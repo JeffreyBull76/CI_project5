@@ -1,108 +1,561 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# **BULL & SEA**
 
-Welcome USER_NAME,
+Online artisan candle shop
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+[View live website here]()
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+<br />
 
-## Gitpod Reminders
+![Bull & Sea AmIresponsive design]()
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+<br />
 
-`python3 -m http.server`
+## [**Table of Contents**](<#table-of-contents>)
 
-A blue button should appear to click: _Make Public_,
+<br />
 
-Another blue button should appear to click: _Open Browser_.
+* [**OVERVIEW**](<#overview>)
+    * [Site Plan](<#site-plan>)
+    * [Design Concept](<#design-concept>)
+    * [User Stories & Agile](<#user-stories-and-agile>)
+    * [Wireframes](<#wireframes>)
+    * [User Interface](<#user-interface>)
+    
+<br />
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+* [**SITE FEATURES**](<#site-features>)
+    * [Inherited Code](<#inherited-code>)
+    * [Depreciated Code](<#depreciated-code>)
+    * [page 1](<#page-1>)
+    * [User Feedback](<#user-feedback>)
 
-A blue button should appear to click: _Make Public_,
+<br />
 
-Another blue button should appear to click: _Open Browser_.
+* [**ROADMAP**](<#roadmap>)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+<br />
 
-To log into the Heroku toolbelt CLI:
+* [**TECHNOLOGY USED**](<#technology-used>)
+    * [Languages](<#languages>)
+    * [Installed Libraries In Requirements](<#installed-libraries-in-requirements>)
+    * [Other software & resources](<#other-software-libraries-and-resources>)
+    * [Testing resources](<#testing-resources>)
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+<br />
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+* [**TESTING**](<#testing>)
+    * [Fixed Bugs](<#fixed-bugs>)
+    * [Known Issues](<#known-issues>)
+    * [Manual Testing](<#manual-testing>)
+    * [Validation](<#validation>)
+    * [Lessons Learned](<#lessons-learned>)
 
-------
+<br />
 
-## Release History
+* [DEPLOYMENT](<#deployment>)
+<br />
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+* [CREDITS](<#credits>)
+<br />
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+* [ACKNOWLEDGEMENTS](<#acknowledgements>)
+<br />
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+--------------------------------------------------------
+## **OVERVIEW**
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+### **Site Plan**
+Plan text here
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+--------------------------------------------------------
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+### **Design Concept**
+Design concept here
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+<details>
+<summary>Schema</summary>
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+![Bull & Sea DB Schema image]()
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+</details>
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+--------------------------------------------------------
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+### **User Stories and Agile**
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+A comprehensive git project page can be found here with my user stories. 
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+[Project Board]()
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+--------------------------------------------------------
 
-------
+### **Wireframes**
 
-## FAQ about the uptime script
+<details>
+<summary>I used an online wireframe tool to create my basic layout idea 
 
-**Why have you added this script?**
+[Fluid UI](https://www.fluidui.com/)
+</summary>
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+![Wireframe]()
 
-**How will this affect me?**
+</details>
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+Explain site structure here
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+In terms of how this relates to the templates in Django, it is as follows.
+  * explain how site layout works which pages extend which etc
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+--------------------------------------------------------
 
-**So….?**
+### **Final Design**
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+* Font choice here:
+    * 1
+    * 2
 
-**Can I opt out?**
+<br />
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+![font 1](font_image_here)
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+<br />
 
-**Anything more?**
+![font 2](font_image_here)
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+<br />
 
----
+* Color palette
+    * text here
 
-Happy coding!
+![Colors](color_palette_image)
+
+* Overall Thoughts: 
+
+
+--------------------------------------------------------
+
+### **User Interface**
+
+Describe how users navigate the site
+
+![Nav Bar](nav_bar_image)
+
+--------------------------------------------------------
+
+### [Contents Menu](<#table-of-contents>)
+
+--------------------------------------------------------
+
+## **SITE FEATURES**
+
+### **Inherited Code**
+
+Text here
+
+<br />
+
+### **Depreciated Code**
+Text here
+
+<br />
+
+<details><summary>Text here</summary>
+
+OLD CODE GOES HERE
+
+</details>
+
+<br />
+
+### **Live Code**
+Text here
+
+### **Models.py file**
+Text here
+
+<br />
+
+### **Page 1**
+
+Text here
+
+<details><summary>Text here</summary>
+
+![Landing Page1]()
+
+</details>
+
+<br />
+
+### **User Feedback**
+
+  Text here
+
+<br />
+
+--------------------------------------------------------
+
+### [Contents Menu](<#table-of-contents>)
+--------------------------------------------------------
+
+## **ROADMAP**
+
+  Text here
+
+* Text here
+
+--------------------------------------------------------
+
+### [Contents Menu](<#table-of-contents>)
+--------------------------------------------------------
+
+## **TECHNOLOGY USED**
+EDIT THIS
+## **Languages**
+  * [HTML](https://www.w3.org/standards/webdesign/htmlcss) - Base structure
+  * [CSS](https://www.w3.org/standards/webdesign/htmlcss) - Style elements
+  * [Javascript](https://developer.mozilla.org/en-US/docs/Web/javascript) - Some interactive elements
+  * [Python](https://www.python.org/) - Backend functionality
+
+<br />
+
+EDIT THIS
+## **Installed libraries in Requirements**
+  * [asgiref](https://pypi.org/project/asgiref/)
+  * [cloudinary](https://pypi.org/project/cloudinary/)
+  * [dj-database-url](https://pypi.org/project/dj-database-url/)
+  * [dj3-cloudinary-storage](https://pypi.org/project/dj3-cloudinary-storage/)
+  * [Django](https://pypi.org/project/Django/)
+  * [django-allauth](https://pypi.org/project/django-allauth/)
+  * [django-crispy-forms](https://pypi.org/project/django-crispy-forms/)
+  * [django-summernote](https://pypi.org/project/django-summernote/)
+  * [gunicorn](https://pypi.org/project/gunicorn/)
+  * [oauthlib](https://pypi.org/project/oauthlib/)
+  * [Pillow](https://pypi.org/project/Pillow/)
+  * [psycopg2](https://pypi.org/project/psycopg2/)
+  * [PyJWT](https://pypi.org/project/PyJWT/)
+  * [python3-openid](https://pypi.org/project/python3-openid/)
+  * [pytz](https://pypi.org/project/pytz/)
+  * [requests-oauhlib](https://pypi.org/project/requests-oauthlib/)
+  * [sqlparse](https://pypi.org/project/sqlparse/)
+
+<br />
+
+EDIT THIS
+## **Other software, libraries and resources**
+  * [Bootstrap](https://getbootstrap.com/) - used for base style elements and layout
+  * [Font Awesome](https://fontawesome.com/) - used for landing page icons
+  * [Jquery](https://cdnjs.com/libraries/jquery) - used throughout the site
+  * [Popper JS](https://cdnjs.com/libraries/popper.js) - Library used in forms.py
+  * [Django](https://www.djangoproject.com/) - A model-view-template framework used to create the Review | Alliance site
+  * [Fluid UI](https://www.fluidui.com/) - Wireframe resource
+  * [Github](https://github.com/) - Used to host this repository
+  * [Gitpod](https://www.gitpod.io) - Used to edit and push to the repo, the native validator was used to validate all Python code.
+  * [Heroku](https://id.heroku.com/login) - Cloud platform the live site is deployed to
+  * [Favicon](https://favicon.io/) - Used to create favicon
+  * [Cloudinary](https://cloudinary.com/) - Hosts all static files in the project and user images
+  * [LINK](https://www.youtube.com/watch?v=2IbRtjez6ag) - Link to a lesson that showed how to create a simple Intersection observer script, which was extended for my project
+  * [LINK](https://www.w3resource.com/html-css-exercise/html-css-practical-exercises/html-css-practical-exercise-40.php) - Gallery code was taken from here then edited for use.
+  * [LINK](http://animista.net) - Used to create the bounce button effect and slide-up image animation
+
+<br />
+
+EDIT THIS
+## **Testing resources**
+  * [HTML Validation](https://validator.w3.org/) - Used to validate HTML code
+  * [CSS Validation](https://jigsaw.w3.org/css-validator/) - Used to validate CSS code
+  * [JSHint Validation](https://jshint.com/) - Used to validate JavaScript code
+  * [PyCodeStyle](https://pypi.org/project/pycodestyle/) - Used to validate all python code
+  * [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) - Performance testing resource
+  * [Responsive Design Checker](https://www.responsivedesignchecker.com/) - Used for responsiveness check
+  * [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/) - Used throughout the project to debug and test
+  * [Wave Web Accessibility Evaluation Tool](https://wave.webaim.org/) - Used to validate the site's accessibility
+
+<br />
+
+--------------------------------------------------------
+
+### [Contents Menu](<#table-of-contents>)
+--------------------------------------------------------
+
+## **TESTING**
+
+## **Fixed Bugs**
+* Text here
+
+<br />
+
+## **Known Issues**
+
+Text here
+
+<br />
+
+## **Manual Testing**
+All user stories marked as 'done' on our project board [HERE](board-link-here) were tested and signed off.
+
+<br />
+
+I did not have time to implement automated or unit tests. As the project is relatively straightforward I opted for manual testing. The results can be seen below.
+
+
+!! EDIT THIS TO BE RELEVANT TO PROJECT 5 !!
+
+| Status | **Landing Page** |
+|:-------:|:--------|
+| &check; | Custom 404 page exists and shows when the user manually enters an incorrect address extension |
+| &check; | Clicking the title reloads to index.html landing page when not logged in |
+| &check; | All landing page links navigate to the correct pages |
+| &check; | All landing page modals open the correct panels |
+| &check; | The landing page responds to different screen sizes correctly |
+| &check; | Using the signup link work correctly and redirects to the gallery page |
+| &check; | Using the login link work correctly and redirects to the gallery page |
+| &check; | All scripts and resources load correctly |
+| &check; | The footer at the bottom shows correctly and the modal works |
+
+<br />
+
+| Status | **Gallery Page**
+|:-------:|:--------|
+| &check; | Custom 404 page exists and shows when the user manually enters an incorrect address extension |
+| &check; | The Gallery page only shows for logged users, it is unreachable otherwise |
+| &check; | The Gallery page loads the post cards in a dynamic masonry gallery correctly |
+| &check; | On scroll new images become visible correctly using an intersection observer API |
+| &check; | The Main navigation links change to show account access and logout once signed in |
+| &check; | The Gallery navigation bar shows correctly once the user is logged in |
+| &check; | Gallery navigation bar links work correctly and redirect to the main gallery and submission form respectively |
+| &check; | Clicking the title when logged in correctly redirects to the gallery |
+| &check; | On new posts do not show in the gallery until published by superuser/staff |
+| &check; | Hovering over an image on desktop systems correctly fades in the image title, likes, and comments counters |
+| &check; | The hover function is correctly disabled on mobile and tablets |
+| &check; | All navigation links work correctly from the gallery page |
+| &check; | Clicking an image card takes you to the correct post details page |
+| &check; | The footer at the bottom shows correctly and the modal works |
+
+<br />
+
+| Status | **Post Detail Page**
+|:-------:|:--------|
+| &check; | Custom 404 page exists and shows when the user manually enters an incorrect address extension |
+| &check; | Post details page only shows for logged users | 
+| &check; | On entering the page our view renders the post details and its relevant parameters to the fields | 
+| &cross; | Post detail page is bug-free (see known issues) |
+| &check; | All navigation links work correctly from this page |
+| &check; | Below the image the likes and comments counter appears correctly |
+| &check; | Clicking the like button toggles the like status for the current user |
+| &check; | A comment box form loads at the bottom of the page allowing users to post comments |
+| &check; | Posted comments render to the bottom left and correctly display a 'delete' button to the comment author |
+| &check; | Posting a comment automatically refreshes the page and reverse redirects |
+| &check; | The post text fields correctly allow for one-button copying to the clipboard via a script |
+| &check; | The footer at the bottom shows correctly and the modal works |
+
+<br />
+
+| Status | **Submit Post Page**
+|:-------:|:--------|
+| &check; | Custom 404 page exists and shows when the user manually enters an incorrect address extension |
+| &check; | All navigation links work correctly from this page |
+| &check; | Submit post page only shows for logged users | 
+| &check; | On entering the page the instructions panel shows correctly on all screen sizes | 
+| &check; | On entering the page our submission form renders correctly based on our Post model |
+| &check; | All form fields are error checked to prevent empty submissions |
+| &check; | On error correctly flags page as posted to prevent form clearly and redirects to self |
+| &check; | The title field checks for a unique name and correctly slugifies this data |
+| &check; | The form automatically detects the logged user and attaches their details to the submitted data |
+| &check; | The image field has a check in place to prevent data over 1MB from being submitted (temporary solution) |
+| &check; | Clicking submit correctly commits the data to the database and sends the image to Cloudinary |
+| &check; | Submitting data correctly redirects users back to the gallery page |
+| &check; | The footer at the bottom shows correctly and the modal works |
+
+<br />
+
+| Status | **Update Post Page**
+|:-------:|:--------|
+| &check; | Custom 404 page exists and shows when the user manually enters an incorrect address extension |
+| &check; | All navigation links work correctly from this page |
+| &check; | update post page only accessible for logged users | 
+| &check; | On entering the page form renders with the same formatting as post view page |
+| &check; | All form fields are Pre-populated with existing post details |
+| &check; | All form fields are error checked to prevent empty submissions |
+| &check; | When an error is encountered redirects the user to the current page |
+| &check; | Submitting data correctly redirects users back to the account page |
+| &check; | The footer at the bottom shows correctly and the modal works |
+
+<br />
+
+| Status | **Account Page**
+|:-------:|:--------|
+| &check; | Custom 404 page exists and shows when the user manually enters an incorrect address extension |
+| &check; | All navigation links work correctly from this page |
+| &check; | Account page only shows for logged users and shows their names correctly | 
+| &check; | Account page shows an admin button for superusers/staff only, allowing for easy navigation to the admin panel |
+| &check; | Correctly populates a list of draft posts for superusers/staff and allows for one-button publishing |
+| &check; | Correctly populates a list of user's own posts and allows for one-button updating and deletion |
+| &check; | All deletion and update actions require confirmation on request and show flash messages |
+| &check; | All redirects work conditionally to redirect to the account page |
+| &check; | Post deletion process also removes the image from Cloudinary |
+| &check; | All dynamic load animations for the gallery are removed from the account page|
+| &check; | The footer at the bottom shows correctly and the modal works |
+
+<br />
+
+| Status | **Admin Page**
+|:-------:|:--------|
+| &check; | Custom 404 page exists and shows when the user manually enters an incorrect address extension |
+| &check; | All standard admin functionality is available | 
+| &check; | Extra function to allow mass publishing from dropdown present and working |
+| &check; | All form data is admissable from the Admin panel in line with the model |
+| &check; | Users are able to navigate back to the site easily |
+
+<br />
+
+## **Validation**
+  **HTML validation:**
+  All code was manually fed into the validator. Various duplicate ID errors and missing alt tags were fixed. 
+  Now returns no errors on all pages.
+
+  <details><summary>HTML Validation</summary>
+  
+  <br />
+  
+  Page 1:
+
+  ![LPage 1 Validation]()
+
+  <br />
+
+  **CSS validation:**
+  All code was manually fed into the validator. Returns no errors.
+
+  <details><summary>CSS Validation</summary>
+
+  CSS validation:
+
+  ![CSS validation]()
+
+  <br />
+
+  </details>
+  
+  <br />
+
+  **Javascript validation:**
+  JS testing output here
+  
+  <details><summary>JS Validation</summary>
+
+  Account page:
+
+  ![Account page]()
+
+  <br />
+
+  </details>
+  
+  <br />
+
+  **Lighthouse testing:**
+
+  Test data here
+
+  <br />
+
+  **Wave web accessibility test:**
+
+  Testing output here
+
+  <details><summary>Wave web test</summary>
+
+  Wave web test:
+
+  ![Wave web test]()
+
+  <br />
+
+  </details>
+
+<br />
+
+## **Lessons Learned**
+  * Text here
+
+<br />
+
+--------------------------------------------------------
+
+### [Contents Menu](<#table-of-contents>)
+--------------------------------------------------------
+
+EDIT THIS
+## **DEPLOYMENT**
+
+* Code was written in Gitpod by creating a repo from the initial CI full template [HERE](https://github.com/Code-Institute-Org/gitpod-full-template)
+* ### Forking the repository
+  * A copy of the GitHub Repository can be made by forking the GitHub account. This copy can be viewed and changes can be made to the copy without affecting the original repository. Take the following steps to fork the repository;
+  * Log in to GitHub and locate the repository.
+  * On the right-hand side of the page in line with the repository name is a button called 'Fork', click on the button to create a copy of the original repository in your GitHub Account.
+
+<br />
+
+* ### Cloning the repository
+  * Under the repo’s name, click on the code tab.
+  * In the Clone with HTTPS section, click on the clipboard icon to copy the given URL.
+  * In your IDE of choice, open Git Bash.
+  * Change the current working directory to the location where you want the cloned directory to be made.
+  * Type git clone, and then paste the URL copied from GitHub.
+  * Press enter and the local clone will be created.
+
+<br />
+
+* ### Deploying to Heroku
+  * Create working Procfile
+  * Ensure requirements.txt is up to date with pip freeze --local > requirement.txt - Vital so that Heroku knows what packages and dependencies are being used.
+  * In our env.py files we use 'noqa' to stop error for long line, this was ok to leave as it not deployed to Heroku.
+  * An ignore file is used with an env.py file to prevent secure data from being published to git.
+  * Make sure to set debug to "DEBUG = 'DEVELOPMENT' in os.environ" so that Heroku will not run in debug mode.
+  * Make sure the current working branch is up to date and pushed to GitHub correctly.
+  * Login to Heroku using 2 step authentication.
+  * Once logged create a new app in Heroku.
+  * Set the config vars of the new app in heroku to reflect the dependencies in the app (see below).
+  * Link the app to our GitHub repo (see below).
+  * This was then deployed manually to ensure control over the live version.
+  * You do this by navigating to the deploy tab and selecting manual or automatic.
+  * Check the build log for a successful build.
+
+<details><summary>Config Vars redacted</summary>
+
+![Config Vars redacted](readme/assets/images/config_vars.png)
+</details>
+
+<br />
+
+<details><summary>Link repo</summary>
+
+![Repo link](readme/assets/images/heroku_link.png)
+</details>
+
+<br />
+ 
+--------------------------------------------------------
+
+### [Contents Menu](<#table-of-contents>)
+--------------------------------------------------------
+
+## **CREDITS**
+
+Text here
+
+--------------------------------------------------------
+
+### [Contents Menu](<#table-of-contents>)
+--------------------------------------------------------
+
+## **ACKNOWLEDGEMENTS**
+
+Text here
+
+--------------------------------------------------------
+
+### [Contents Menu](<#table-of-contents>)
+--------------------------------------------------------
