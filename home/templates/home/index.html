@@ -1,6 +1,27 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
 {% block content %}
-    <h1 class="display-4 text-success">It works!</h1>
+<div class="container h-100">
+    <div class="row h-100 align-items-start">
+        <div class="col-7 col-md-6 d-flex flex-column justify-content-start">
+            <h1 class="splash-text">
+                Artisan candles and lifestyle products
+            </h1>
+            <div class="my-5">
+                <h5>
+                    <a href="" class="call-to-action-button btn btn-lg rounded-2 text-uppercase py-2">Discover our candles...</a>
+                </h5>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
