@@ -11,15 +11,17 @@ html {
 }
 
 .splash-text {
-    padding: 50px 0 0 10px;
+    padding: 150px 0 0 10px;
     font-size: 2rem;
-    color: black !important;
+    color: #383838 !important;
     line-height: 1.1;
     text-shadow: 0 0 3px #f5f0ecab;
 }
 
 .bg-nav {
     background-color: #DCDBDC;
+    height: 130px;
+    padding-bottom: 15px;
 }
 
 .bg-searchbox {
@@ -59,11 +61,10 @@ body {
 }
 
 .call-to-action-button {
-    background: #BEC9BF;
+    background: #F5F0EC;
     color: #383838;
     min-width: 260px;
 }
-
 
 .call-to-action-button:hover,
 .call-to-action-button:active,
@@ -81,6 +82,21 @@ body {
 
 .border-black {
     border: 1px solid black !important;
+}
+
+/* dropdown and dropdown nav menu */
+
+.navbar-expand-lg {
+    background-color: #f5f0ec9c
+}
+
+.navbar {
+    padding: 0;
+}
+
+.dropdown-menu {
+    background: #f5f0ec9c;
+    min-width: 0;
 }
 
 /* -------------------------------- Media Queries */
