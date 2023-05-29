@@ -20,7 +20,7 @@ html {
 
 .bg-nav {
     background-color: #DCDBDC;
-    height: 130px;
+    height: 110px;
     padding-bottom: 15px;
 }
 
@@ -86,8 +86,29 @@ body {
 
 /* dropdown and dropdown nav menu */
 
-.navbar-expand-lg {
-    background-color: #f5f0ec9c
+.nav-link {
+    font-size: large;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #727272 !important;
+    text-decoration: none !important;
+}
+
+.nav-link-padding {
+    padding: 0 10px !important;
+}
+
+.main-logo-link {
+    padding: 0.5rem 1rem !important;
+    text-decoration: none !important;
+}
+
+.navlinksleft {
+    padding: 2rem 0 2rem 1rem !important;
+}
+
+.searchbarright {
+    padding: 1.8rem 1rem 1.8rem 0 !important;
 }
 
 .navbar {
@@ -95,17 +116,37 @@ body {
 }
 
 .dropdown-menu {
-    background: #f5f0ec9c;
+    background: #f5f0ec;
     min-width: 0;
+}
+
+/* mobile menu */
+
+.collapsedmenu {
+    background-color: #DCDBDC;
+    position: fixed;
+    top: 100px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.mobnavpadding {
+    padding: 2rem 0;
+}
+
+.mob-nav-link-padding {
+    padding: 0.5rem 0 1rem 1.5rem !important;
 }
 
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
-  .container {
-    max-width: 80%;
-  }
+    .container {
+        max-width: 80%;
+    }
 }
 
 /* fixed top navbar only on medium and up */
