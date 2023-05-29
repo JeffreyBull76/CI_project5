@@ -11,8 +11,8 @@ html {
 }
 
 .splash-text {
-    padding: 150px 0 0 10px;
-    font-size: 2rem;
+    padding: 180px 0 0 8px;
+    font-size: 1.4rem;
     color: #383838 !important;
     line-height: 1.1;
     text-shadow: 0 0 3px #f5f0ecab;
@@ -42,6 +42,14 @@ body {
     font-family: 'Slabo 27px', serif;
 }
 
+.footer-base {
+    background-color: #DCDBDC;
+    height: 3rem;
+    padding-bottom: 55px;
+    font-family: 'Cinzel', serif;
+    color: #384D73;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;
@@ -61,9 +69,11 @@ body {
 }
 
 .call-to-action-button {
-    background: #F5F0EC;
-    color: #383838;
-    min-width: 260px;
+    background: #384D73;
+    color: #F5F0EC;
+    min-width: 220px;
+    font-size: medium;
+    padding: 0.4rem 0 !important;
 }
 
 .call-to-action-button:hover,
@@ -116,8 +126,15 @@ body {
 }
 
 .dropdown-menu {
-    background: #f5f0ec;
+    background: #DCDBDC;
     min-width: 0;
+    border: 0 !important;
+}
+
+.dropdown-item {
+    padding: 0.3rem 0.4rem;
+    font-weight: bold;
+    color: #727272 !important;
 }
 
 /* mobile menu */
@@ -151,7 +168,7 @@ body {
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
-    .fixed-top-desktop-only {
+     .fixed-top-desktop-only {
         position: fixed;
         top: 0;
         right: 0;
@@ -162,4 +179,45 @@ body {
     .header-container {
         padding-top: 164px;
     }
+}
+
+/* mobile styles */
+@media (max-width: 992px) {
+    .splash-text {
+        padding: 350px 0 0 10px;
+    }
+    .navbar-brand {
+        padding-left: 0.6rem;
+    }
+    .text-right {
+        padding-right: 1.6rem;
+    }
+    .btn-mobile {
+        background: #DCDBDC;
+        border: 0;
+    }
+    .dropmenu-Mob {
+        left: -10px !important;
+    }
+    .navbar-toggler span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        margin-bottom: 4px;
+        position: relative;
+        background: #333;
+        transition: all 0.2s ease-in-out;
+      }
+      
+      .navbar-toggler.open span:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+      }
+      
+      .navbar-toggler.open span:nth-child(2) {
+        opacity: 0;
+      }
+      
+      .navbar-toggler.open span:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+      }
 }

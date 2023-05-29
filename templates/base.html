@@ -40,6 +40,14 @@
   {% endblock %}
 
   {% block extra_js %}
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var navbarToggler = document.querySelector('.navbar-toggler');
+      navbarToggler.addEventListener('click', function () {
+        this.classList.toggle('open');
+      });
+    });
+  </script>
   {% endblock %}
 
   <title>Bull & Sea {% block extra_title %}{% endblock %}</title>
@@ -120,7 +128,7 @@
 
     <div class="d-lg-none">
       {% include 'includes/mobile-top-header.html' %}
-  </div>
+    </div>
 
   </header>
 
@@ -133,6 +141,15 @@
 
   {% block content %}
   {% endblock %}
+
+  <footer class="container-fluid footer-base fixed-bottom">
+    <div class="row">
+      <div class="col text-center py-3">
+        <!-- Footer content goes here -->
+        <p>This is the footer</p>
+      </div>
+    </div>
+  </footer>
 
   {% block postloadjs %}
   {% endblock %}
