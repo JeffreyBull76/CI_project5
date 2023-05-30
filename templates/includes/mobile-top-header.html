@@ -49,11 +49,11 @@
         <div class="col-12">
           <ul class="navbar-nav mob-nav-link-padding">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              <a class="nav-link dropdown-toggle caret-off" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 My Account
               </a>
-              <div class="dropdown-menu dropmenu-Mob" aria-labelledby="navbarDropdown">
+              <div class="dropdown-menu dropmenu-Mob dropdown-menu-end animate slideIn" aria-labelledby="navbarDropdown">
                 {% if request.user.is_authenticated %}
                 {% if request.user.is_superuser %}
                 <a href="" class="dropdown-item">Manage Products</a>
@@ -68,7 +68,7 @@
             </li>
 
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              <a class="nav-link dropdown-toggle caret-off" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 Shop
               </a>

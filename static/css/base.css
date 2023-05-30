@@ -105,7 +105,7 @@ body {
 }
 
 .nav-link-padding {
-    padding: 0 10px !important;
+    padding: 0 25px !important;
 }
 
 .main-logo-link {
@@ -137,6 +137,14 @@ body {
     color: #727272 !important;
 }
 
+.caret-off::before {
+    display: none;
+}
+
+.caret-off::after {
+    display: none;
+}
+
 /* mobile menu */
 
 .collapsedmenu {
@@ -155,6 +163,10 @@ body {
 
 .mob-nav-link-padding {
     padding: 0.5rem 0 1rem 1.5rem !important;
+}
+
+.dropmenu-Main {
+    left: 18px !important;
 }
 
 /* -------------------------------- Media Queries */
@@ -221,3 +233,52 @@ body {
         transform: translateY(-6px) rotate(-45deg);
       }
 }
+
+/* dropdown animation for medium and above screens */
+@media (min-width: 992px) {
+    .animate {
+      animation-duration: 0.3s;
+      -webkit-animation-duration: 0.3s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both;
+    }
+  }
+  
+  @keyframes slideIn {
+    0% {
+      transform: translateY(2rem);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translateY(1.2rem);
+      opacity: 1;
+    }
+  
+    0% {
+      transform: translateY(2rem);
+      opacity: 0;
+    }
+  }
+  
+  @-webkit-keyframes slideIn {
+    0% {
+      -webkit-transform: transform;
+      -webkit-opacity: 0;
+    }
+  
+    100% {
+      -webkit-transform: translateY(1.2rem);
+      -webkit-opacity: 1;
+    }
+  
+    0% {
+      -webkit-transform: translateY(2rem);
+      -webkit-opacity: 0;
+    }
+  }
+  
+  .slideIn {
+    -webkit-animation-name: slideIn;
+    animation-name: slideIn;
+  }
