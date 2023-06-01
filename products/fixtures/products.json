@@ -1,0 +1,71 @@
+[{
+        "pk": 1,
+        "model": "products.product",
+        "fields": {
+            "sku": "pp00010001",
+            "name": "Candle 1",
+            "description": "1st Candle",
+            "price": 25.99,
+            "category": 1,
+            "image_url": "",
+            "image": "no1.webp",
+            "reviews": []
+        }
+    },
+    {
+        "pk": 2,
+        "model": "products.product",
+        "fields": {
+            "sku": "pp00010002",
+            "name": "Candle 2",
+            "description": "2nd Candle",
+            "price": 25.99,
+            "category": 1,
+            "image_url": "",
+            "image": "no2.webp",
+            "reviews": []
+        }
+    },
+    {
+        "pk": 3,
+        "model": "products.product",
+        "fields": {
+            "sku": "pp00010003",
+            "name": "Candle 3",
+            "description": "3rd Candle",
+            "price": 25.99,
+            "category": 1,
+            "image_url": "",
+            "image": "no3.webp",
+            "reviews": []
+        }
+    },
+    {
+        "pk": 4,
+        "model": "products.product",
+        "fields": {
+            "sku": "pp00010004",
+            "name": "Candle 4",
+            "description": "4th Candle",
+            "price": 25.99,
+            "category": 1,
+            "image_url": "",
+            "image": "no4.webp",
+            "reviews": []
+        }
+    },
+    {
+        "pk": 5,
+        "model": "products.product",
+        "fields": {
+            "sku": "pp00010004",
+            "name": "Curiosity 1",
+            "description": "Curiosity product",
+            "price": 25.99,
+            "category": 2,
+            "image_url": "https://placehold.co/512x512/png",
+            "image": "",
+            "reviews": []
+        }
+    }
+]

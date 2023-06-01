@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['localhost', '8000-jeffreybull7-ciproject5-fu0y1tjwsgb.ws-eu98.gitpod.io']  # noqa
 
 # Application definition
 
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
 
     'home',
+    'products',
 ]
 
 MIDDLEWARE = [
