@@ -1,8 +1,8 @@
 <div class="dropdown-menu dropmenu-Mob dropmenu-Main dropdown-menu-end animate slideIn" aria-labelledby="navbarDropdown">
-    <a class="dropdown-item" href="#">Candles</a>
-    <a class="dropdown-item" href="#">Lifestyle Products</a>
-    <a class="dropdown-item" href="#">Candle 1</a>
-    <a class="dropdown-item" href="#">Candle 2</a>
-    <a class="dropdown-item" href="#">Candle 3</a>
-    <a class="dropdown-item" href="#">Candle 4</a>
-  </div>
+  {% for category in categories %}
+    <a class="dropdown-item" href="#">{{ category.get_friendly_name }}</a>
+  {% endfor %}
+  {% for product in products %}
+    <a class="dropdown-item" href="#">{{ product.name }}</a>
+  {% endfor %}
+</div>
