@@ -40,14 +40,6 @@
   {% endblock %}
 
   {% block extra_js %}
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var navbarToggler = document.querySelector('.navbar-toggler');
-      navbarToggler.addEventListener('click', function () {
-        this.classList.toggle('open');
-      });
-    });
-  </script>
   {% endblock %}
 
   <title>Bull & Sea {% block extra_title %}{% endblock %}</title>
@@ -81,7 +73,8 @@
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 My Account
               </a>
-              <div class="dropdown-menu dropmenu-Main dropdown-menu-end animate slideIn" aria-labelledby="navbarDropdown">
+              <div class="dropdown-menu dropmenu-Main dropdown-menu-end animate slideIn"
+                aria-labelledby="navbarDropdown">
                 {% if request.user.is_authenticated %}
                 {% if request.user.is_superuser %}
                 <a href="" class="dropdown-item">Manage Products</a>

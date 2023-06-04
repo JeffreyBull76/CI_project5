@@ -75,6 +75,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',  # noqa required by allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # processor to pass categories and products to all views
+                'products.context_processors.categories_and_products',
             ],
         },
     },
