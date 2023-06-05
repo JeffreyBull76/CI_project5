@@ -28,10 +28,10 @@
         <div class="col-12 flex-column">
           <div class="d-flex mob-nav-link-padding">
 
-            <form class="form-inline" method="GET" action="">
+            <form class="form-inline" method="GET" action="{% url 'search_products' %}">
               <div class="input-group w-100">
                 <input class="form-control border border-grey rounded-2 bg-searchbox" type="text" name="q"
-                  placeholder="Search our site">
+                  placeholder="Search our products" value="{{ search_query }}">
                 <div class="input-group-append">
                   <button class="form-control btn btn-searchbox border border-grey rounded-2" type="submit">
                     <span class="icon">
@@ -103,6 +103,19 @@
               </a>
               {% include 'includes/main-nav.html' %}
             </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle caret-off" href="#" id="navbarDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Connect
+              </a>
+              <div class="dropdown-menu dropmenu-Mob dropdown-menu-end animate slideIn"
+                aria-labelledby="navbarDropdown">
+                <a href="" class="dropdown-item">About us</a>
+                <a href="" class="dropdown-item">Contact</a>
+              </div>
+            </li>
+            
           </ul>
         </div>
       </div>

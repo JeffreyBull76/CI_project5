@@ -1,5 +1,24 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Product, Category
+from django.db.models import Q
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+
+
+def search_products(request):
+    query = request.GET.get('q')
+
+    if query:
+        products = Product.objects.filter(Q(name__icontains=query) | Q(description__icontains=query))  # noqa
+    else:
+        products = Product.objects.none()
+
+    context = {
+        'products': products,
+        'search_query': query
+    }
+
+    return render(request, 'products/products.html', context)
 
 
 def category_products(request, category_id):

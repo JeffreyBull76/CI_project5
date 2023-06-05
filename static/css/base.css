@@ -213,7 +213,7 @@ body {
 }
 
 .hr-prod-top-spacer hr {
-    border: 1px solid #DCDBDC;
+    border: 1px solid #F5F0EC;
 }
 
 .card {
@@ -264,6 +264,17 @@ body {
 
 
 /* -------------------------------- Media Queries */
+
+@media (max-width: 1300px) {
+    .small-screen-menutext, .small-screen-droptext a {
+        font-size: small !important;
+    }
+
+    .nav-link-padding {
+        padding: 0 8px !important;
+    }
+}
+
 
 /* pad the top of product details overlay */
 @media (max-width: 991px) {
@@ -341,11 +352,6 @@ body {
 
     .navbar-toggler.open span:nth-child(3) {
         transform: translateY(-6px) rotate(-45deg);
-    }
-
-    .hr-prod-top-spacer {
-        display: inline-block;
-        padding-top: 28px;
     }
 
     .hr-prod-bot-spacer {

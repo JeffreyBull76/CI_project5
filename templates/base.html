@@ -56,12 +56,12 @@
         <div class="d-flex navlinksleft text-base">
           <ul class="navbar-nav mr-auto d-flex flex-row">
             <li class="nav-item active">
-              <a class="nav-link nav-link-padding" href="{% url 'home' %}">Home <span
+              <a class="small-screen-menutext nav-link nav-link-padding" href="{% url 'home' %}">Home <span
                   class="sr-only">(current)</span></a>
             </li>
 
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle nav-link-padding caret-off" href="#" id="navbarDropdown" role="button"
+              <a class="small-screen-menutext nav-link dropdown-toggle nav-link-padding caret-off" href="#" id="navbarDropdown" role="button"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Shop
               </a>
@@ -69,11 +69,23 @@
             </li>
 
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle nav-link-padding caret-off" href="#" id="navbarDropdown" role="button"
+              <a class="small-screen-menutext nav-link dropdown-toggle nav-link-padding caret-off" href="#" id="navbarDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Connect
+              </a>
+              <div class="small-screen-droptext dropdown-menu dropmenu-Main dropdown-menu-end animate slideIn"
+                aria-labelledby="navbarDropdown">
+                <a href="" class="dropdown-item">About us</a>
+                <a href="" class="dropdown-item">Contact</a>
+              </div>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="small-screen-menutext nav-link dropdown-toggle nav-link-padding caret-off" href="#" id="navbarDropdown" role="button"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 My Account
               </a>
-              <div class="dropdown-menu dropmenu-Main dropdown-menu-end animate slideIn"
+              <div class="small-screen-droptext dropdown-menu dropmenu-Main dropdown-menu-end animate slideIn"
                 aria-labelledby="navbarDropdown">
                 {% if request.user.is_authenticated %}
                 {% if request.user.is_superuser %}
@@ -131,10 +143,10 @@
             </li>
           </ul>
 
-          <form class="form-inline" method="GET" action="">
+          <form class="form-inline" method="GET" action="{% url 'search_products' %}">
             <div class="input-group w-100">
               <input class="form-control border border-grey rounded-2 bg-searchbox" type="text" name="q"
-                placeholder="Search our site">
+                placeholder="Search our products" value="{{ search_query }}">
               <div class="input-group-append">
                 <button class="form-control btn btn-searchbox border border-grey rounded-2" type="submit">
                   <span class="icon">
