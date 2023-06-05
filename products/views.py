@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Product, Category
+from .models import Product, Category, Review
 from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.urls import reverse
@@ -84,11 +84,24 @@ def category_products(request, category_id):
 
 
 def product_detail(request, product_id):
-    # Logic to retrieve product details
     product = get_object_or_404(Product, pk=product_id)
 
-    context = {
-        'product': product
-    }
+    is_reviewed = False
+    if request.user.is_authenticated:
+        is_reviewed = product.reviews.filter(user=request.user).exists()
 
+    if request.method == 'POST' and request.user.is_authenticated and not is_reviewed:  # noqa
+        rating = int(request.POST.get('rating'))
+        comment = request.POST.get('comment')
+        print('Rating:', rating)
+        print('Comment:', comment)
+        review = Review(user=request.user, product=product, rating=rating, comment=comment)  # noqa
+        # Validate the review object
+        review.full_clean(validate_unique=False)
+        review.save()
+        product.reviews.add(review)
+        # Redirect back to the same page after form submission
+        return HttpResponseRedirect(request.path)
+
+    context = {'product': product, 'is_reviewed': is_reviewed}
     return render(request, 'products/product_detail.html', context)
