@@ -87,6 +87,7 @@
                 {% endif %}
               </div>
             </li>
+
           </ul>
         </div>
       </div>
@@ -100,7 +101,36 @@
 
       <!-- Search box -->
       <div class="col-4">
+
+
+
         <div class="d-flex justify-content-end searchbarright">
+
+          <ul class="nav-list-style">
+            <li>
+              {% if grand_total > 0 %}
+              <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
+                <div class="text-center">
+                  <div class="d-flex align-items-center">
+                    <div class="mr-2">
+                      <i class="fas fa-shopping-bag fa-lg"></i>
+                    </div>
+                    <div>
+                      <p class="my-0">
+                        {% if grand_total %}
+                        ${{ grand_total|floatformat:2 }}
+                        {% else %}
+                        $0.00
+                        {% endif %}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              {% endif %}
+            </li>
+          </ul>
+
           <form class="form-inline" method="GET" action="">
             <div class="input-group w-100">
               <input class="form-control border border-grey rounded-2 bg-searchbox" type="text" name="q"
@@ -114,7 +144,9 @@
               </div>
             </div>
           </form>
+
         </div>
+
       </div>
 
     </div>

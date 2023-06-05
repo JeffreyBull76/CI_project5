@@ -96,6 +96,12 @@ body {
 
 /* dropdown and dropdown nav menu */
 
+.nav-list-style {
+    list-style: none;
+    padding: 0 15px 0 0;
+    margin: 0;
+}
+
 .nav-link {
     font-size: large;
     font-weight: bold;
@@ -118,7 +124,7 @@ body {
 }
 
 .searchbarright {
-    padding: 1.8rem 1rem 1.8rem 0 !important;
+    padding: 1.6rem 1rem 1.8rem 0 !important;
 }
 
 .navbar {
@@ -171,6 +177,13 @@ body {
 
 /* products css */
 
+.sub-heading-font {
+    font-family: 'Cinzel', serif;
+    color: #384D73;
+    font-size: x-large;
+    font-weight: bold;
+}
+
 .overlay {
     height: 100%;
     width: 100%;
@@ -207,7 +220,8 @@ body {
     max-width: 512px;
 }
 
-.card-body, .card-footer {
+.card-body,
+.card-footer {
     background-color: #DCDBDC !important;
 }
 
@@ -218,14 +232,14 @@ body {
  * w: http://animista.net, t: @cssanimista
  * ---------------------------------------------- */
 
- .shadow-drop-center:hover {
-	-webkit-animation: shadow-drop-center 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: shadow-drop-center 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+.shadow-drop-center:hover {
+    -webkit-animation: shadow-drop-center 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: shadow-drop-center 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .shadow-drop-center {
-	-webkit-animation: shadow-drop-center 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse both;
-	        animation: shadow-drop-center 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse both;
+    -webkit-animation: shadow-drop-center 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse both;
+    animation: shadow-drop-center 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse both;
 }
 
 /**
@@ -233,18 +247,34 @@ body {
  * animation shadow-drop-center
  * ----------------------------------------
  */
- @keyframes shadow-drop-center {
+@keyframes shadow-drop-center {
     0% {
-      -webkit-box-shadow: 0 0 0 0 #72727200;
-              box-shadow: 0 0 0 0 #72727200;
+        -webkit-box-shadow: 0 0 0 0 #72727200;
+        box-shadow: 0 0 0 0 #72727200;
     }
+
     100% {
-      -webkit-box-shadow: 0 0 10px 2px #72727246;
-              box-shadow: 0 0 10px 2px #72727246;
+        -webkit-box-shadow: 0 0 10px 2px #72727246;
+        box-shadow: 0 0 10px 2px #72727246;
     }
-  }
+}
+
+/* product details */ 
+
+
 
 /* -------------------------------- Media Queries */
+
+/* pad the top of product details overlay */
+@media (max-width: 991px) {
+    .header-container {
+        padding-top: 116px;
+    }
+
+    body {
+        height: calc(100vh - 116px);
+    }
+}
 
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
@@ -321,6 +351,7 @@ body {
     .hr-prod-bot-spacer {
         display: none;
     }
+
 }
 
 /* dropdown animation for medium and above screens */
