@@ -23,6 +23,19 @@
         </div>
     </div>
     <div class="row">
+        <form method="get" action="">
+            <select name="sort">
+                <option value="price" {% if current_sorting == 'price_asc' or current_sorting == 'price_desc' %}selected{% endif %}>Sort by Price</option>
+            </select>
+            <select name="direction">
+                <option value="asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Ascending</option>
+                <option value="desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Descending</option>
+            </select>
+            <input type="hidden" name="q" value="{{ request.GET.q }}">
+            <button type="submit">Sort</button>
+        </form>
+        
+
         <div class="product-container col-10 offset-1">
             <div class="row mt-1 mb-2"></div>
             <div class="row">
