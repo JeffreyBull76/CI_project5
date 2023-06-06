@@ -284,7 +284,9 @@ body {
 
 /* product details */
 
-
+.review-tabs {
+    padding-bottom: 220px;
+}
 
 /* -------------------------------- Media Queries */
 
