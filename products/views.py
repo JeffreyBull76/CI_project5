@@ -104,7 +104,9 @@ def product_detail(request, product_id):
         return HttpResponseRedirect(request.path)
 
     # Fetch reviews associated with the product, newest first
-    reviews = product.reviews.order_by('-id')  
+    reviews = product.reviews.order_by('-id')
 
-    context = {'product': product, 'is_reviewed': is_reviewed, 'reviews': reviews,}
+    context = {
+        'product': product, 'is_reviewed': is_reviewed, 'reviews': reviews,
+        }
     return render(request, 'products/product_detail.html', context)
