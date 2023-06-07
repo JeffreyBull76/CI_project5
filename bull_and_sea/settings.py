@@ -78,6 +78,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 # processor to pass categories and products to all views
                 'products.context_processors.categories_and_products',
+                'bag.contexts.bag_contents',
             ],
         },
     },
@@ -162,3 +163,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+STANDARD_DELIVERY_PERCENTAGE = 10
