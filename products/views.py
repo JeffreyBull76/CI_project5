@@ -110,3 +110,17 @@ def product_detail(request, product_id):
         'product': product, 'is_reviewed': is_reviewed, 'reviews': reviews,
         }
     return render(request, 'products/product_detail.html', context)
+
+
+def all_products(request):
+    """ A view to show all products, including sorting and search queries """
+
+    products = Product.objects.all()
+    categories = None
+
+    context = {
+        'products': products,
+        'current_categories': categories,
+    }
+
+    return render(request, 'products/products.html', context)

@@ -120,8 +120,8 @@
 
           <ul class="nav-list-style">
             <li>
-              {% if grand_total > 0 %}
-              <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
+              
+              <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
                 <div class="text-center">
                   <div class="d-flex align-items-center">
                     <div class="mr-2">
@@ -139,7 +139,7 @@
                   </div>
                 </div>
               </a>
-              {% endif %}
+
             </li>
           </ul>
 
