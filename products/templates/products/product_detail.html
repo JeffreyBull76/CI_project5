@@ -18,7 +18,7 @@
     <div class="row">
 
         <!-- Image element -->
-        <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+        <div class="col-12 col-md-6 col-lg-6 d-flex det-image-container">
             <div class="image-container my-5">
                 {% if product.image %}
                 <a>
@@ -31,6 +31,7 @@
                 {% endif %}
             </div>
         </div>
+        
 
         <!-- Tabbed content -->
         <div class="col-12 col-md-6 col-lg-6">
@@ -38,7 +39,7 @@
             <!-- Tabbed headers -->
             <div class="container-fluid review-tabs">
                 <ul class="nav nav-tabs" id="myTabs" role="tablist">
-                    <li class="nav-item">
+                    <li class="nav-item tab-nav-item">
                         <a class="nav-link active" id="tab1-tab" data-toggle="tab" href="#tab1" role="tab"
                             aria-controls="tab1" aria-selected="true">Product Details</a>
                     </li>
@@ -59,7 +60,7 @@
                     <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
                         <div class="col-12 col-md-6 col-lg-4">
                             <div class="product-details-container mb-5 mt-md-5">
-                                <p class="mb-0">{{ product.name }}</p>
+                                <h3 class="mb-3">{{ product.name }}</h3>
                                 <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
                                 {% if product.category %}
                                 <p class="small mt-1 mb-0">
@@ -85,25 +86,25 @@
                     <!-- reviews tab -->
                     <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
                         <div class="col-12 p-0">
-                            <div class="container-fluid">
+                            <div class="container-fluid p-0">
                                 {% if reviews %}
                                 {% for review in reviews %}
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5 class="card-title">User: {{ review.user.username }}</h5>
-                                    </div>
+                                <div class="review-card card prod-duct-card">
+                                    <div class="card-header d-flex">
+                                        <h5 class="card-title inline-block">User: {{ review.user.username }}</h5>
+                                        <h5 class="card-title inline-block ml-auto">Rating: {{ review.rating }}</h5>
+                                      </div>                                      
                                     <div class="card-body">
                                         <div class="card mb-3">
                                             <div class="card-body">
-                                                <p class="card-text">Rating: {{ review.rating }}</p>
-                                                <p class="card-text">Comment: {{ review.comment }}</p>
+                                                <p class="card-text">{{ review.comment }}</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 {% endfor %}
                                 {% else %}
-                                <p>No reviews available.</p>
+                                <p class="pt-4 pl-2">No reviews available.</p>
                                 {% endif %}
                             </div>
                         </div>
@@ -116,9 +117,9 @@
                         {% if not is_reviewed %}
                         <form method="post">
                             {% csrf_token %}
-                            <div class="form-group">
+                            <div class="form-group pt-4">
                                 <label for="rating">Rating:</label>
-                                <select name="rating" id="rating" class="form-control">
+                                <select class="rating-selector" name="rating" id="rating" class="form-control">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -128,9 +129,9 @@
                             </div>
                             <div class="form-group">
                                 <label for="comment">Comment:</label>
-                                <textarea name="comment" id="comment" class="form-control" rows="3"></textarea>
+                                <textarea name="comment" id="comment" class="review-comment form-control" rows="3"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="rating-button btn rounded-2 text-uppercase">Submit</button>
                         </form>
                         {% else %}
                         <p>You have already submitted a review for this product.</p>

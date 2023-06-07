@@ -177,8 +177,8 @@ body {
 
 .navbar-toggler:focus,
 .navbar-toggler:active {
-  outline: none;
-  border: none;
+    outline: none;
+    border: none;
 }
 
 /* products css */
@@ -284,9 +284,75 @@ body {
 
 /* product details */
 
-.review-tabs {
-    padding-bottom: 220px;
+.product-details-container {
+    padding: 20px 0 0 10px;
 }
+
+.prod-duct-card {
+    max-width: 100%;
+}
+
+.review-tabs {
+    padding: 47px 60px 220px 0;
+}
+
+.review-tabs>ul>li>a {
+    font-size: small !important;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+    background-color: #DCDBDC !important;
+    border-color: #DCDBDC !important;
+}
+
+.det-image-container {
+    justify-content: center;
+}
+
+.review-card .card-header {
+    background-color: #DCDBDC !important;
+    padding: 10px;
+}
+
+.review-card .card-title {
+    padding: 8px 0 0 0;
+    display: inline-block;
+    margin-right: 20px;
+    font-size: medium;
+}
+
+.review-card .card-header .card-title {
+    color: #384D73;
+}
+
+.review-card .card-body {
+    background-color: #F5F0EC !important;
+}
+
+.review-card .card-body .card {
+    padding: 0;
+    border: none !important;
+}
+
+.rating-selector {
+    max-width: 100px;
+    background-color: #DCDBDC;
+    border: none;
+}
+
+.rating-button {
+    background: #384D73;
+    color: #F5F0EC;
+    min-width: 160px;
+    font-size: medium;
+    padding: 0.2rem 0 !important;
+}
+
+.review-comment {
+    background-color: #dcdbdc8a;
+}
+
 
 /* -------------------------------- Media Queries */
 
@@ -387,6 +453,17 @@ body {
 
     .btt-button {
         right: 5px;
+    }
+}
+
+/* small mobile screen */
+@media (max-width: 768px) {
+    .review-tabs {
+        padding: 0 0 220px 0;
+    }
+
+    .review-tabs>ul>li>a {
+        font-size: x-small !important;
     }
 }
 
