@@ -59,7 +59,7 @@
                     <!-- Details tab -->
                     <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
                         <div class="col-12 col-md-6 col-lg-4">
-                            <div class="product-details-container mb-5 mt-md-5">
+                            <div class="product-details-container mt-2 md-5">
                                 <h3 class="mb-3">{{ product.name }}</h3>
                                 <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
                                 {% if product.category %}
@@ -73,20 +73,19 @@
                                 {% if product.reviews.all %}
                                 <small class="text-muted"><i
                                         class="fas fa-star mr-1"></i>{{ product.reviews.all | calculate_average_rating }}
-                                    /
-                                    5</small>
+                                    /5</small>
                                 {% else %}
                                 <small class="text-muted">No Rating</small>
                                 {% endif %}
-                                <p class="mt-3">{{ product.description }}</p>
+                                <p class="mt-2">{{ product.description }}</p>
                                 <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                                     {% csrf_token %}
                                     <div class="form-row">
                                         <div class="col-12">
-                                            <p class="mt-3"><strong>Quantity:</strong></p>
+                                            <p class="mt-2"><strong>Quantity:</strong></p>
                                             <div class="form-group w-50">
                                                 <div class="input-group">
-                                                    <input class="form-control qty_input" type="number" name="quantity"
+                                                    <input class="form-control qty_input quantity-selector" type="number" name="quantity"
                                                         value="1" min="1" max="99" data-item_id="{{ product.id }}"
                                                         id="id_qty_{{ product.id }}">
                                                 </div>
@@ -95,26 +94,29 @@
 
                                         <div class="col-12">
                                             {% if request.META.HTTP_REFERER %}
-                                            <a href="{{ request.META.HTTP_REFERER }}" class="btn btn-outline-black rounded-0 mt-5">
-                                                <span class="icon">
+                                            <a href="{{ request.META.HTTP_REFERER }}"
+                                                class="rating-button btn rounded-2 text-uppercase mt-2">
+                                                <span class="icon-pale pr-2">
                                                     <i class="fas fa-chevron-left"></i>
                                                 </span>
                                                 <span class="text-uppercase">Keep Shopping</span>
                                             </a>
                                             {% else %}
-                                            <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">
-                                                <span class="icon">
+                                            <a href="{% url 'products' %}"
+                                                class="rating-button btn rounded-2 text-uppercase mt-2">
+                                                <span class="icon-pale pr-2">
                                                     <i class="fas fa-chevron-left"></i>
                                                 </span>
                                                 <span class="text-uppercase">Keep Shopping</span>
                                             </a>
                                             {% endif %}
-                                            
-                                            <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5"
+
+                                            <input type="submit" class="rating-button btn rounded-2 text-uppercase mt-2"
                                                 value="Add to Bag">
                                         </div>
                                         {% if request.META.HTTP_REFERER %}
-                                        <input type="hidden" name="redirect_url" value="{{ request.META.HTTP_REFERER }}">
+                                        <input type="hidden" name="redirect_url"
+                                            value="{{ request.META.HTTP_REFERER }}">
                                         {% else %}
                                         <input type="hidden" name="redirect_url" value="{% url 'products' %}">
                                         {% endif %}
@@ -156,7 +158,7 @@
                     <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
                         {% if user.is_authenticated %}
                         {% if not is_reviewed %}
-                        <form method="post">
+                        <form method="post" class="ml-2 mr-2">
                             {% csrf_token %}
                             <div class="form-group pt-4">
                                 <label for="rating">Rating:</label>
@@ -176,7 +178,7 @@
                             <button type="submit" class="rating-button btn rounded-2 text-uppercase">Submit</button>
                         </form>
                         {% else %}
-                        <p>You have already submitted a review for this product.</p>
+                        <p class="pt-4 pl-3">You have already submitted a review for this product.</p>
                         {% endif %}
                         {% else %}
                         <p class="pt-4 pl-3">Please <a href="{% url 'account_login' %}">Login</a> or <a

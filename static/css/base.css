@@ -68,6 +68,10 @@ body {
     width: fit-content;
 }
 
+.icon-pale i {
+    color: #F5F0EC !important;
+}
+
 .call-to-action-button {
     background: #384D73;
     color: #F5F0EC;
@@ -108,6 +112,10 @@ body {
     text-transform: uppercase;
     color: #727272 !important;
     text-decoration: none !important;
+}
+
+.bag-nav-link:hover {
+    color: #384D73 !important;
 }
 
 .nav-link-padding {
@@ -293,7 +301,7 @@ body {
 }
 
 .review-tabs {
-    padding: 47px 60px 220px 0;
+    padding: 47px 3rem 220px 0;
 }
 
 .review-tabs>ul>li>a {
@@ -308,6 +316,12 @@ body {
 
 .det-image-container {
     justify-content: center;
+}
+
+.quantity-selector {
+    max-width: 100px;
+    background-color: #DCDBDC;
+    border: none;
 }
 
 .review-card .card-header {
@@ -353,6 +367,26 @@ body {
     background-color: #dcdbdc8a;
 }
 
+/* shopping bag */
+
+.table-head-text {
+    color: #384D73;
+    font-size: 1.4rem !important;
+}
+
+tr.table-style p {
+    color: #727272;
+    font-size: 1.2rem !important;
+}
+
+.main-bag-table {
+    margin-bottom: 110px;
+}
+
+tr.table-style .sku-text {
+    font-size: xx-small !important;
+}
+
 
 /* -------------------------------- Media Queries */
 
@@ -385,6 +419,14 @@ body {
     .container {
         max-width: 80%;
     }
+
+    .table-head-text {
+        font-size: 1.5rem !important;
+    }
+    
+    tr.table-style p {
+        font-size: 1.3rem !important;
+    }
 }
 
 /* fixed top navbar only on medium and up */
@@ -402,7 +444,7 @@ body {
     }
 }
 
-/* mobile styles */
+/* medium styles */
 @media (max-width: 992px) {
     .splash-text {
         padding: 350px 0 0 10px;
@@ -454,16 +496,44 @@ body {
     .btt-button {
         right: 5px;
     }
+
+    .table-head-text {
+        font-size: 1.3rem !important;
+    }
+    
+    tr.table-style p {
+        font-size: 1.1rem !important;
+    }
+
+    .review-tabs {
+        padding: 47px 20px 220px 0;
+    }
 }
 
 /* small mobile screen */
 @media (max-width: 768px) {
+    .container {
+        max-width: 95%;
+    }
+
     .review-tabs {
         padding: 0 0 220px 0;
     }
 
     .review-tabs>ul>li>a {
-        font-size: x-small !important;
+        font-size: small !important;
+    }
+
+    .table-head-text {
+        font-size: 1rem !important;
+    }
+    
+    tr.table-style p {
+        font-size: 0.9rem !important;
+    }
+
+    .hide-img {
+        display: none;
     }
 }
 
