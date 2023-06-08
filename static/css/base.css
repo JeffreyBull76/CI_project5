@@ -243,6 +243,13 @@ body {
     padding: 12px 0;
 }
 
+.sort-button {
+    background: #384D73;
+    color: #F5F0EC;
+    font-size: medium;
+    padding: 0.2rem 1.2rem !important;
+}
+
 .btt-button {
     height: 42px;
     width: 42px;
@@ -319,9 +326,16 @@ body {
 }
 
 .quantity-selector {
-    max-width: 100px;
+    max-width: 4rem;
     background-color: #DCDBDC;
     border: none;
+}
+
+.qty-button {
+    background: #384D73;
+    color: #F5F0EC;
+    font-size: medium;
+    padding: 0.2rem 1.2rem !important;
 }
 
 .review-card .card-header {

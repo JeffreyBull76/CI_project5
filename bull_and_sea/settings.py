@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['localhost', '8000-jeffreybull7-ciproject5-v1ijwke3vyv.ws-eu98.gitpod.io']  # noqa
+ALLOWED_HOSTS = ['localhost', '8000-jeffreybull7-ciproject5-v1ijwke3vyv.ws-eu99.gitpod.io']  # noqa
 
 # Application definition
 
