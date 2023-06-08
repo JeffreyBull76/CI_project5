@@ -19,7 +19,13 @@
             <hr>
         </div>
         <div class="col text-center mt-3">
-            <h2 class="logo-font sub-heading-font">SHOP {{ category_name }}</h2>
+            <h2 class="logo-font sub-heading-font">
+                {% if category_name %}
+                  SHOP {{ category_name }}
+                {% else %}
+                  SHOP ALL PRODUCTS
+                {% endif %}
+              </h2>
         </div>
     </div>
 

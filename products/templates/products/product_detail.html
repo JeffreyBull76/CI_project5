@@ -220,10 +220,10 @@
 </div>
 {% endblock %}
 
-<!-- script to handle tabbed content -->
 {% block postloadjs %}
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
+<!-- script to handle tabbed content -->
 <script>
     $(document).ready(function () {
         $('#myTabs a').click(function (e) {
