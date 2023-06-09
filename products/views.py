@@ -1,8 +1,9 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Product, Category, Review
 from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.views.decorators.http import require_POST
 
 
 def search_products(request):
@@ -124,3 +125,13 @@ def all_products(request):
     }
 
     return render(request, 'products/products.html', context)
+
+
+@require_POST
+def delete_review(request, review_id):
+    review = get_object_or_404(Review, pk=review_id)
+
+    review.delete()
+
+    # Redirect to the product detail page
+    return redirect('product_detail', product_id=review.product.pk)

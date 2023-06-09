@@ -6,4 +6,5 @@ urlpatterns = [
     path('categories/<int:category_id>/products/', views.category_products, name='category_products'),  # noqa
     path('<product_id>', views.product_detail, name='product_detail'),
     path('search/', views.search_products, name='search_products'),
+    path('reviews/delete/<int:review_id>/', views.delete_review, name='delete_review'),  # noqa
 ]
