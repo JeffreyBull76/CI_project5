@@ -34,7 +34,13 @@ class ReviewAdmin(admin.ModelAdmin):
         'user',
         'product',
         'rating',
+        'is_authorized',
     )
+    actions = ['authorize_reviews']
+
+    def authorize_reviews(self, request, queryset):
+        queryset.update(is_authorized=True)
+    authorize_reviews.short_description = "Authorize selected reviews"
 
 
 # Register your models here.

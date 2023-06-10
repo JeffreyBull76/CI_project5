@@ -2,8 +2,9 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Product, Category, Review
 from django.db.models import Q
 from django.http import HttpResponseRedirect
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from django.views.decorators.http import require_POST
+from django.contrib import messages
 
 
 def search_products(request):
@@ -135,3 +136,17 @@ def delete_review(request, review_id):
 
     # Redirect to the product detail page
     return redirect('product_detail', product_id=review.product.pk)
+
+
+def toggle_review_authorization(request, review_id):
+    review = get_object_or_404(Review, pk=review_id)
+    # Toggle the is_authorized field between True and False
+    review.is_authorized = not review.is_authorized
+    review.save()
+
+    if review.is_authorized:
+        messages.success(request, 'The review has been authorized!')
+    else:
+        messages.success(request, 'The review has been unauthorized!')
+
+    return HttpResponseRedirect(reverse_lazy('product_detail', args=[review.product.pk]))  # noqa

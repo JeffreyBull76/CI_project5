@@ -7,4 +7,5 @@ urlpatterns = [
     path('<product_id>', views.product_detail, name='product_detail'),
     path('search/', views.search_products, name='search_products'),
     path('reviews/delete/<int:review_id>/', views.delete_review, name='delete_review'),  # noqa
+    path('review/<int:review_id>/toggle-authorization/', views.toggle_review_authorization, name='toggle_review_authorization'),  # noqa
 ]
