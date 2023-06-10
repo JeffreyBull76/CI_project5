@@ -35,6 +35,7 @@
                 <div class="d-flex">
                     <select name="sort" id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-grey rounded-2 bg-searchbox">
                         <option value="price" {% if current_sorting == 'price_asc' or current_sorting == 'price_desc' %}selected{% endif %}>Sort by Price</option>
+                        <option value="average_rating" {% if current_sorting == 'average_rating' %}selected{% endif %}>Sort by Average Rating</option>
                     </select>
                     <select name="direction" id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-grey rounded-2 bg-searchbox">
                         <option value="asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Ascending</option>

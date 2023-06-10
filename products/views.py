@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Product, Category, Review
-from django.db.models import Q
+from django.db.models import Q, Avg
 from django.http import HttpResponseRedirect
 from django.urls import reverse, reverse_lazy
 from django.views.decorators.http import require_POST
@@ -42,6 +42,15 @@ def search_products(request):
             # Sort products by ascending price
             products = products.order_by('price')
 
+    # Apply sorting if the sort parameter is 'average_rating'
+    if sort == 'average_rating':
+        if direction == 'desc':
+            # Annotate average rating and sort in descending order
+            products = products.annotate(average_rating=Avg('review__rating')).order_by('-average_rating')  # noqa
+        else:
+            # Annotate average rating and sort in ascending order
+            products = products.annotate(average_rating=Avg('review__rating')).order_by('average_rating')  # noqa
+
     # Create a string representing the current sorting criterion and direction
     current_sorting = f'{sort}_{direction}'
 
@@ -57,31 +66,53 @@ def search_products(request):
 
 
 def category_products(request, category_id):
-    # Logic to retrieve the category and products
+    # Retrieve the category object
     category = Category.objects.get(id=category_id)
+
+    # Retrieve the products for the given category
     products = Product.objects.filter(category_id=category_id)
+
+    # Initialize variables for sorting
     sort = None
     direction = None
 
+    # Check if there are query parameters in the request
     if request.GET:
+        # Check if 'sort' parameter is present
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
+
+            # Sort the products by price
             if sortkey == 'price':
                 if 'direction' in request.GET:
                     direction = request.GET['direction']
                     if direction == 'desc':
-                        sortkey = '-price'
+                        sortkey = '-price'  # Sort in descending order
                 products = products.order_by(sortkey)
 
+            # Sort the products by average rating
+            elif sortkey == 'average_rating':
+                if 'direction' in request.GET:
+                    direction = request.GET['direction']
+                if direction == 'desc':
+                    # Annotate average rating and sort in descending order
+                    products = products.annotate(average_rating=Avg('review__rating')).order_by('-average_rating')  # noqa
+                else:
+                    # Annotate average rating and sort in ascending order
+                    products = products.annotate(average_rating=Avg('review__rating')).order_by('average_rating')  # noqa
+
+    # Create the current sorting string for display
     current_sorting = f'{sort}_{direction}'
 
+    # Prepare the context for rendering the template
     context = {
         'category_name': category.get_friendly_name(),
         'products': products,
         'current_sorting': current_sorting,
     }
 
+    # Render the template with the context
     return render(request, 'products/products.html', context)
 
 
