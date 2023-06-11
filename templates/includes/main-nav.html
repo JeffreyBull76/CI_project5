@@ -1,5 +1,5 @@
 <div class="dropdown-menu dropmenu-Mob dropmenu-Main dropdown-menu-end animate slideIn"
-  aria-labelledby="navbarDropdown">
+  aria-labelledby="navbarDropdown2">
   {% for category in categories %}
   <a class="dropdown-item"
     href="{% url 'category_products' category_id=category.id %}">{{ category.get_friendly_name }}</a>

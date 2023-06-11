@@ -619,11 +619,13 @@ tr.table-style .sku-text {
     }
     
     .bg-toast-head {
-        min-width: 310px;
+        min-width: 320px;
+        font-size: medium;
     }
     
     .bg-toast-body {
-        min-width: 310px;
+        min-width: 320px;
+        font-size: medium;
     }
 }
 
