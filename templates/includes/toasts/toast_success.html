@@ -30,16 +30,18 @@
                     </div>
                 {% endfor %}
             </div>
-            <div class="row">
-                <div class="col pt-3 align-items-center">
+            <div class="row justify-content-center">
+                <div class="col pt-3 text-center">
                     <a href="{% url 'view_bag' %}" class="rating-button btn rounded-2 text-uppercase mt-2">
-                        <span class="text-uppercase mr-1 ml-2">Go To Secure Checkout</span><span class="ml-2 mr-2"> ${{ grand_total|floatformat:2 }}</span>
+                        <span class="text-uppercase mr-1 ml-2">Go To Secure Checkout</span>
+                        <span class="ml-2 mr-2"> ${{ grand_total|floatformat:2 }}</span>
                         <span class="icon icon-pale">
                             <i class="fas fa-lock mr-1"></i>
                         </span>
                     </a>
                 </div>
             </div>
+            
         {% endif %}
     </div>
 </div>
