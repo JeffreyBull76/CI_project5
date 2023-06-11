@@ -1,0 +1,6 @@
+/* small mobile screen */
+@media (max-width: 575px) {
+    .chk-hidden-div {
+        display: none;
+    }
+}
