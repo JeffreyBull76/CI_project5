@@ -61,16 +61,16 @@
             </li>
 
             <li class="nav-item dropdown">
-              <a class="small-screen-menutext nav-link dropdown-toggle nav-link-padding caret-off" href="#" id="navbarDropdown" role="button"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="small-screen-menutext nav-link dropdown-toggle nav-link-padding caret-off" href="#"
+                id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Shop
               </a>
               {% include 'includes/main-nav.html' %}
             </li>
 
             <li class="nav-item dropdown">
-              <a class="small-screen-menutext nav-link dropdown-toggle nav-link-padding caret-off" href="#" id="navbarDropdown" role="button"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="small-screen-menutext nav-link dropdown-toggle nav-link-padding caret-off" href="#"
+                id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Connect
               </a>
               <div class="small-screen-droptext dropdown-menu dropmenu-Main dropdown-menu-end animate slideIn"
@@ -81,8 +81,8 @@
             </li>
 
             <li class="nav-item dropdown">
-              <a class="small-screen-menutext nav-link dropdown-toggle nav-link-padding caret-off" href="#" id="navbarDropdown" role="button"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="small-screen-menutext nav-link dropdown-toggle nav-link-padding caret-off" href="#"
+                id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 My Account
               </a>
               <div class="small-screen-droptext dropdown-menu dropmenu-Main dropdown-menu-end animate slideIn"
@@ -121,7 +121,8 @@
           <ul class="nav-list-style">
             <li>
               {% if grand_total > 0 %}
-              <a class="{% if grand_total %}font-weight-bold{% else %}{% endif %} nav-link bag-nav-link" href="{% url 'view_bag' %}">
+              <a class="{% if grand_total %}font-weight-bold{% else %}{% endif %} nav-link bag-nav-link"
+                href="{% url 'view_bag' %}">
                 <div class="text-center">
                   <div class="d-flex align-items-center">
                     <div class="mr-2">
@@ -170,7 +171,21 @@
   </header>
 
   {% if messages %}
-  <div class="message-container"></div>
+  <div class="message-container">
+    {% for message in messages %}
+    {% with message.level as level %}
+    {% if level == 40 %}
+    {% include 'includes/toasts/toast_error.html' %}
+    {% elif level == 30 %}
+    {% include 'includes/toasts/toast_warning.html' %}
+    {% elif level == 25 %}
+    {% include 'includes/toasts/toast_success.html' %}
+    {% else %}
+    {% include 'includes/toasts/toast_info.html' %}
+    {% endif %}
+    {% endwith %}
+    {% endfor %}
+  </div>
   {% endif %}
 
   {% block page_header %}
@@ -189,6 +204,9 @@
   </footer>
 
   {% block postloadjs %}
+  <script type="text/javascript">
+    $('.toast').toast('show');
+  </script>
   {% endblock %}
 
 

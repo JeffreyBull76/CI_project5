@@ -27,6 +27,7 @@ def search_products(request):
             )
     else:
         # If no search query is provided, return an empty queryset
+        messages.error(request, "You didn't enter any search criteria!")
         products = Product.objects.none()
 
     # Retrieve the sorting parameters from the GET parameters
@@ -133,6 +134,8 @@ def product_detail(request, product_id):
         review.full_clean(validate_unique=False)
         review.save()
         product.reviews.add(review)
+        # Message for successful review addition
+        messages.info(request, 'Review added successfully!')
         # Redirect back to the same page after form submission
         return HttpResponseRedirect(request.path)
 
@@ -163,6 +166,7 @@ def all_products(request):
 def delete_review(request, review_id):
     review = get_object_or_404(Review, pk=review_id)
 
+    messages.info(request, 'Review deleted successfully!')
     review.delete()
 
     # Redirect to the product detail page
@@ -176,8 +180,8 @@ def toggle_review_authorization(request, review_id):
     review.save()
 
     if review.is_authorized:
-        messages.success(request, 'The review has been authorized!')
+        messages.info(request, 'The review has been authorized!')
     else:
-        messages.success(request, 'The review has been unauthorized!')
+        messages.info(request, 'The review has been unauthorized!')
 
     return HttpResponseRedirect(reverse_lazy('product_detail', args=[review.product.pk]))  # noqa
