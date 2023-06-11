@@ -98,6 +98,13 @@ body {
     border: 1px solid black !important;
 }
 
+.sub-header2-font {
+    font-family: 'Cinzel', serif;
+    color: #384D73;
+    font-size: large;
+    font-weight: bold;
+}
+
 /* dropdown and dropdown nav menu */
 
 .nav-list-style {
