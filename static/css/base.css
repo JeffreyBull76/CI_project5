@@ -50,6 +50,57 @@ body {
     color: #384D73;
 }
 
+/* Allauth */
+
+.form.signup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+.allauth-form-inner-content p {
+    margin-top: 1.5rem; /* mt-4 */
+    color: #6c757d; /* text-secondary */
+}
+
+.allauth-form-inner-content input {
+    border-radius: 0;
+}
+
+.allauth-form-inner-content label:not([for='id_remember']) {
+    display: none;
+}
+
+.allauth-form-inner-content input::placeholder {
+    color: #aab7c4;
+}
+
+
+.allauth-form-inner-content a {
+	color: #17a2b8; /* text-info */
+}
+
+.allauth-form-inner-content h1 {
+    color: #384D73;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.allauth-form-inner-content .textinput {
+    max-width: 300px;
+}
+
+.auth-overlay {
+    height: 100%;
+    width: 100%;
+    top: 110px;
+    left: 0;
+    position: fixed;
+    background: #f5f0ecbd;
+    z-index: -1;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;
