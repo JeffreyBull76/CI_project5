@@ -193,9 +193,18 @@
 
         <div class="row checkout-padder justify-content-center">
 			<div class="col-12 col-lg-7 pt-3">
+                {% if from_profile %}
+                    <a href="{% url 'profile' %}" class="rating-button btn rounded-2 text-uppercase">
+                        <span class="icon mr-2 icon-pale">
+                            <i class="fas fa-angle-left"></i>
+                        </span>
+                        <span class="text-uppercase">Back to Profile</span>
+                    </a>
+                {% else %}
 				<a href="{% url 'home' %}" class="rating-button btn rounded-2 text-uppercase">
 					<span class="text-uppercase">Home</span>
 				</a>
+                {% endif %}
 			</div>
 		</div>
     </div>

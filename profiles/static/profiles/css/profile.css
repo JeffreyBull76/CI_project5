@@ -1,0 +1,23 @@
+#profile-update-form .form-control {
+    border: 1px solid #384d739c !important;
+    border-radius: 2px !important;
+    color: #384D73;
+}
+
+#profile-update-form input::placeholder {
+    color: #aab7c4;
+}
+
+#id_default_country,
+#id_default_country option:not(:first-child) {
+    color: #384D73;
+}
+
+#id_default_country option:first-child {
+    color: #aab7c4;
+}
+
+.order-history {
+    max-height: 416px;
+    overflow-y: auto;
+}
