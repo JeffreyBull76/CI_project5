@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6 hr-prod-spacer">
+            <hr class="pt-2">
+            <h2 class="logo-font sub-header2-font">Contact Us</h2>
+            <h5 class="text-muted pt-2">For all customer and business to business enquiries</h5>
+            <hr class="mb-2">
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-12 col-md-6 mb-5">
+
+            <form method="post" action="{% url 'contact' %}">
+                {% csrf_token %}
+
+                <div class="form-group">
+                    <label for="id_first_name">First Name:</label>
+                    {{ form.first_name }}
+                </div>
+
+                <div class="form-group">
+                    <label for="id_last_name">Last Name:</label>
+                    {{ form.last_name }}
+                </div>
+
+                <div class="form-group">
+                    <label for="id_email">Email:</label>
+                    {{ form.email }}
+                </div>
+
+                <div class="form-group">
+                    <label for="id_phone_number">Phone Number:</label>
+                    {{ form.phone_number }}
+                </div>
+
+                <div class="form-group">
+                    <label for="id_comment">Comment:</label>
+                    {{ form.comment }}
+                </div>
+
+                <a class="rating-button btn rounded-2 text-uppercase mb-5" href="{% url 'products' %}">Cancel</a>
+                <button class="rating-button btn rounded-2 text-uppercase mb-5" type="submit">Submit</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
