@@ -21,11 +21,11 @@
         <div class="col text-center mt-3">
             <h2 class="logo-font sub-heading-font">
                 {% if category_name %}
-                  SHOP {{ category_name }}
+                SHOP {{ category_name }}
                 {% else %}
-                  SHOP ALL PRODUCTS
+                SHOP ALL PRODUCTS
                 {% endif %}
-              </h2>
+            </h2>
         </div>
     </div>
 
@@ -33,13 +33,20 @@
         <div class="col-12 col-md-6">
             <form method="get" action="" class="d-flex justify-content-center sort-field">
                 <div class="d-flex">
-                    <select name="sort" id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-grey rounded-2 bg-searchbox">
-                        <option value="price" {% if current_sorting == 'price_asc' or current_sorting == 'price_desc' %}selected{% endif %}>Sort by Price</option>
-                        <option value="average_rating" {% if current_sorting == 'average_rating' %}selected{% endif %}>Sort by Average Rating</option>
+                    <select name="sort" id="sort-selector"
+                        class="custom-select custom-select-sm rounded-0 border border-grey rounded-2 bg-searchbox">
+                        <option value="price"
+                            {% if current_sorting == 'price_asc' or current_sorting == 'price_desc' %}selected{% endif %}>
+                            Sort by Price</option>
+                        <option value="average_rating" {% if current_sorting == 'average_rating' %}selected{% endif %}>
+                            Sort by Average Rating</option>
                     </select>
-                    <select name="direction" id="sort-selector2" class="custom-select custom-select-sm rounded-0 border border-grey rounded-2 bg-searchbox">
-                        <option value="asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Ascending</option>
-                        <option value="desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Descending</option>
+                    <select name="direction" id="sort-selector2"
+                        class="custom-select custom-select-sm rounded-0 border border-grey rounded-2 bg-searchbox">
+                        <option value="asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Ascending
+                        </option>
+                        <option value="desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Descending
+                        </option>
                     </select>
                     <input type="hidden" name="q" value="{{ request.GET.q }}">
                     <button type="submit" class="sort-button btn rounded-2 text-uppercase">Sort</button>
@@ -48,7 +55,7 @@
         </div>
     </div>
 
-    
+
     <div class="row">
 
         <div class="product-container col-10 offset-1">
@@ -77,7 +84,8 @@
 
                                     {% if product.category %}
                                     <p class="small mt-1 mb-0">
-                                        <a class="text-muted" href="{% url 'category_products' category_id=product.category.id %}">
+                                        <a class="text-muted"
+                                            href="{% url 'category_products' category_id=product.category.id %}">
                                             <i class="fas fa-tag mr-1"></i>{{ product.category.get_friendly_name }}
                                         </a>
                                     </p>
@@ -89,6 +97,12 @@
                                         / 5</small>
                                     {% else %}
                                     <small class="text-muted">No Rating</small>
+                                    {% endif %}
+                                    {% if request.user.is_superuser %}
+                                    <small class="ml-3">
+                                        <a href="{% url 'edit_product' product.id %}">Edit</a> |
+                                        <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                    </small>
                                     {% endif %}
                                 </div>
                             </div>
@@ -126,7 +140,7 @@
 <div class="btt-button rounded-0">
     <a class="btt-link d-flex h-100">
         <i class="fas fa-arrow-up mx-auto my-auto"></i>
-    </a>	
+    </a>
 </div>
 {% else %}
 <div class="overlay"></div>
@@ -144,10 +158,10 @@
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
-    <script type="text/javascript">
-		$('.btt-link').click(function(e) {
-			window.scrollTo(0,0)
-		})
-	</script>
+{{ block.super }}
+<script type="text/javascript">
+    $('.btt-link').click(function (e) {
+        window.scrollTo(0, 0)
+    })
+</script>
 {% endblock %}
