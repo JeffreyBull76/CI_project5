@@ -1,10 +1,14 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Product, Category, Review
+from django.db.models.functions import Lower
 from django.db.models import Q, Avg
 from django.http import HttpResponseRedirect
 from django.urls import reverse, reverse_lazy
 from django.views.decorators.http import require_POST
 from django.contrib import messages
+
+
+from .forms import ProductForm
+from .models import Product, Category, Review
 
 
 def search_products(request):
@@ -185,3 +189,24 @@ def toggle_review_authorization(request, review_id):
         messages.info(request, 'The review has been unauthorized!')
 
     return HttpResponseRedirect(reverse_lazy('product_detail', args=[review.product.pk]))  # noqa
+
+
+def add_product(request):
+    """ Add a product to the store """
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully added product!')
+            return redirect(reverse('add_product'))
+        else:
+            messages.error(request, 'Failed to add product. Please ensure the form is valid.')  # noqa
+    else:
+        form = ProductForm()
+
+    template = 'products/add_product.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
