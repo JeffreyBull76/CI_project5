@@ -38,7 +38,11 @@
                     {% for item in bag_items %}
                     <tr class="table-style">
                         <td class="py-3 w-25 hide-img">
-                            <img class="img-fluid rounded pr-1" src="{{ item.product.image.url }}">
+                            {% if item.product.image %}
+                            <img class="img-fluid rounded pr-1" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                            {% else %}
+                            <img class="img-fluid rounded pr-1" src="https://placehold.co/512x512?text=No+Image" alt="{{ item.product.name }}">
+                            {% endif %}
                         </td>
                         <td class="py-3">
                             <p class="my-0 pl-1 text-left"><strong>{{ item.product.name }}</strong></p>
