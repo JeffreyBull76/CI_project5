@@ -8,5 +8,6 @@ urlpatterns = [
     path('search/', views.search_products, name='search_products'),
     path('reviews/delete/<int:review_id>/', views.delete_review, name='delete_review'),  # noqa
     path('review/<int:review_id>/toggle-authorization/', views.toggle_review_authorization, name='toggle_review_authorization'),  # noqa
+    path('edit/<int:product_id>/', views.edit_product, name='edit_product'),
     path('add/', views.add_product, name='add_product'),
 ]
