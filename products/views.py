@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse, reverse_lazy
 from django.views.decorators.http import require_POST
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 
 from .forms import ProductForm
@@ -166,6 +167,7 @@ def all_products(request):
     return render(request, 'products/products.html', context)
 
 
+@login_required
 @require_POST
 def delete_review(request, review_id):
     review = get_object_or_404(Review, pk=review_id)
@@ -177,7 +179,12 @@ def delete_review(request, review_id):
     return redirect('product_detail', product_id=review.product.pk)
 
 
+@login_required
 def toggle_review_authorization(request, review_id):
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
     review = get_object_or_404(Review, pk=review_id)
     # Toggle the is_authorized field between True and False
     review.is_authorized = not review.is_authorized
@@ -191,8 +198,13 @@ def toggle_review_authorization(request, review_id):
     return HttpResponseRedirect(reverse_lazy('product_detail', args=[review.product.pk]))  # noqa
 
 
+@login_required
 def add_product(request):
     """ Add a product to the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
@@ -212,8 +224,13 @@ def add_product(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_product(request, product_id):
     """ Edit a product in the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
     product = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
@@ -236,8 +253,13 @@ def edit_product(request, product_id):
     return render(request, template, context)
 
 
+@login_required
 def delete_product(request, product_id):
     """ Delete a product from the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
     messages.success(request, 'Product deleted!')
