@@ -52,6 +52,16 @@
   padding-bottom: 80px;
 }
 
+select,
+select option {
+    color: #000000;
+}
+
+select:invalid,
+select option[value=""] {
+    color: #aab7c4 !important;
+}
+
 /* overlay css */
 #loading-overlay {
 	display: none;
