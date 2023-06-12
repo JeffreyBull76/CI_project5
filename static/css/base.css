@@ -57,11 +57,13 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
+}
 
 .allauth-form-inner-content p {
-    margin-top: 1.5rem; /* mt-4 */
-    color: #6c757d; /* text-secondary */
+    margin-top: 1.5rem;
+    /* mt-4 */
+    color: #6c757d;
+    /* text-secondary */
 }
 
 .allauth-form-inner-content input {
@@ -78,7 +80,8 @@ body {
 
 
 .allauth-form-inner-content a {
-	color: #17a2b8; /* text-info */
+    color: #17a2b8;
+    /* text-info */
 }
 
 .allauth-form-inner-content h1 {
@@ -441,6 +444,14 @@ body {
     background-color: #dcdbdc8a;
 }
 
+/* comment form */
+
+.comment-cell {
+    min-width: 260px;
+    max-width: 400px;
+    word-wrap: break-word;
+}
+
 /* Product Form */
 
 .btn-file {
@@ -518,10 +529,10 @@ tr.table-style .sku-text {
 
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
 .arrow-up {
-    width: 0; 
-    height: 0; 
+    width: 0;
+    height: 0;
     border-left: 4px solid transparent;
-    border-right: 4px solid transparent; 
+    border-right: 4px solid transparent;
     border-bottom: 10px solid black;
     position: absolute;
     top: -10px;
@@ -603,7 +614,7 @@ tr.table-style .sku-text {
     .table-head-text {
         font-size: 1.5rem !important;
     }
-    
+
     tr.table-style p {
         font-size: 1.3rem !important;
     }
@@ -680,7 +691,7 @@ tr.table-style .sku-text {
     .table-head-text {
         font-size: 1.3rem !important;
     }
-    
+
     tr.table-style p {
         font-size: 1.1rem !important;
     }
@@ -696,12 +707,12 @@ tr.table-style .sku-text {
         transform: translateX(50%);
         z-index: 99999999999;
     }
-    
+
     .bg-toast-head {
         min-width: 320px;
         font-size: medium;
     }
-    
+
     .bg-toast-body {
         min-width: 320px;
         font-size: medium;
@@ -725,7 +736,7 @@ tr.table-style .sku-text {
     .table-head-text {
         font-size: 1rem !important;
     }
-    
+
     tr.table-style p {
         font-size: 0.9rem !important;
     }

@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6 hr-prod-spacer">
+            <hr class="pt-2">
+            <h2 class="logo-font sub-header2-font">Contact Messages</h2>
+            <h5 class="text-muted pt-2">Customer and business enquiries requiring attention</h5>
+            <hr class="mb-2">
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-12 col-md-6 mb-5">
+
+            <div class="container">
+                {% for contact_form in contact_forms %}
+                <div class="row mb-4">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Form ID: {{ contact_form.form_id }}</h5>
+                                <p class="card-text"><strong>First Name:</strong> {{ contact_form.first_name }}</p>
+                                <p class="card-text"><strong>Last Name:</strong> {{ contact_form.last_name }}</p>
+                                <p class="card-text"><strong>Email:</strong> {{ contact_form.email }}</p>
+                                <p class="card-text"><strong>Phone Number:</strong> {{ contact_form.phone_number }}</p>
+                                <p class="card-text"><strong>Comment:</strong></p>
+                                <p class="card-text comment-text">{{ contact_form.comment }}</p>
+                                <p class="card-text"><strong>Created At:</strong> {{ contact_form.created_at }}</p>
+                                {% if request.user.is_superuser %}
+                                <form method="POST" action="{% url 'delete_message' message_id=contact_form.form_id %}">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+
+        </div>
+    </div>
+</div>
+{% endblock %}
