@@ -11,51 +11,47 @@
 
 {% block content %}
 <div class="overlay"></div>
-<div class="container">
-    <div class="row">
-        <div class="col-12 col-md-6 hr-prod-spacer">
+<div class="container-fluid px-0">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-12 col-md-6 hr-prod-spacer text-center">
             <hr class="pt-2">
             <h2 class="logo-font sub-header2-font">Contact Us</h2>
-            <h5 class="text-muted pt-2">For all customer and business to business enquiries</h5>
+            <h5 class="text-muted pt-2">For all customer and business-to-business enquiries</h5>
             <hr class="mb-2">
         </div>
     </div>
 
-    <div class="row mb-5">
-        <div class="col-12 col-md-6 mb-5">
+    <div class="row mb-5 justify-content-center align-items-center">
+        <div class="col-12 col-md-6 contact-form-width-control">
+            <div class="form-group">
+                <label for="first_name">First Name:</label>
+                <input type="text" class="form-control" id="first_name" placeholder="Enter your first name">
+            </div>
 
-            <form method="post" action="{% url 'contact' %}">
-                {% csrf_token %}
+            <div class="form-group">
+                <label for="last_name">Last Name:</label>
+                <input type="text" class="form-control" id="last_name" placeholder="Enter your last name">
+            </div>
 
-                <div class="form-group">
-                    <label for="id_first_name">First Name:</label>
-                    {{ form.first_name }}
-                </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+            </div>
 
-                <div class="form-group">
-                    <label for="id_last_name">Last Name:</label>
-                    {{ form.last_name }}
-                </div>
+            <div class="form-group">
+                <label for="phone_number">Phone Number:</label>
+                <input type="tel" class="form-control" id="phone_number" placeholder="Enter your phone number">
+            </div>
 
-                <div class="form-group">
-                    <label for="id_email">Email:</label>
-                    {{ form.email }}
-                </div>
+            <div class="form-group">
+                <label for="comment">Comment:</label>
+                <textarea class="form-control" id="comment" rows="4" placeholder="Enter your comment"></textarea>
+            </div>
 
-                <div class="form-group">
-                    <label for="id_phone_number">Phone Number:</label>
-                    {{ form.phone_number }}
-                </div>
-
-                <div class="form-group">
-                    <label for="id_comment">Comment:</label>
-                    {{ form.comment }}
-                </div>
-
+            <div class="text-center">
                 <a class="rating-button btn rounded-2 text-uppercase mb-5" href="{% url 'products' %}">Cancel</a>
-                <button class="rating-button btn rounded-2 text-uppercase mb-5" type="submit">Submit</button>
-            </form>
-
+                <button class="rating-button btn rounded-2 text-uppercase mb-5" type="button">Submit</button>
+            </div>
         </div>
     </div>
 </div>

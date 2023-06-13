@@ -79,6 +79,9 @@
                 aria-labelledby="navbarDropdown1">
                 <a href="" class="dropdown-item">About us</a>
                 <a href="{% url 'contact' %}" class="dropdown-item">Contact</a>
+                {% if request.user.is_superuser %}
+                <a href="{% url 'contact_management' %}" class="dropdown-item">Messages</a>
+                {% endif %}
               </div>
             </li>
 

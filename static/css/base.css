@@ -452,6 +452,10 @@ body {
     word-wrap: break-word;
 }
 
+.contact-form-width-control > .form-group {
+    padding: 0 15px;
+}
+
 /* Product Form */
 
 .btn-file {
@@ -582,7 +586,6 @@ tr.table-style .sku-text {
 /* -------------------------------- Media Queries */
 
 @media (max-width: 1300px) {
-
     .small-screen-menutext,
     .small-screen-droptext a {
         font-size: small !important;
@@ -607,6 +610,10 @@ tr.table-style .sku-text {
 
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
+    .contact-form-width-control > .form-group {
+        padding: 0 120px;
+    }
+
     .container {
         max-width: 80%;
     }
