@@ -85,9 +85,9 @@
                 aria-labelledby="navbarDropdown3">
                 {% if request.user.is_authenticated %}
                 {% if request.user.is_superuser %}
-                <a href="" class="dropdown-item">Manage Products</a>
+                <a href="{% url 'add_product' %}" class="dropdown-item">Manage Products</a>
                 {% endif %}
-                <a href="" class="dropdown-item">My Profile</a>
+                <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                 {% else %}
                 <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
@@ -111,8 +111,10 @@
               </a>
               <div class="dropdown-menu dropmenu-Mob dropdown-menu-end animate slideIn"
                 aria-labelledby="navbarDropdown5">
-                <a href="" class="dropdown-item">About us</a>
-                <a href="" class="dropdown-item">Contact</a>
+                <a href="{% url 'contact' %}" class="dropdown-item">Contact</a>
+                {% if request.user.is_superuser %}
+                <a href="{% url 'contact_management' %}" class="dropdown-item">Messages</a>
+                {% endif %}
               </div>
             </li>
             

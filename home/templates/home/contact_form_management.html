@@ -25,8 +25,7 @@
             <div class="card-container cmt-card-container">
                 {% for contact_form in contact_forms %}
                 <div class="card cmt-card">
-                    <div class="card-body cmt-card-body contact-message-card">
-                        <h5 class="card-title">Form ID: {{ contact_form.form_id }}</h5>
+                    <div class="card-body cmt-card-body contact-message-card text-left">
                         <p class="card-text"><strong>First Name:</strong> {{ contact_form.first_name }}</p>
                         <p class="card-text"><strong>Last Name:</strong> {{ contact_form.last_name }}</p>
                         <p class="card-text"><strong>Email:</strong> {{ contact_form.email }}</p>

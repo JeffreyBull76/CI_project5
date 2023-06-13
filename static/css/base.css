@@ -446,6 +446,10 @@ body {
 
 /* comment form */
 
+.contact-form-width-control {
+    padding: 0 25px;
+}
+
 .contact-form-width-control > .form-group {
     padding: 0 15px;
     width: 100%;
