@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{% load crispy_forms_tags %}
 
 {% block page_header %}
 <div class="container header-container">
@@ -11,48 +10,66 @@
 
 {% block content %}
 <div class="overlay"></div>
-<div class="container-fluid px-0">
+<div class="container">
     <div class="row justify-content-center align-items-center">
         <div class="col-12 col-md-6 hr-prod-spacer text-center">
-            <hr class="pt-2">
+            <hr>
             <h2 class="logo-font sub-header2-font">Contact Us</h2>
             <h5 class="text-muted pt-2">For all customer and business-to-business enquiries</h5>
             <hr class="mb-2">
         </div>
     </div>
 
-    <div class="row mb-5 justify-content-center align-items-center">
-        <div class="col-12 col-md-6 contact-form-width-control">
-            <div class="form-group">
-                <label for="first_name">First Name:</label>
-                <input type="text" class="form-control" id="first_name" placeholder="Enter your first name">
-            </div>
+        <div class="row justify-content-center align-items-center">
 
-            <div class="form-group">
-                <label for="last_name">Last Name:</label>
-                <input type="text" class="form-control" id="last_name" placeholder="Enter your last name">
-            </div>
+            <div class="col-12 col-md-8">
 
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter your email">
-            </div>
+                <form method="post" action="{% url 'contact' %}" class="contact-form-width-control">
+                    {% csrf_token %}
 
-            <div class="form-group">
-                <label for="phone_number">Phone Number:</label>
-                <input type="tel" class="form-control" id="phone_number" placeholder="Enter your phone number">
-            </div>
+                    <div class="form-group">
+                        <label for="id_first_name">First Name:</label>
+                        <input type="text" class="form-control" placeholder="Enter your first name"
+                            name="{{ form.first_name.name }}" id="{{ form.first_name.id_for_label }}">
+                    </div>
 
-            <div class="form-group">
-                <label for="comment">Comment:</label>
-                <textarea class="form-control" id="comment" rows="4" placeholder="Enter your comment"></textarea>
-            </div>
+                    <div class="form-group">
+                        <label for="id_last_name">Last Name:</label>
+                        <input type="text" class="form-control" placeholder="Enter your last name"
+                            name="{{ form.last_name.name }}" id="{{ form.last_name.id_for_label }}">
+                    </div>
 
-            <div class="text-center">
-                <a class="rating-button btn rounded-2 text-uppercase mb-5" href="{% url 'products' %}">Cancel</a>
-                <button class="rating-button btn rounded-2 text-uppercase mb-5" type="button">Submit</button>
+                    <div class="form-group">
+                        <label for="id_email">Email:</label>
+                        <input type="email" class="form-control" placeholder="Enter your email"
+                            name="{{ form.email.name }}" id="{{ form.email.id_for_label }}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="id_phone_number">Phone Number:</label>
+                        <input type="text" class="form-control" placeholder="Enter your phone number"
+                            name="{{ form.phone_number.name }}" id="{{ form.phone_number.id_for_label }}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="id_comment">Comment:</label>
+                        <textarea class="form-control" placeholder="Enter your comment" name="{{ form.comment.name }}"
+                            id="{{ form.comment.id_for_label }}"></textarea>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="d-flex justify-content-center">
+                            <a class="rating-button btn rounded-2 text-uppercase mb-5 mr-3"
+                                href="{% url 'products' %}">Cancel</a>
+                            <button class="rating-button btn rounded-2 text-uppercase mb-5"
+                                type="submit">Submit</button>
+                        </div>
+                    </div>
+
+                </form>
+
             </div>
         </div>
-    </div>
+
 </div>
 {% endblock %}

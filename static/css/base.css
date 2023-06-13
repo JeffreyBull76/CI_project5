@@ -446,15 +446,38 @@ body {
 
 /* comment form */
 
-.comment-cell {
-    min-width: 260px;
-    max-width: 400px;
-    word-wrap: break-word;
-}
-
 .contact-form-width-control > .form-group {
     padding: 0 15px;
+    width: 100%;
 }
+
+.contact-form-width-control > .form-group label {
+    display: none;
+}
+
+/* contact management */
+
+.contact-message-card > .card-body {
+    padding: 0;
+    margin: 0;
+}
+
+.cmt-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 100px;
+  }
+  
+  .cmt-card {
+    width: 360px;
+    height: 400px;
+    margin: 10px;
+  }
+  
+  .cmt-card-body {
+    overflow-y: auto;
+  }
 
 /* Product Form */
 
@@ -610,9 +633,6 @@ tr.table-style .sku-text {
 
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
-    .contact-form-width-control > .form-group {
-        padding: 0 120px;
-    }
 
     .container {
         max-width: 80%;
