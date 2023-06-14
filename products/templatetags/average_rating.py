@@ -9,7 +9,7 @@ register = template.Library()
 def calculate_average_rating(reviews):
     """
     Custom filter for averaging the review scores of a product.
-    When called it expects an object with a relevant 'rating' associated.
+    Allows all site items to be calculate average rating
 
     Args:
         reviews (list): A list of review objects.

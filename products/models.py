@@ -3,6 +3,9 @@ from django.contrib.auth.models import User
 
 
 class Category(models.Model):
+    """
+    Model unchanged from walkthrough
+    """
 
     class Meta:
         verbose_name_plural = 'Categories'
@@ -18,6 +21,10 @@ class Category(models.Model):
 
 
 class Product(models.Model):
+    """
+    Model has sizes and rating removed
+    Model has review FK field added
+    """
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)  # noqa
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
@@ -32,6 +39,9 @@ class Product(models.Model):
 
 
 class Review(models.Model):
+    """
+    New Model for tracking reviews and ratings
+    """
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     product = models.ForeignKey('Product', on_delete=models.CASCADE)
     rating = models.IntegerField(choices=[(i, i) for i in range(1, 6)])

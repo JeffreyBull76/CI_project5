@@ -31,6 +31,7 @@
 
     <div class="row justify-content-center">
         <div class="col-12 col-md-6">
+            <!-- sorting element -->
             <form method="get" action="" class="d-flex justify-content-center sort-field">
                 <div class="d-flex">
                     <select name="sort" id="sort-selector"
@@ -61,6 +62,7 @@
         <div class="product-container col-10 offset-1">
             <div class="row mt-1 mb-2"></div>
             <div class="row">
+                <!-- iterate list of relevant products based on search or category -->
                 {% for product in products %}
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                     <div class="shadow-drop-center card h-100 border-0">

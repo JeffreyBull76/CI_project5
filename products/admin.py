@@ -11,7 +11,8 @@ class ProductAdmin(admin.ModelAdmin):
         'category',
         'price',
         'image',
-        'display_reviews',  # Add custom method here
+        # custom element
+        'display_reviews',
     )
     ordering = ('sku',)
 
@@ -39,11 +40,14 @@ class ReviewAdmin(admin.ModelAdmin):
     actions = ['authorize_reviews']
 
     def authorize_reviews(self, request, queryset):
+        """
+        Method to authorize selected reviews.
+        """
         queryset.update(is_authorized=True)
     authorize_reviews.short_description = "Authorize selected reviews"
 
 
-# Register your models here.
+# Registered models
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Review, ReviewAdmin)

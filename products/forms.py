@@ -4,6 +4,9 @@ from .models import Product, Category
 
 
 class ProductForm(forms.ModelForm):
+    """
+    form moden for adding products from front end
+    """
 
     class Meta:
         model = Product

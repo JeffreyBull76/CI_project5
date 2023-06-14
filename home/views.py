@@ -53,7 +53,7 @@ def contact_form_view(request):
         form = ContactFormModelForm(request.POST)
         if form.is_valid():
             form.save()
-            # Send email with form data
+            # Send email with form data using our view
             send_contact_email(form.cleaned_data)
             messages.success(request, 'Successfully sent message!')
             # Redirect to the success page
@@ -63,8 +63,14 @@ def contact_form_view(request):
     return render(request, 'home/contact_form.html', {'form': form})
 
 
+# login required to prevent logged out access
 @login_required
 def contact_form_management_view(request):
+    """
+    View to handle retrieving contact form entries
+    """
+
+    # prevent non superusers accessing this view
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -75,6 +81,11 @@ def contact_form_management_view(request):
 
 @login_required
 def delete_message(request, message_id):
+    """
+    View to handle deleting contact form entries.
+    """
+
+    # prevent non superusers accessing this view
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))

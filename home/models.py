@@ -3,6 +3,7 @@ from django.db import models
 
 class ContactForm(models.Model):
     """
+    NEW MODEL
     Model for contact form
     """
     form_id = models.AutoField(primary_key=True)

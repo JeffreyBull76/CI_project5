@@ -13,6 +13,10 @@ from .models import Product, Category, Review
 
 
 def search_products(request):
+    """
+    Allow searching from search field
+    """
+
     # Retrieve the search query from the GET parameters
     query = request.GET.get('q')
 
@@ -72,6 +76,10 @@ def search_products(request):
 
 
 def category_products(request, category_id):
+    """
+    Returns items based on category
+    """
+
     # Retrieve the category object
     category = Category.objects.get(id=category_id)
 
@@ -123,33 +131,48 @@ def category_products(request, category_id):
 
 
 def product_detail(request, product_id):
+    """
+    View function to display the details of a specific product.
+    Allows authenticated users to add reviews for the product.
+    """
     product = get_object_or_404(Product, pk=product_id)
 
+    # Check if the current user has already reviewed the product
     is_reviewed = False
     if request.user.is_authenticated:
         is_reviewed = product.reviews.filter(user=request.user).exists()
 
+    # Handle the form submission for adding a review
     if request.method == 'POST' and request.user.is_authenticated and not is_reviewed:  # noqa
         rating = int(request.POST.get('rating'))
         comment = request.POST.get('comment')
-        print('Rating:', rating)
-        print('Comment:', comment)
+
+        # Create a new Review object
         review = Review(user=request.user, product=product, rating=rating, comment=comment)  # noqa
+
         # Validate the review object
         review.full_clean(validate_unique=False)
+
+        # Save the review to the database and associate it with the product
         review.save()
         product.reviews.add(review)
-        # Message for successful review addition
+
+        # Display a success message
         messages.info(request, 'Review added successfully!')
+
         # Redirect back to the same page after form submission
         return HttpResponseRedirect(request.path)
 
-    # Fetch reviews associated with the product, newest first
+    # Fetch reviews associated with the product, ordered by the newest first
     reviews = product.reviews.order_by('-id')
 
+    # Prepare the context data for the template
     context = {
-        'product': product, 'is_reviewed': is_reviewed, 'reviews': reviews,
-        }
+        'product': product,
+        'is_reviewed': is_reviewed,
+        'reviews': reviews,
+    }
+
     return render(request, 'products/product_detail.html', context)
 
 
@@ -157,11 +180,45 @@ def all_products(request):
     """ A view to show all products, including sorting and search queries """
 
     products = Product.objects.all()
-    categories = None
+    categories = Category.objects.all()
+
+    # Initialize variables for sorting
+    sort = None
+    direction = None
+
+    # Check if there are query parameters in the request
+    if request.GET:
+        # Check if 'sort' parameter is present
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+
+            # Sort the products by price
+            if sortkey == 'price':
+                if 'direction' in request.GET:
+                    direction = request.GET['direction']
+                    if direction == 'desc':
+                        sortkey = '-price'  # Sort in descending order
+                products = products.order_by(sortkey)
+
+            # Sort the products by average rating
+            elif sortkey == 'average_rating':
+                if 'direction' in request.GET:
+                    direction = request.GET['direction']
+                if direction == 'desc':
+                    # Annotate average rating and sort in descending order
+                    products = products.annotate(average_rating=Avg('review__rating')).order_by('-average_rating')  # noqa
+                else:
+                    # Annotate average rating and sort in ascending order
+                    products = products.annotate(average_rating=Avg('review__rating')).order_by('average_rating')  # noqa
+
+    # Create the current sorting string for display
+    current_sorting = f'{sort}_{direction}'
 
     context = {
         'products': products,
         'current_categories': categories,
+        'current_sorting': current_sorting,
     }
 
     return render(request, 'products/products.html', context)
@@ -170,6 +227,12 @@ def all_products(request):
 @login_required
 @require_POST
 def delete_review(request, review_id):
+    """
+    View function to delete reviews.
+    Only superusers (store owners) can perform this action.
+    """
+
+    # Retrieve the review object based on the given review_id
     review = get_object_or_404(Review, pk=review_id)
 
     messages.info(request, 'Review deleted successfully!')
@@ -181,12 +244,19 @@ def delete_review(request, review_id):
 
 @login_required
 def toggle_review_authorization(request, review_id):
+    """
+    View function to toggle the authorization status of a review.
+    Only superusers (store owners) can perform this action.
+    """
     if not request.user.is_superuser:
+        # Check if the current user is a superuser (store owner)
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
 
+    # Retrieve the review object based on the given review_id
     review = get_object_or_404(Review, pk=review_id)
-    # Toggle the is_authorized field between True and False
+
+    # Toggle the is_authorized field of the review between True and False
     review.is_authorized = not review.is_authorized
     review.save()
 
@@ -195,6 +265,7 @@ def toggle_review_authorization(request, review_id):
     else:
         messages.info(request, 'The review has been unauthorized!')
 
+    # Redirect to the product detail page of the review's associated product
     return HttpResponseRedirect(reverse_lazy('product_detail', args=[review.product.pk]))  # noqa
 
 
