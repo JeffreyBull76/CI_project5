@@ -50,6 +50,16 @@ body {
     color: #384D73;
 }
 
+.footer-icons a {
+    color: inherit;
+    text-decoration: none;
+    font-size: large;
+}
+
+.footer-icons a:hover {
+    text-decoration: none;
+}
+
 /* Allauth */
 
 .form.signup {
@@ -450,18 +460,18 @@ body {
     padding: 0 25px;
 }
 
-.contact-form-width-control > .form-group {
+.contact-form-width-control>.form-group {
     padding: 0 15px;
     width: 100%;
 }
 
-.contact-form-width-control > .form-group label {
+.contact-form-width-control>.form-group label {
     display: none;
 }
 
 /* contact management */
 
-.contact-message-card > .card-body {
+.contact-message-card>.card-body {
     padding: 0;
     margin: 0;
 }
@@ -471,17 +481,17 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 100px;
-  }
-  
-  .cmt-card {
+}
+
+.cmt-card {
     width: 360px;
     height: 400px;
     margin: 10px;
-  }
-  
-  .cmt-card-body {
+}
+
+.cmt-card-body {
     overflow-y: auto;
-  }
+}
 
 /* Product Form */
 
@@ -613,6 +623,7 @@ tr.table-style .sku-text {
 /* -------------------------------- Media Queries */
 
 @media (max-width: 1300px) {
+
     .small-screen-menutext,
     .small-screen-droptext a {
         font-size: small !important;
