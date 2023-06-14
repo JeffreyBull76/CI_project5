@@ -87,6 +87,7 @@ TEMPLATES = [
                 'django.template.context_processors.media',
                 # processor to pass categories and products to all views
                 'products.context_processors.categories_and_products',
+                # processor to pass bag contents to all views
                 'bag.contexts.bag_contents',
             ],
             'builtins': [
