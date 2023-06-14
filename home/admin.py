@@ -4,4 +4,7 @@ from .models import ContactForm
 
 @admin.register(ContactForm)
 class ContactFormAdmin(admin.ModelAdmin):
+    """
+    Admin class for the ContactForm model.
+    """
     pass

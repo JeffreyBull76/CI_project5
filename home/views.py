@@ -22,6 +22,9 @@ def index(request):
 
 
 def send_contact_email(data):
+    """
+    View to handle sending the contact form.
+    """
     subject = "Website Inquiry"
     body = f"""
     First Name: {data['first_name']}
@@ -40,6 +43,7 @@ def send_contact_email(data):
             [data['email']],
             fail_silently=False
         )
+    # Header checking added despite not being needed for future use
     except BadHeaderError:
         return HttpResponse('Invalid header found.')
 

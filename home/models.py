@@ -2,6 +2,9 @@ from django.db import models
 
 
 class ContactForm(models.Model):
+    """
+    Model for contact form
+    """
     form_id = models.AutoField(primary_key=True)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
