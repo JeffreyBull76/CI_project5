@@ -493,6 +493,10 @@ body {
     overflow-y: auto;
 }
 
+.form-management-container {
+    max-width: 98%;
+}
+
 /* Product Form */
 
 .btn-file {
