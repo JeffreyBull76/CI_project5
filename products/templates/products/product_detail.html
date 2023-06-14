@@ -26,7 +26,8 @@
                 </a>
                 {% else %}
                 <a>
-                    <img class="card-img-top img-fluid" src="https://placehold.co/512x512?text=No+Image" alt="{{ product.name }}">
+                    <img class="card-img-top img-fluid" src="https://placehold.co/512x512?text=No+Image"
+                        alt="{{ product.name }}">
                 </a>
                 {% endif %}
             </div>
@@ -78,10 +79,10 @@
                                 <small class="text-muted">No Rating</small>
                                 {% endif %}
                                 {% if request.user.is_superuser %}
-                                    <small class="ml-3">
-                                        <a href="{% url 'edit_product' product.id %}">Edit</a> |
-                                        <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                                    </small>
+                                <small class="ml-3">
+                                    <a href="{% url 'edit_product' product.id %}">Edit</a> |
+                                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                </small>
                                 {% endif %}
                                 <p class="mt-3">{{ product.description }}</p>
                                 <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
@@ -178,28 +179,26 @@
                                         </form>
 
                                         <p class="mt-3 card-text text-muted">{{ review.comment }}</p>
-                                                <div class="review-buttons">
-                                                    <form method="post" action="{% url 'delete_review' review.id %}"
-                                                        class="d-inline-block">
-                                                        {% csrf_token %}
-                                                        <button type="submit"
-                                                            class="btn btn-danger btn-sm">Delete</button>
-                                                    </form>
-                                                </div>
+                                        <div class="review-buttons">
+                                            <form method="post" action="{% url 'delete_review' review.id %}"
+                                                class="d-inline-block">
+                                                {% csrf_token %}
+                                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                            </form>
+                                        </div>
 
                                         {% endif %}
                                         {% else %}
-                                                <p class="card-text text-muted">{{ review.comment }}</p>
-                                                {% if request.user == review.user %}
-                                                <div class="review-buttons">
-                                                    <form method="post" action="{% url 'delete_review' review.id %}"
-                                                        class="d-inline-block">
-                                                        {% csrf_token %}
-                                                        <button type="submit"
-                                                            class="btn btn-danger btn-sm">Delete</button>
-                                                    </form>
-                                                </div>
-                                                {% endif %}
+                                        <p class="card-text text-muted">{{ review.comment }}</p>
+                                        {% if request.user == review.user %}
+                                        <div class="review-buttons">
+                                            <form method="post" action="{% url 'delete_review' review.id %}"
+                                                class="d-inline-block">
+                                                {% csrf_token %}
+                                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                            </form>
+                                        </div>
+                                        {% endif %}
                                         {% endif %}
                                     </div>
                                 </div>
@@ -213,34 +212,42 @@
 
                     <!-- post review tab -->
                     <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+                        <p class="pt-2 mt-2 pl-1 text-muted">You may only  review products you have purchased.</p>
                         {% if user.is_authenticated %}
                         {% if not is_reviewed %}
-                        <form method="post" class="ml-2 mr-2">
-                            {% csrf_token %}
-                            <div class="form-group pt-4">
-                                <label for="rating">Rating:</label>
-                                <select class="rating-selector" name="rating" id="rating" class="form-control">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="comment">Comment:</label>
-                                <textarea name="comment" id="comment" class="review-comment form-control"
-                                    rows="3"></textarea>
-                            </div>
-                            <button type="submit" class="rating-button btn rounded-2 text-uppercase">Submit</button>
-                        </form>
+                        {% if user.userprofile.orders.all %}
+                        {% for order in user.userprofile.orders.all %}
+                        {% for item in order.lineitems.all %}
+                            {% if item.product.id == product.id %}
+                            <form method="post" class="ml-2 mr-2">
+                                {% csrf_token %}
+                                <div class="form-group pt-4">
+                                    <label for="rating">Rating:</label>
+                                    <select class="rating-selector" name="rating" id="rating" class="form-control">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="comment">Comment:</label>
+                                    <textarea name="comment" id="comment" class="review-comment form-control"
+                                        rows="3"></textarea>
+                                </div>
+                                <button type="submit" class="rating-button btn rounded-2 text-uppercase">Submit</button>
+                            </form>
+                            {% endif %}
+                        {% endfor %}
+                        {% endfor %}
+                        {% endif %}
                         {% else %}
                         <p class="pt-4 pl-3">You have already submitted a review for this product.</p>
                         {% endif %}
                         {% else %}
                         <p class="pt-4 pl-3">Please <a href="{% url 'account_login' %}">Login</a> or <a
-                                href="{% url 'account_signup' %}">Register</a>
-                            to submit a review.</p>
+                                href="{% url 'account_signup' %}">Register</a> to submit a review.</p>
                         {% endif %}
                     </div>
 
