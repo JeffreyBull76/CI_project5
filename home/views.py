@@ -1,11 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404, reverse  # noqa
 from products.models import Category, Product
-from .forms import ContactFormModelForm
-from .models import ContactForm
+from .forms import ContactFormModelForm, NewsletterSignupForm
+from .models import ContactForm, NewsletterSubscriber
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
-from django.shortcuts import render, redirect
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 
@@ -98,3 +97,18 @@ def delete_message(request, message_id):
     messages.success(request, 'Message deleted!')
     # Redirect to contact management page after deletion
     return redirect('contact_management')
+
+
+def newsletter_signup(request):
+    if request.method == 'POST':
+        form = NewsletterSignupForm(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data['email']
+            if not NewsletterSubscriber.objects.filter(email=email).exists():
+                form.save()
+                return redirect('home')
+            else:
+                form.add_error('email', 'This email is already subscribed.')
+    else:
+        form = NewsletterSignupForm()
+    return render(request, 'home/signup.html', {'form': form})

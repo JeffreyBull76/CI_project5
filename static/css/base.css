@@ -260,6 +260,23 @@ body {
     border: none;
 }
 
+/* signup newsletter form */
+
+.signup-form-element ul {
+    list-style-type: none;
+    font-size: large;
+    text-transform: uppercase;
+  }
+
+  .signup-form-element input {
+    opacity: 50%;
+  }
+
+  .signup-form-element label {
+    padding-right: 10px;
+    font-size: small;
+  }
+
 /* products css */
 
 .sub-heading-font {

@@ -13,3 +13,16 @@ class ContactForm(models.Model):
     phone_number = models.CharField(max_length=20)
     comment = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
+
+
+class NewsletterSubscriber(models.Model):
+    """
+    NEW MODEL
+    Newsletter form
+    """
+    email = models.EmailField(unique=True)
+    agreed_to_tcs = models.BooleanField(default=False)
+    signup_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.email

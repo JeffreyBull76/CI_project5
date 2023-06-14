@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container mb-2">
+    <div class="row">
+        <div class="col-12 text-center hr-prod-spacer">
+            <h4 class="logo-font sub-header2-font text-md mt-3 mb-4 pt-3">Sign up to our newsletter</h3>
+                <hr>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+            <div class="text-center"> <!-- Apply 'text-center' class here -->
+                <form method="post" class="signup-form-element">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="rating-button btn rounded-2 text-uppercase mb-5">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row"></div>
+    <div class="text-center">
+        <p>fsdfdsf</p>
+    </div>
+</div>
+</div>
+{% endblock %}
