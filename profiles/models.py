@@ -8,6 +8,8 @@ from django_countries.fields import CountryField
 
 class UserProfile(models.Model):
     """
+    Unchanged from walkthrough
+
     A user profile model for maintaining default
     delivery information and order history
     """
@@ -27,6 +29,8 @@ class UserProfile(models.Model):
 @receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):
     """
+    Unchanged from walkthrough
+
     Create or update the user profile
     """
     if created:
