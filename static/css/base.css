@@ -1,6 +1,3 @@
-/* font-family: 'Cinzel', serif;
-font-family: 'Slabo 27px', serif; */
-
 html {
     height: 100%;
 }
@@ -11,8 +8,8 @@ html {
 }
 
 .splash-text {
-    padding: 180px 0 0 8px;
-    font-size: 1.4rem;
+    padding: 200px 0 0 8px;
+    font-size: 1.3rem;
     color: #383838 !important;
     line-height: 1.1;
     text-shadow: 0 0 3px #f5f0ecab;
@@ -266,16 +263,28 @@ body {
     list-style-type: none;
     font-size: large;
     text-transform: uppercase;
-  }
+}
 
-  .signup-form-element input {
+.signup-form-element input {
     opacity: 50%;
-  }
+}
 
-  .signup-form-element label {
-    padding-right: 10px;
+.signup-form-element label {
     font-size: small;
-  }
+}
+
+.tandcs-list {
+    text-align: left;
+}
+
+.tandcs-card {
+    padding-bottom: 100px;
+}
+
+.tandcs-list .list-group-item {
+    font-size: small;
+    padding: 2px 5px;
+}
 
 /* products css */
 
@@ -701,7 +710,7 @@ tr.table-style .sku-text {
 /* medium styles */
 @media (max-width: 992px) {
     .splash-text {
-        padding: 350px 0 0 10px;
+        padding: 300px 0 0 10px;
     }
 
     .navbar-brand {

@@ -11,30 +11,68 @@
 
 {% block content %}
 <div class="overlay"></div>
-<div class="container mb-2">
+<div class="container d-flex justify-content-center">
     <div class="row">
-        <div class="col-12 text-center hr-prod-spacer">
-            <h4 class="logo-font sub-header2-font text-md mt-3 mb-4 pt-3">Sign up to our newsletter</h3>
-                <hr>
-        </div>
-    </div>
 
-    <div class="row">
-        <div class="col-12 d-flex justify-content-center">
-            <div class="text-center"> <!-- Apply 'text-center' class here -->
-                <form method="post" class="signup-form-element">
-                    {% csrf_token %}
-                    {{ form.as_p }}
-                    <button type="submit" class="rating-button btn rounded-2 text-uppercase mb-5">Submit</button>
-                </form>
+        <div class="col-md-6 mt-4">
+            <div class="card signup-card">
+                <div class="card-header text-uppercase">
+                    <h5>Signup to our Newsletter !!</h5>
+                </div>
+                <div class="card-body">
+                    <form method="post" class="signup-form-element">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="rating-button btn rounded-2 text-uppercase mb-5">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mt-4 tandcs-card">
+            <div class="card">
+                <div class="card-header text-uppercase">
+                    <h5>Ts & Cs:</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="tandcs-list list-group">
+                        <li class="list-group-item">By signing up for our newsletter, you agree to receive periodic
+                            email
+                            updates from us.</li>
+                        <li class="list-group-item">You can unsubscribe from the newsletter at any time by sending an
+                            email to
+                            <a href="mailto:unsubscribe@bull&sea.com">unsubscribe@bull&sea.com</a>. Please include
+                            "Unsubscribe"
+                            in the subject line.</li>
+                        <li class="list-group-item">We respect your privacy and will not share your personal information
+                            with
+                            any third parties.</li>
+                        <li class="list-group-item">The content of the newsletter is intended for informational purposes
+                            only
+                            and should not be considered as professional advice.</li>
+                        <li class="list-group-item">We reserve the right to modify or terminate the newsletter service
+                            at any
+                            time without prior notice.</li>
+                        <li class="list-group-item">You are responsible for ensuring the accuracy of the email address
+                            provided
+                            for newsletter subscription.</li>
+                        <li class="list-group-item">We are not liable for any consequences resulting from errors or
+                            inaccuracies
+                            in the newsletter content.</li>
+                        <li class="list-group-item">By subscribing to the newsletter, you acknowledge that you are at
+                            least 18
+                            years old or have obtained parental consent.</li>
+                        <li class="list-group-item">We may occasionally send you promotional offers or marketing
+                            communications
+                            related to our products or services.</li>
+                        <li class="list-group-item">These terms and conditions are subject to change without prior
+                            notice.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-    
-    <div class="row"></div>
-    <div class="text-center">
-        <p>fsdfdsf</p>
-    </div>
 </div>
+
 </div>
 {% endblock %}

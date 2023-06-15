@@ -6,9 +6,20 @@
 <head>
 
   {% block meta %}
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Jeffrey Bull">
+  <meta name="description" content="Bull & Sea - Handmade candles and lifestyle products">
+  <meta name="keywords"
+    content="handmade candles, environmentally friendly candles, rapeseed wax candles, organic scent candles, 
+    high quality candles, cruelty-free candles, eco-friendly candles, natural candles, sustainable candles, artisan candles, 
+    non-toxic candles, vegan candles, clean-burning candles, ethical candles, small batch candles, home fragrance, hand-poured candles, 
+    sustainable home decor, natural wax candles, aromatherapy candles, slow-burning candles, eco-conscious candles, conscious living, 
+    green candles, non-GMO candles, chemical-free candles, renewable materials, conscious consumerism, ethical home goods, sustainable gifts, 
+    natural home fragrance, zero-waste candles, sustainable packaging">
   {% endblock %}
 
   {% block extra_meta %}
@@ -44,6 +55,7 @@
   {% block extra_js %}
   {% endblock %}
 
+  <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}">
   <title>Bull & Sea {% block extra_title %}{% endblock %}</title>
 </head>
 
