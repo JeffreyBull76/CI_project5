@@ -94,7 +94,7 @@ def delete_message(request, message_id):
     if request.method == 'POST':
         message.delete()
 
-    messages.success(request, 'Message deleted!')
+    messages.info(request, 'Message deleted!')
     # Redirect to contact management page after deletion
     return redirect('contact_management')
 
@@ -106,6 +106,7 @@ def newsletter_signup(request):
             email = form.cleaned_data['email']
             if not NewsletterSubscriber.objects.filter(email=email).exists():
                 form.save()
+                messages.success(request, 'Signed up to newsletter!')
                 return redirect('home')
             else:
                 form.add_error('email', 'This email is already subscribed.')

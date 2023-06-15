@@ -123,15 +123,6 @@
                                         </div>
 
                                         <div class="col-12">
-                                            {% if request.META.HTTP_REFERER %}
-                                            <a href="{{ request.META.HTTP_REFERER }}"
-                                                class="rating-button btn rounded-2 text-uppercase mt-2">
-                                                <span class="icon-pale pr-2">
-                                                    <i class="fas fa-chevron-left"></i>
-                                                </span>
-                                                <span class="text-uppercase">Keep Shopping</span>
-                                            </a>
-                                            {% else %}
                                             <a href="{% url 'products' %}"
                                                 class="rating-button btn rounded-2 text-uppercase mt-2">
                                                 <span class="icon-pale pr-2">
@@ -139,17 +130,10 @@
                                                 </span>
                                                 <span class="text-uppercase">Keep Shopping</span>
                                             </a>
-                                            {% endif %}
-
                                             <input type="submit" class="rating-button btn rounded-2 text-uppercase mt-2"
                                                 value="Add to Bag">
                                         </div>
-                                        {% if request.META.HTTP_REFERER %}
-                                        <input type="hidden" name="redirect_url"
-                                            value="{{ request.META.HTTP_REFERER }}">
-                                        {% else %}
                                         <input type="hidden" name="redirect_url" value="{% url 'products' %}">
-                                        {% endif %}
                                     </div>
                                 </form>
                             </div>
