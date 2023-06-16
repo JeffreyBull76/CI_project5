@@ -51,14 +51,28 @@ def contact_form_view(request):
     if request.method == 'POST':
         form = ContactFormModelForm(request.POST)
         if form.is_valid():
-            form.save()
-            # Send email with form data using our view
-            send_contact_email(form.cleaned_data)
-            messages.success(request, 'Successfully sent message!')
-            # Redirect to the success page
-            return redirect('home')
+            # Perform field-level validation
+            first_name = form.cleaned_data['first_name']
+            last_name = form.cleaned_data['last_name']
+            phone_number = form.cleaned_data['phone_number']
+
+            if any(char.isdigit() for char in first_name):
+                form.add_error('first_name', 'Only letters are allowed in the first name.')  # noqa
+            if any(char.isdigit() for char in last_name):
+                form.add_error('first_name', 'Only letters are allowed in the last name.')  # noqa
+            if any(char.isalpha() for char in phone_number):
+                form.add_error('phone_number', 'Only numbers are allowed in the phone number.')  # noqa
+
+            if not form.errors:
+                form.save()
+                # Send email with form data using our view
+                send_contact_email(form.cleaned_data)
+                messages.success(request, 'Successfully sent message!')
+                # Redirect to the success page
+                return redirect('home')
     else:
         form = ContactFormModelForm()
+
     return render(request, 'home/contact_form.html', {'form': form})
 
 

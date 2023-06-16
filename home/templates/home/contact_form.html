@@ -21,57 +21,67 @@
         </div>
     </div>
 
-        <div class="row justify-content-center align-items-center">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-12 col-lg-7 px-0">
+            <!-- Form to handle contact message submission -->
+            <form method="post" action="" class="contact-form-width-control">
+                {% csrf_token %}
 
-            <div class="col-12 col-lg-7 px-0">
+                <div class="form-group">
+                    <label for="id_first_name">First Name:</label>
+                    <input type="text" class="form-control" placeholder="Enter your first name"
+                        name="{{ form.first_name.name }}" id="{{ form.first_name.id_for_label }}">
+                    {% if form.first_name.errors %}
+                        <div class="error">{{ form.first_name.errors }}</div>
+                    {% endif %}
+                </div>
 
-                <!-- Form to handle contact message submission -->
-                <form method="post" action="{% url 'contact' %}" class="contact-form-width-control">
-                    {% csrf_token %}
+                <div class="form-group">
+                    <label for="id_last_name">Last Name:</label>
+                    <input type="text" class="form-control" placeholder="Enter your last name"
+                        name="{{ form.last_name.name }}" id="{{ form.last_name.id_for_label }}">
+                    {% if form.last_name.errors %}
+                        <div class="error">{{ form.last_name.errors }}</div>
+                    {% endif %}
+                </div>
 
-                    <div class="form-group">
-                        <label for="id_first_name">First Name:</label>
-                        <input type="text" class="form-control" placeholder="Enter your first name"
-                            name="{{ form.first_name.name }}" id="{{ form.first_name.id_for_label }}">
+                <div class="form-group">
+                    <label for="id_email">Email:</label>
+                    <input type="email" class="form-control" placeholder="Enter your email"
+                        name="{{ form.email.name }}" id="{{ form.email.id_for_label }}">
+                    {% if form.email.errors %}
+                        <div class="error">{{ form.email.errors }}</div>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for="id_phone_number">Phone Number:</label>
+                    <input type="text" class="form-control" placeholder="Enter your phone number"
+                        name="{{ form.phone_number.name }}" id="{{ form.phone_number.id_for_label }}">
+                    {% if form.phone_number.errors %}
+                        <div class="error">{{ form.phone_number.errors }}</div>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for="id_comment">Comment:</label>
+                    <textarea class="form-control" placeholder="Enter your comment" name="{{ form.comment.name }}"
+                        id="{{ form.comment.id_for_label }}" rows="6"></textarea>
+                    {% if form.comment.errors %}
+                        <div class="error">{{ form.comment.errors }}</div>
+                    {% endif %}
+                </div>
+
+                <div class="text-center">
+                    <div class="d-flex justify-content-center pt-3">
+                        <a class="rating-button btn rounded-2 text-uppercase mb-5 mr-3"
+                            href="{% url 'products' %}">Cancel</a>
+                        <button class="rating-button btn rounded-2 text-uppercase mb-5"
+                            type="submit">Submit</button>
                     </div>
-
-                    <div class="form-group">
-                        <label for="id_last_name">Last Name:</label>
-                        <input type="text" class="form-control" placeholder="Enter your last name"
-                            name="{{ form.last_name.name }}" id="{{ form.last_name.id_for_label }}">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="id_email">Email:</label>
-                        <input type="email" class="form-control" placeholder="Enter your email"
-                            name="{{ form.email.name }}" id="{{ form.email.id_for_label }}">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="id_phone_number">Phone Number:</label>
-                        <input type="text" class="form-control" placeholder="Enter your phone number"
-                            name="{{ form.phone_number.name }}" id="{{ form.phone_number.id_for_label }}">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="id_comment">Comment:</label>
-                        <textarea class="form-control" placeholder="Enter your comment" name="{{ form.comment.name }}"
-                            id="{{ form.comment.id_for_label }}" rows="6"></textarea>
-                    </div>
-
-                    <div class="text-center">
-                        <div class="d-flex justify-content-center pt-3">
-                            <a class="rating-button btn rounded-2 text-uppercase mb-5 mr-3"
-                                href="{% url 'products' %}">Cancel</a>
-                            <button class="rating-button btn rounded-2 text-uppercase mb-5"
-                                type="submit">Submit</button>
-                        </div>
-                    </div>
-
-                </form>
-
-            </div>
+                </div>
+            </form>
         </div>
-
+    </div>
 </div>
 {% endblock %}
