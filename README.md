@@ -87,7 +87,7 @@ It adds and changes the following models.
 * NEW MODELS:
   * REVIEW: A model which tracks and stores all product reviews. It accepts a rating and text based review. The latter is not required to allow user to post ratings without needing to leave a comment (this follows practices seen on sites such as booking.com where users can leave blank reviews) It has a foreign key relationship to Product. This allows multiple reviews of one product. In view for this we add a check to prevent users leaving multiple reviews of the same product (more on this later)
   * NEWSLETTER SIGNUP: A model which simply holds a list of emails which can then be used to send a newsletter to. In a live version this would have to have some form of unsubscribe feature built in but for now this is added as a minimum viable feature to show where this could go. I decided to not relate this to users to allow non registered guests to sign up.
-  * CONTACT FORM: A model which allows messages sent by customers to be held in a database. As with the newsletter a decision was made to not attach these messages to users as it would prevent non registered guests using this feature.
+  * CONTACT FORM: A model which allows messages sent by customers to be held in a database. As with the newsletter a decision was made to not attach these messages to users as it would prevent non registered guests using this feature. In a live version this feature could be ideated upon and expanded (see roadmap)
 
 <details>
 <summary>Schema</summary>
@@ -137,38 +137,47 @@ In theory, this would be the first step in a much larger and longer process. Thi
 ### **Final Design**
 
 * Font choice here:
-    * 1
-    * 2
+    * Cinzel - for main title font and headings
+    * Slabo - for all other text
+
+Cinzel was chosen as a more decorative text for main title and Slabo as a still decorative but more readable font for all other text. Both should elicit a craft or artisan feeling without looking to cold or modern.
 
 <br />
 
-![font 1](font_image_here)
+![font 1](readme/assets/images/cinzel_font.jpg)
 
 <br />
 
-![font 2](font_image_here)
+![font 2](readme/assets/images/slabo_font.jpg)
 
 <br />
 
 * Color palette
-    * text here
+    * The color palette below was chosen to allow the products to take center stage. A distinct vintage blue and muted grey tones where used to evoke an artisan / vintage feeling.
+    * Worth noting some slight variations in tone from these were used where appropriate on elements which were small or needed opacity.
 
-![Colors](color_palette_image)
+![Colors](readme/assets/images/Bull%26Sea%20Palette.png)
 
-* Overall Thoughts: 
-
+* Hopefully the design feeling conveys artisan high quality products. 
 
 --------------------------------------------------------
 
 ### **User Interface**
 
+The navigation UI is significantly changed mechanically from the walkthrough, and changed in appearance as well. I now have the title central the search bar off to the far right of the screen and all nav buttons on the left. The shopping bag remains hidden until items are added. 
+
 * ETHOS:
   * I left the structure deliberately unclutttered as this is a small scale business.
   * It should be intuitve to find what you need and not require lots of clicking
 
-Describe how users navigate the site
+* CODE:
+  * I am using a dropdown navbar element from Bootstrap to build my navigation, the scripting for which sits in a small function in the postload JS block.
 
-![Nav Bar](nav_bar_image)
+![Nav Bar](readme/assets/images/b%26s_navbar.jpg)
+
+* NAVBAR STRUCTURE:
+  * The shop button loads a html template (using includes in syntax) that iterates through our two product cateogories.
+  This allows for new categories to be added dynamically. And a third static element which goes to an all products view.
 
 --------------------------------------------------------
 
