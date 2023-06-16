@@ -77,12 +77,22 @@ Visually, it should be modern, clean, and styled to suit a lifestyle brand.
 
 ### **Database Schema**
 
-<br>Here you can see the DB Schema plan visually represented.
+<br>Here you can see the DB Schema plan visually represented. It inherits the core structure of Product, User and Categories from the walkthrough project.
+It adds and changes the following models.
+
+* CHANGED MODELS:
+  * PRODUCT: Size removed as this was no longer needed for the products featured. The rating field was also removed and FK relationship to our new Review model was added instead.
+  * ORDER LINE ITEM: Size removed, again this was no longer required
+
+* NEW MODELS:
+  * REVIEW: A model which tracks and stores all product reviews. It accepts a rating and text based review. The latter is not required to allow user to post ratings without needing to leave a comment (this follows practices seen on sites such as booking.com where users can leave blank reviews) It has a foreign key relationship to Product. This allows multiple reviews of one product. In view for this we add a check to prevent users leaving multiple reviews of the same product (more on this later)
+  * NEWSLETTER SIGNUP: A model which simply holds a list of emails which can then be used to send a newsletter to. In a live version this would have to have some form of unsubscribe feature built in but for now this is added as a minimum viable feature to show where this could go. I decided to not relate this to users to allow non registered guests to sign up.
+  * CONTACT FORM: A model which allows messages sent by customers to be held in a database. As with the newsletter a decision was made to not attach these messages to users as it would prevent non registered guests using this feature.
 
 <details>
 <summary>Schema</summary>
 
-![Bull & Sea DB Schema image]()
+![Bull & Sea DB Schema image](readme/assets/images/DB_Schema.jpg)
 
 </details>
 
@@ -90,9 +100,13 @@ Visually, it should be modern, clean, and styled to suit a lifestyle brand.
 
 ### **User Stories and Agile**
 
-A comprehensive git project page can be found here with my user stories. 
+A comprehensive Git project page can be found here with my user stories. Overall, I wanted to focus on getting an MVP working, which could be iterated on later or expanded.
 
-[Project Board]()
+I decided not to use sprints or epics since my timescale here was already quite short. I had to go from no code at all to a working project in 5 weeks, so breaking that into smaller chunks felt unnecessary.
+
+In theory, this would be the first step in a much larger and longer process. This version could see a limited release to a test environment (either for clients or trusted testers), and then use feedback to produce new user stories and move forward.
+
+[Project Board](https://github.com/users/JeffreyBull76/projects/6)
 
 
 --------------------------------------------------------
@@ -100,19 +114,23 @@ A comprehensive git project page can be found here with my user stories.
 ### **Wireframes**
 
 <details>
-<summary>I used an online wireframe tool to create my basic layout idea 
+<summary>I used an online wireframe tool to create my basic layout idea, that is not exhaustive and was ideated in production to what now exists.
 
 [Fluid UI](https://www.fluidui.com/)
 </summary>
 
-![Wireframe]()
+![Wireframe](readme/assets/images/wireframe.jpg)
 
 </details>
 
-Explain site structure here
-
-In terms of how this relates to the templates in Django, it is as follows.
-  * explain how site layout works which pages extend which etc
+* SITE STRUCTURE:
+  * The main page structure remains similar to the walkthrough project. It has other templates added where required (such as those for new models)
+  * Base page is extended by index which functions as our landing page. In turn the other main template views represented in our navigation are.
+      * SHOP - Products > Product Details
+      * CONNECT - Contact > Contact Messages (admin feature)
+      * MY ACCOUNT - Manage Products (admin feature) > Profile > Allauth account templates
+  * I also have a footer (present on all pages) which features the social media linkage.
+  * Newsletter signup page - accessed from home page and checkout success page.
 
 --------------------------------------------------------
 
@@ -143,6 +161,10 @@ In terms of how this relates to the templates in Django, it is as follows.
 --------------------------------------------------------
 
 ### **User Interface**
+
+* ETHOS:
+  * I left the structure deliberately unclutttered as this is a small scale business.
+  * It should be intuitve to find what you need and not require lots of clicking
 
 Describe how users navigate the site
 
