@@ -112,6 +112,10 @@ body {
     z-index: -1;
 }
 
+.splash-text-padder {
+    padding-bottom: 120px;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;
@@ -490,7 +494,7 @@ body {
 /* comment form */
 
 .contact-form-width-control {
-    padding: 0 25px;
+    padding: 0 25px 120px 25px;
 }
 
 .contact-form-width-control>.form-group {
@@ -717,6 +721,7 @@ tr.table-style .sku-text {
 /* medium styles */
 @media (max-width: 992px) {
     .splash-text {
+        font-size: 1.1rem;
         padding: 100px 0 0 10px;
     }
 

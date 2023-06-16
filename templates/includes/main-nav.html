@@ -2,8 +2,8 @@
   aria-labelledby="navbarDropdown2">
   <!-- new nav element -->
   {% for category in categories %}
-  <a class="dropdown-item"
-    href="{% url 'category_products' category_id=category.id %}">{{ category.get_friendly_name }}</a>
+  <a class="dropdown-item" href="{% url 'category_products' category_id=category.id %}"
+    aria-label="{{ category.get_friendly_name }}">{{ category.get_friendly_name }}</a>
   {% endfor %}
-  <a class="dropdown-item" href="{% url 'products' %}">All Products</a>
+  <a class="dropdown-item" href="{% url 'products' %}" aria-label="All Products">All Products</a>
 </div>

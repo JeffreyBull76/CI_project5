@@ -122,7 +122,7 @@
 
       <!-- Title -->
       <div class="col-4 text-center">
-        <a href="{% url 'home' %}" class="main-logo-link">
+        <a href="{% url 'home' %}" class="main-logo-link" aria-label="home">
           <h2 class="logo-font my-0 title-font"><strong>Bull & Sea</strong> </h2>
         </a>
       </div>
@@ -138,7 +138,7 @@
             <li>
               {% if grand_total > 0 %}
               <a class="{% if grand_total %}font-weight-bold{% else %}{% endif %} nav-link bag-nav-link"
-                href="{% url 'view_bag' %}">
+                href="{% url 'view_bag' %}" aria-label="shopping bag">
                 <div class="text-center">
                   <div class="d-flex align-items-center">
                     <div class="mr-2">
@@ -160,12 +160,11 @@
             </li>
           </ul>
 
-          <form class="form-inline" method="GET" action="{% url 'search_products' %}">
+          <form class="form-inline" method="GET" action="{% url 'search_products' %}" aria-label="Search Form">
             <div class="input-group w-100">
-              <input class="form-control border border-grey rounded-2 bg-searchbox" type="text" name="q"
-                placeholder="Search our products" value="{{ search_query }}">
+              <input class="form-control border border-grey rounded-2 bg-searchbox" type="text" name="q" placeholder="Search our products" value="{{ search_query }}" aria-label="Search Input">
               <div class="input-group-append">
-                <button class="form-control btn btn-searchbox border border-grey rounded-2" type="submit">
+                <button class="form-control btn btn-searchbox border border-grey rounded-2" type="submit" aria-label="Search Button">
                   <span class="icon">
                     <i class="fas fa-search"></i>
                   </span>
@@ -173,11 +172,9 @@
               </div>
             </div>
           </form>
-
+          
         </div>
-
       </div>
-
     </div>
 
     <div class="d-lg-none">
@@ -217,10 +214,10 @@
         <p class="font-weight-bold">
           &copy; 2023 Bull &amp; Sea
           <span class="footer-icons">
-            <a href="https://www.facebook.com/bullandsea/" target="_blank">
+            <a href="https://www.facebook.com/bullandsea/" target="_blank" aria-label="Facebook">
               <i class="pl-3 fab fa-facebook fa-lg"></i>
             </a>
-            <a href="https://www.pinterest.ie/rooinstheninth/_created" target="_blank">
+            <a href="https://www.pinterest.ie/rooinstheninth/_created" target="_blank" aria-label="Pinterest">
               <i class="pl-3 fab fa-pinterest fa-lg"></i>
             </a>
           </span>
@@ -235,7 +232,5 @@
   </script>
   {% endblock %}
 
-
 </body>
-
 </html>

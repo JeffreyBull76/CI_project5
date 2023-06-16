@@ -32,10 +32,10 @@
     <div class="row justify-content-center">
         <div class="col-12 col-md-6">
             <!-- sorting element -->
-            <form method="get" class="d-flex justify-content-center sort-field">
+            <form method="get" class="d-flex justify-content-center sort-field" aria-label="Sort Form">
                 <div class="d-flex">
                     <select name="sort" id="sort-selector"
-                        class="custom-select custom-select-sm rounded-0 border border-grey rounded-2 bg-searchbox">
+                        class="custom-select custom-select-sm rounded-0 border border-grey rounded-2 bg-searchbox" aria-label="Sort By">
                         <option value="price"
                             {% if current_sorting == 'price_asc' or current_sorting == 'price_desc' %}selected{% endif %}>
                             Sort by Price</option>
@@ -43,16 +43,16 @@
                             Sort by Average Rating</option>
                     </select>
                     <select name="direction" id="sort-selector2"
-                        class="custom-select custom-select-sm rounded-0 border border-grey rounded-2 bg-searchbox">
+                        class="custom-select custom-select-sm rounded-0 border border-grey rounded-2 bg-searchbox" aria-label="Sort Direction">
                         <option value="asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Ascending
                         </option>
                         <option value="desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Descending
                         </option>
                     </select>
                     <input type="hidden" name="q" value="{{ request.GET.q }}">
-                    <button type="submit" class="sort-button btn rounded-2 text-uppercase">Sort</button>
+                    <button type="submit" class="sort-button btn rounded-2 text-uppercase" aria-label="Sort Button">Sort</button>
                 </div>
-            </form>
+            </form>            
         </div>
     </div>
 

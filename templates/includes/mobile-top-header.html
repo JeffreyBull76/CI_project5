@@ -33,7 +33,7 @@
                 <input class="form-control border border-grey rounded-2 bg-searchbox" type="text" name="q"
                   placeholder="Search our products" value="{{ search_query }}">
                 <div class="input-group-append">
-                  <button class="form-control btn btn-searchbox border border-grey rounded-2" type="submit">
+                  <button class="form-control btn btn-searchbox border border-grey rounded-2" type="submit" aria-label="Search">
                     <span class="icon">
                       <i class="fas fa-search"></i>
                     </span>
@@ -46,7 +46,7 @@
               <li>
                 {% if grand_total > 0 %}
                 <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
-                  href="{% url 'view_bag' %}">
+                  href="{% url 'view_bag' %}" aria-label="shopping bag">
                   <div class="text-center">
                     <div class="d-flex align-items-center">
                       <div class="mr-2">
