@@ -18,13 +18,16 @@
                 <hr class="pt-2">
                 <h2 class="logo-font sub-header2-font mb-4">Contact Messages</h2>
                 <h5 class="text-muted pt-2">Customer and Business-to-Business enquiries requiring attention</h5>
-                {% with new_messages_count=messages|length %}
                 <p>
-                    {% if new_messages_count > 0 %}You have  ({{ new_messages_count }}) Message(s) requiring attention.{% else %}You have no new Messages{% endif %}
+                    {% if new_messages_count > 0 %}
+                        You have {{ new_messages_count }} message(s) requiring attention.
+                    {% else %}
+                        You have no new messages.
+                    {% endif %}
                 </p>
-                {% endwith %}
                 <hr class="mb-2">
             </div>
+            
         </div>
 
         <div class="row mb-5">

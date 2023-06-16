@@ -85,12 +85,14 @@ def contact_form_management_view(request):
 
     contact_forms = ContactForm.objects.all()
 
-    # otification for new messages
+    # Count new messages
     new_messages_count = contact_forms.count()
-    if new_messages_count > 0:
-        messages.info(request, f"You have {new_messages_count} new message(s).")  # noqa
 
-    return render(request, 'home/contact_form_management.html', {'contact_forms': contact_forms})  # noqa
+    # Pass new_messages_count to the template context
+    return render(request, 'home/contact_form_management.html', {
+        'contact_forms': contact_forms,
+        'new_messages_count': new_messages_count
+    })
 
 
 @login_required

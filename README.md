@@ -23,11 +23,23 @@ Minimal viable product for ecommerce candle and lifestyle product store.
     
 <br />
 
-* [**SITE FEATURES**](<#site-features>)
-    * [Inherited Code](<#inherited-code>)
-    * [Depreciated Code](<#depreciated-code>)
-    * [page 1](<#page-1>)
-    * [User Feedback](<#user-feedback>)
+* [**SITE FEATURES**](#site-features)
+    * [Inherited Code](#inherited-code)
+    * [Depreciated Code](#depreciated-code)
+    * [Landing Page](#landing-page)
+    * [Newsletter Signup](#newsletter-signup)
+    * [Products Page](#products-page)
+    * [Product Details Page](#product-details-page)
+    * [Contact Page](#contact-page)
+    * [Customer Messages Page](#customer-messages-page)
+    * [Allauth Pages](#allauth-pages)
+    * [Manage Products Page](#manage-products-page)
+    * [Profile Page](#profile-page)
+    * [Bag Page](#bag-page)
+    * [Checkout Page](#checkout-page)
+    * [Checkout Success Page](#checkout-success-page)
+    * [Order History Page](#order-history-page)
+    * [User Feedback](#user-feedback)
 
 <br />
 
@@ -65,13 +77,13 @@ Minimal viable product for ecommerce candle and lifestyle product store.
 ## **OVERVIEW**
 
 ### **Site Plan**
-<br>E-commerce website built using Django to showcase learning outcomes from my Code Institute course. The website is for a once-real, but now defunct (due to moving countries), actual business that sold artisan candles. This iteration presumes the business is being restarted and now branching into other lifestyle products.
+<br>Fully responsive E-commerce website built using Django & Bootstrap to showcase learning outcomes of Porject 5 for my Code Institute course. The website is for a once-real, but now defunct (due to moving countries), actual business that sold artisan candles. This iteration presumes the business is being restarted and now branching into other lifestyle products.
 
 While technically fake, this may serve as a jumping-off point for a new website for this business or, at the very least, a test bed to ideate from, as we plan to restart the business now that we are settled in Ireland.
 
 The design concept is somewhat in keeping with the original site and the existing but dormant Facebook page. It should be an e-commerce site that focuses on a small inventory of items, with high customer engagement and feedback in the form of a review system and wishlist.
 
-Visually, it should be modern, clean, and styled to suit a lifestyle brand.
+The deployed site represents an MVP which would be iterated on going forward.
 
 --------------------------------------------------------
 
@@ -167,6 +179,7 @@ Cinzel was chosen as a more decorative text for main title and Slabo as a still 
 The navigation UI is significantly changed mechanically from the walkthrough, and changed in appearance as well. I now have the title central the search bar off to the far right of the screen and all nav buttons on the left. The shopping bag remains hidden until items are added. 
 
 * ETHOS:
+  * All pages are fully responsive in line with modern best practices.
   * I left the structure deliberately unclutttered as this is a small scale business.
   * It should be intuitve to find what you need and not require lots of clicking
 
@@ -176,8 +189,28 @@ The navigation UI is significantly changed mechanically from the walkthrough, an
 ![Nav Bar](readme/assets/images/b%26s_navbar.jpg)
 
 * NAVBAR STRUCTURE:
-  * The shop button loads a html template (using includes in syntax) that iterates through our two product cateogories.
+  * The shop button loads a html template (using includes) that iterates through our two product cateogories.
   This allows for new categories to be added dynamically. And a third static element which goes to an all products view.
+  * Contact button is populated with two options: 
+    * A connect option to allow users to submit forms to the sites admin. 
+    * If an admin is logged in this shows a separate option to access the Message page and a number in parenthesis showing the number of messages requiring attention.
+  * My account is populated with 2 options for non logged users:
+    * Register
+    * Login
+  * My account is populated with 3 options for logged users:
+    * Manage products is displayed if user is an admin that navigates to the relevant page.
+    * Profile allows updating and reviewing profile and orders.
+    * Logout
+  * Search Bar: this sits over to the right and allows searching products by keyword in either title or description. It also allows searching multiple terms at once (changed from walkthrough).
+  * Shopping cart: this option only appears to users when items are added to current bag session.
+
+<br />
+
+  * FOOTER ELEMENT:
+
+  ![Site Footer](readme/assets/images/footer.jpg)
+
+  * The site footer is a consistent component that appears on all pages of the website. It features a standard copyright statement and includes two links to the business's social media profiles: Facebook and Pinterest. These links direct visitors to the official Facebook page and Pinterest page of the business. Although the business is currently not active and the pages are not regularly updated, they remain unchanged from the time of the business's initial launch until it was temporarily put on hold due to relocation. In the event of a relaunch, these pages would require updating with new information and products, but for now, they are presented in their original form.
 
 --------------------------------------------------------
 
@@ -189,38 +222,212 @@ The navigation UI is significantly changed mechanically from the walkthrough, an
 
 ### **Inherited Code**
 
-Text here
+The navigation UI in this project has undergone significant changes, both mechanically and visually. The codebase for this project inherits the foundational structure and shared code from the walkthrough blog project on the CI course. The models and basic project structure from the previous project served as a starting pointonly. 
+
+Throughout the development process, the codebase was iterated on and substantially extended. However, it is important to acknowledge the shared lineage and the influence of the initial project.
+
+As this is purely an MVP to showcase learning outcomes at this time, I felt it best to stick to the base structure but later in my roadmap section I will note areas this could change further if it were to become a real project.
 
 <br />
 
 ### **Depreciated Code**
-Text here
+
+The code presented below is my custom code that was once part of the repo but since removed following testing.
 
 <br />
 
-<details><summary>Text here</summary>
+<details><summary>Allowed back buttons to retain search categories / keywords</summary>
 
-OLD CODE GOES HERE
+```
+   <td colspan="5" class="text-right">
+   {% if request.META.HTTP_REFERER %}
+   <a href="{{ request.META.HTTP_REFERER }}"
+       class="rating-button btn rounded-2 text-uppercase">
+       <span class="icon-pale pr-2">
+           <i class="fas fa-chevron-left"></i>
+       </span>
+       <span class="text-uppercase">Keep Shopping</span>
+   </a>
+   {% else %}
+   <a href="{% url 'products' %}" class="rating-button btn rounded-2 text-uppercase">
+       <span class="icon-pale pr-2">
+           <i class="fas fa-chevron-left"></i>
+       </span>
+       <span class="text-uppercase">Keep Shopping</span>
+   </a>
+   {% endif %}
+```
+<br>
+
+* This code was originally a simple and somewhat clumsy solution to having smart back buttons for the search page. The HTTP_REFERER element allowed it to retain search information. However this created issues with back buttons on pages where the previous page was not a product search. So for example if a user navigated to a product, left a review then used the back button it would just return them to the same page they were on. 
+
+* SOLUTION: For now this functionality was removed and all back buttons return to all products view. See roadmap for future solution ideas to this problem.
 
 </details>
 
 <br />
 
 ### **Live Code**
-Text here
-
-### **Models.py file**
-Text here
+I have added extensive annotation to all my Python files in the live code which details its function and how it was built. This of course could be edited down in a production version but it is included here to show what was learned. The various .py files have this throughout. Some of the code which remains unchanged from the walkthrough does not have any annotation added.
 
 <br />
 
-### **Page 1**
+### **Landing Page**
+
+* The main landing page for the online store. It displays splash text introducing the store's main product (rapeseed wax candles) and encourages visitors to explore the candle collection and sign up for the newsletter. The page follows the structure defined in the base.html template (which itself has all our dependencies and meta information).
+  * Splash text is concise and descriptive and uses strong styling element to highlight the most relevant keywords for the purposes of web crawlers.
+
+<details><summary>Landing Page</summary>
+
+![Landing Page](readme/assets/images/landing-page.jpg)
+
+</details>
+
+<br />
+
+### **Newsletter Signup**
 
 Text here
 
 <details><summary>Text here</summary>
 
-![Landing Page1]()
+![Newsletter Signup](readme/assets/images/newsletter-page.jpg)
+
+</details>
+
+<br />
+
+### **Products Page**
+
+Text here
+
+<details><summary>Text here</summary>
+
+![Products Page](readme/assets/images/products-page.jpg)
+
+</details>
+
+<br />
+
+### **Product Details Page**
+
+Text here
+
+<details><summary>Text here</summary>
+
+![Product Details Page](readme/assets/images/product-detail-page.jpg)
+
+![Post Review Tab](readme/assets/images/product-postreview-tab.jpg)
+
+![View Review Tab](readme/assets/images/product-viewreview-tab.jpg)
+
+</details>
+
+<br />
+
+### **Contact Page**
+
+Text here
+
+<details><summary>Text here</summary>
+
+![Contact Page](readme/assets/images/contact-page.jpg)
+
+</details>
+
+<br />
+
+### **Contact Messages Page**
+
+Text here
+
+<details><summary>Text here</summary>
+
+![Contact Messages Page](readme/assets/images/contact-messages-page.jpg)
+
+</details>
+
+<br />
+
+### **Allauth Pages**
+
+Text here
+
+<details><summary>Text here</summary>
+
+![Allauth Pages]()
+
+</details>
+
+<br />
+
+### **Manage Products Page**
+
+Text here
+
+<details><summary>Text here</summary>
+
+![Manage Products Page]()
+
+</details>
+
+<br />
+
+### **Profile Page**
+
+Text here
+
+<details><summary>Text here</summary>
+
+![Profile Page]()
+
+</details>
+
+<br />
+
+### **Bag Page**
+
+Text here
+
+<details><summary>Text here</summary>
+
+![Bag Page]()
+
+</details>
+
+<br />
+
+### **Checkout Page**
+
+Text here
+
+<details><summary>Text here</summary>
+
+![Checkout Page]()
+
+</details>
+
+<br />
+
+### **Checkout Success Page**
+
+Text here
+
+<details><summary>Text here</summary>
+
+![Checkout Success Page]()
+
+</details>
+
+<br />
+
+### **Order History Page**
+
+Text here
+
+<details><summary>Text here</summary>
+
+![Order History Page]()
 
 </details>
 
