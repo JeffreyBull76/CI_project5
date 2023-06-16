@@ -1,12 +1,12 @@
 # **BULL & SEA**
 
-Online artisan candle shop
+Minimal viable product for ecommerce candle and lifestyle product store.
 
-[View live website here]()
+[View live website here](https://p5-bull-and-sea.herokuapp.com/)
 
 <br />
 
-![Bull & Sea AmIresponsive design]()
+![Bull & Sea AmIresponsive design](readme/assets/images/amiresponsive.jpg)
 
 <br />
 
@@ -16,7 +16,7 @@ Online artisan candle shop
 
 * [**OVERVIEW**](<#overview>)
     * [Site Plan](<#site-plan>)
-    * [Design Concept](<#design-concept>)
+    * [Database Schema](<#database_schema>)
     * [User Stories & Agile](<#user-stories-and-agile>)
     * [Wireframes](<#wireframes>)
     * [User Interface](<#user-interface>)
@@ -65,12 +65,19 @@ Online artisan candle shop
 ## **OVERVIEW**
 
 ### **Site Plan**
-Plan text here
+<br>E-commerce website built using Django to showcase learning outcomes from my Code Institute course. The website is for a once-real, but now defunct (due to moving countries), actual business that sold artisan candles. This iteration presumes the business is being restarted and now branching into other lifestyle products.
+
+While technically fake, this may serve as a jumping-off point for a new website for this business or, at the very least, a test bed to ideate from, as we plan to restart the business now that we are settled in Ireland.
+
+The design concept is somewhat in keeping with the original site and the existing but dormant Facebook page. It should be an e-commerce site that focuses on a small inventory of items, with high customer engagement and feedback in the form of a review system and wishlist.
+
+Visually, it should be modern, clean, and styled to suit a lifestyle brand.
 
 --------------------------------------------------------
 
-### **Design Concept**
-Design concept here
+### **Database Schema**
+
+<br>Here you can see the DB Schema plan visually represented.
 
 <details>
 <summary>Schema</summary>

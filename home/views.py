@@ -59,7 +59,7 @@ def contact_form_view(request):
             if any(char.isdigit() for char in first_name):
                 form.add_error('first_name', 'Only letters are allowed in the first name.')  # noqa
             if any(char.isdigit() for char in last_name):
-                form.add_error('first_name', 'Only letters are allowed in the last name.')  # noqa
+                form.add_error('last_name', 'Only letters are allowed in the last name.')  # noqa
             if any(char.isalpha() for char in phone_number):
                 form.add_error('phone_number', 'Only numbers are allowed in the phone number.')  # noqa
 
