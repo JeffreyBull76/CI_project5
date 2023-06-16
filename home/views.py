@@ -79,16 +79,17 @@ def contact_form_view(request):
 # login required to prevent logged out access
 @login_required
 def contact_form_management_view(request):
-    """
-    View to handle retrieving contact form entries
-    """
-
-    # prevent non superusers accessing this view
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
 
     contact_forms = ContactForm.objects.all()
+
+    # otification for new messages
+    new_messages_count = contact_forms.count()
+    if new_messages_count > 0:
+        messages.info(request, f"You have {new_messages_count} new message(s).")  # noqa
+
     return render(request, 'home/contact_form_management.html', {'contact_forms': contact_forms})  # noqa
 
 
@@ -109,7 +110,7 @@ def delete_message(request, message_id):
         message.delete()
 
     messages.info(request, 'Message deleted!')
-    # Redirect to contact management page after deletion
+    # Redirect after deletion
     return redirect('contact_management')
 
 

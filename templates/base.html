@@ -13,8 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Jeffrey Bull">
   <meta name="description" content="Bull & Sea - Handmade candles and lifestyle products">
-  <meta name="keywords"
-    content="handmade candles, environmentally friendly candles, rapeseed wax candles, organic scent candles, 
+  <meta name="keywords" content="handmade candles, environmentally friendly candles, rapeseed wax candles, organic scent candles, 
     high quality candles, cruelty-free candles, eco-friendly candles, natural candles, sustainable candles, artisan candles, 
     non-toxic candles, vegan candles, clean-burning candles, ethical candles, small batch candles, home fragrance, hand-poured candles, 
     sustainable home decor, natural wax candles, aromatherapy candles, slow-burning candles, eco-conscious candles, conscious living, 
@@ -91,7 +90,11 @@
                 aria-labelledby="navbarDropdown1">
                 <a href="{% url 'contact' %}" class="dropdown-item">Contact</a>
                 {% if request.user.is_superuser %}
-                <a href="{% url 'contact_management' %}" class="dropdown-item">Messages</a>
+                {% with new_messages_count=messages|length %}
+                <a href="{% url 'contact_management' %}" class="dropdown-item">
+                  Messages {% if new_messages_count > 0 %}({{ new_messages_count }}){% endif %}
+                </a>
+                {% endwith %}
                 {% endif %}
               </div>
             </li>
@@ -162,9 +165,11 @@
 
           <form class="form-inline" method="GET" action="{% url 'search_products' %}" aria-label="Search Form">
             <div class="input-group w-100">
-              <input class="form-control border border-grey rounded-2 bg-searchbox" type="text" name="q" placeholder="Search our products" value="{{ search_query }}" aria-label="Search Input">
+              <input class="form-control border border-grey rounded-2 bg-searchbox" type="text" name="q"
+                placeholder="Search our products" value="{{ search_query }}" aria-label="Search Input">
               <div class="input-group-append">
-                <button class="form-control btn btn-searchbox border border-grey rounded-2" type="submit" aria-label="Search Button">
+                <button class="form-control btn btn-searchbox border border-grey rounded-2" type="submit"
+                  aria-label="Search Button">
                   <span class="icon">
                     <i class="fas fa-search"></i>
                   </span>
@@ -172,7 +177,7 @@
               </div>
             </div>
           </form>
-          
+
         </div>
       </div>
     </div>
@@ -233,4 +238,5 @@
   {% endblock %}
 
 </body>
+
 </html>

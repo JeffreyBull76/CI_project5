@@ -531,7 +531,7 @@ body {
 }
 
 .form-management-container {
-    max-width: 98%;
+    overflow-x: hidden;
 }
 
 /* Product Form */
