@@ -33,7 +33,7 @@ Minimal viable product for ecommerce candle and lifestyle product store.
     * [Products Page](#products-page)
     * [Product Details Page](#product-details-page)
     * [Contact Page](#contact-page)
-    * [Customer Messages Page](#customer-messages-page)
+    * [Contact Messages Page](#contact-messages-page)
     * [Allauth Pages](#allauth-pages)
     * [Manage Products Page](#manage-products-page)
     * [Profile Page](#profile-page)
@@ -749,11 +749,11 @@ The Checkout Page where users can complete their orders by providing necessary d
 
 <hr>
 
-### **Checkout Success Page**
+## **Checkout Success Page**
 
 The checkout success page is displayed to users after they have successfully placed an order. This Markdown readme description provides an overview of the Order Confirmation Page and its features.
 
-## Features
+### Features
 
 - **Order Information**: The page displays the order details, including the order number, order date, and order items. Each item in the order is listed, showing the product name, quantity, and individual price.
 - **Delivery Information**: The page also presents the delivery information provided by the user during the checkout process. This includes the user's full name, address details (street address, city/town, county, postal code), country, and phone number.
@@ -776,7 +776,7 @@ The checkout success page is displayed to users after they have successfully pla
 
 <hr>
 
-### **Order History View**
+## **Order History View**
 
 The same as the previous checkout success page, but called by clicking on order number within a users profile (see image below)
 
@@ -842,7 +842,7 @@ Please keep in mind that while the current implementation may not process actual
 
 <hr>
 
-## **TECHNOLOGY USED**
+# **TECHNOLOGY USED**
 
 ## **Languages**
   * [HTML](https://www.w3.org/standards/webdesign/htmlcss) - Base structure
@@ -911,7 +911,7 @@ Please keep in mind that while the current implementation may not process actual
 
 <hr>
 
-## **TESTING**
+# **TESTING**
 
 ## **Fixed Bugs**
 * No major bugs existed worthy of note except the one piece of unwanted function introduced by trying to provide dynamic back buttons (see previous entries on this).
