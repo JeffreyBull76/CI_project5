@@ -1409,15 +1409,15 @@ If the site were to go live google adwords would need to be considered, but in t
 
 </details>
 
-* ## AWS hosting
+## AWS hosting
 
-A brief overview of the process for hosting images on AWS (Amazon Web Services) using S3 (Simple Storage Service). I followed the walkthrough guides for this as it was quite in depth but below is a synposis of the process.
+A brief overview of the process for hosting images on AWS (Amazon Web Services) using S3 (Simple Storage Service). I followed the walkthrough guides for this as it was quite in depth but below is a synopsis of the process.
 
-## Prerequisites
+### Prerequisites
 
 - If you don't have one you'll need an account, sign up at the [AWS website](https://aws.amazon.com/).
 
-## Steps
+### Steps
 
 1. **Set up an S3 bucket**
    - Create an S3 bucket to store your images.
@@ -1464,6 +1464,7 @@ All images used are my own original work created for this project, with the exce
 ## **ACKNOWLEDGEMENTS**
 
 Thanks to fellow slack students and CI staff who gave advice and also my mentor. 
+And thanks to CI for giving me the opportunity to do this course in the first place.
 But mostly thanks to my Wife for putting up with me during this time !
 
 <hr>
