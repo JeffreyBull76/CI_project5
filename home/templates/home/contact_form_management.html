@@ -18,13 +18,12 @@
                 <hr class="pt-2">
                 <h2 class="logo-font sub-header2-font mb-4">Contact Messages</h2>
                 <h5 class="text-muted pt-2">Customer and Business-to-Business enquiries requiring attention</h5>
-                <p>
+                <p class="contact-alert-message">
                     {% if new_messages_count > 0 %}
                         You have {{ new_messages_count }} message(s) requiring attention.
                     {% else %}
                         You have no new messages.
                     {% endif %}
-                    
                 </p>
                 <hr class="mb-2">
             </div>
@@ -46,7 +45,7 @@
                             <p class="card-text comment-text">{{ contact_form.comment }}</p>
                             <p class="card-text"><strong>Created At:</strong> {{ contact_form.created_at }}</p>
                             {% if request.user.is_superuser %}
-                            <form method="POST" action="{% url 'delete_message' message_id=contact_form.form_id %}">
+                            <form class="pt-3" method="POST" action="{% url 'delete_message' message_id=contact_form.form_id %}">
                                 {% csrf_token %}
                                 <button type="submit" class="btn btn-danger">Delete</button>
                             </form>

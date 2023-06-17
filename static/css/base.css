@@ -534,6 +534,11 @@ body {
     overflow-x: hidden;
 }
 
+.contact-alert-message {
+    padding-top: 4px;
+    color: #007bff !important;
+}
+
 /* Product Form */
 
 .btn-file {

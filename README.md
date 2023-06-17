@@ -228,6 +228,8 @@ Throughout the development process, the codebase was iterated on and substantial
 
 As this is purely an MVP to showcase learning outcomes at this time, I felt it best to stick to the base structure but later in my roadmap section I will note areas this could change further if it were to become a real project.
 
+STRIPE: A special note on the stripe code and integration used. This is unchanged from the walkthrough project. All webhook handling is tested as working on my live code (see testing later)
+
 <br />
 
 ### **Depreciated Code**
@@ -355,7 +357,7 @@ Text here
 
 <details><summary>Text here</summary>
 
-![Allauth Pages]()
+![Allauth Pages](readme/assets/images/allauth-page.jpg)
 
 </details>
 
@@ -367,7 +369,7 @@ Text here
 
 <details><summary>Text here</summary>
 
-![Manage Products Page]()
+![Manage Products Page](readme/assets/images/product-management-page.jpg)
 
 </details>
 
@@ -379,7 +381,7 @@ Text here
 
 <details><summary>Text here</summary>
 
-![Profile Page]()
+![Profile Page](readme/assets/images/profile-page.jpg)
 
 </details>
 
@@ -391,7 +393,7 @@ Text here
 
 <details><summary>Text here</summary>
 
-![Bag Page]()
+![Bag Page](readme/assets/images/bag-page.jpg)
 
 </details>
 
@@ -403,7 +405,7 @@ Text here
 
 <details><summary>Text here</summary>
 
-![Checkout Page]()
+![Checkout Page](readme/assets/images/checkout-page.jpg)
 
 </details>
 
@@ -415,19 +417,19 @@ Text here
 
 <details><summary>Text here</summary>
 
-![Checkout Success Page]()
+![Checkout Success Page](readme/assets/images/checkout-success.jpg)
 
 </details>
 
 <br />
 
-### **Order History Page**
+### **Order History View**
 
 Text here
 
 <details><summary>Text here</summary>
 
-![Order History Page]()
+![Order History Page](readme/assets/images/order-history-view.jpg)
 
 </details>
 
