@@ -143,6 +143,8 @@ In theory, this would be the first step in a much larger and longer process. Thi
       * MY ACCOUNT - Manage Products (admin feature) > Profile > Allauth account templates
   * I also have a footer (present on all pages) which features the social media linkage.
   * Newsletter signup page - accessed from home page and checkout success page.
+  * Bag view page
+  * Checkout view page
 
 --------------------------------------------------------
 
@@ -193,7 +195,7 @@ The navigation UI is significantly changed mechanically from the walkthrough, an
   This allows for new categories to be added dynamically. And a third static element which goes to an all products view.
   * Contact button is populated with two options: 
     * A connect option to allow users to submit forms to the sites admin. 
-    * If an admin is logged in this shows a separate option to access the Message page and a number in parenthesis showing the number of messages requiring attention.
+    * If an admin is logged in this shows the number of messages requiring attention (or displays a message saying no messages)
   * My account is populated with 2 options for non logged users:
     * Register
     * Login
@@ -226,9 +228,11 @@ The navigation UI in this project has undergone significant changes, both mechan
 
 Throughout the development process, the codebase was iterated on and substantially extended. However, it is important to acknowledge the shared lineage and the influence of the initial project.
 
-As this is purely an MVP to showcase learning outcomes at this time, I felt it best to stick to the base structure but later in my roadmap section I will note areas this could change further if it were to become a real project.
+As this is purely an MVP to showcase learning outcomes, at this time I felt it best to stick to the base structure but later in my roadmap section I will note areas this could change further if it were to become a real project.
 
 STRIPE: A special note on the stripe code and integration used. This is unchanged from the walkthrough project. All webhook handling is tested as working on my live code (see testing later)
+
+
 
 <br />
 
@@ -272,13 +276,22 @@ The code presented below is my custom code that was once part of the repo but si
 ### **Live Code**
 I have added extensive annotation to all my Python files in the live code which details its function and how it was built. This of course could be edited down in a production version but it is included here to show what was learned. The various .py files have this throughout. Some of the code which remains unchanged from the walkthrough does not have any annotation added.
 
+Across all forms and elements validation checks are present where appropriate to prevent invalid entries.
+
 <br />
 <hr>
 
 # **Landing Page**
 
-* The main landing page for the online store. It displays splash text introducing the store's main product (rapeseed wax candles) and encourages visitors to explore the candle collection and sign up for the newsletter. The page follows the structure defined in the base.html template (which itself has all our dependencies and meta information).
+Uses the base template extended by index.html and then further extended by the various templates across the site.
+
+## Features
+
+- **Main page**: Displays splash text introducing the store's main product (rapeseed wax candles) and encourages visitors to explore the candle collection and sign up for the newsletter. The page follows the structure defined in the base.html template (which itself has all our dependencies and meta information).
   * Splash text is concise and descriptive and uses strong styling element to highlight the most relevant keywords for the purposes of web crawlers.
+
+## Notes:
+- **Future development**: More detail could be added on the front page, such as scrollable content, pleasant inviting animations and video elements and more prominent links to social media sites.
 
 <details><summary>LANDING PAGE IMAGE</summary>
 
@@ -299,14 +312,6 @@ This page provides a simple and user-friendly interface for collecting user info
 - **Unsubscribe Option**: Users are informed that they can unsubscribe from the newsletter at any time. The page provides an email address where users can send their unsubscribe requests.
 - **Responsive Design**: The signup page is designed to be responsive, ensuring optimal viewing and interaction across different devices and screen sizes.
 
-## Usage
-
-1. Access the signup page by navigating to the appropriate URL.
-2. Fill out the signup form with the required information.
-3. Click the "Submit" button to subscribe to the newsletter.
-4. Optionally, review the terms and conditions section for more details.
-5. To unsubscribe from the newsletter, send an email to the provided email address with "Unsubscribe" in the subject line.
-
 ## Notes:
 - **Future development**: In a live environment an automated backend integration would be required both for the sending of a newsletter and the unsubscribe feature. I did debate adding a delete address feature but it would serve no purpose in a real world project as it would be open to abuse so its left out here. It could eventually be integrated in the expanded admin messaging panel that could allow the composition of newlsetters in the front end and allow updating and targetting signup list addresses though this would require significantly more testing and development than is possible here.
 
@@ -320,30 +325,20 @@ This page provides a simple and user-friendly interface for collecting user info
 
 # **Products Page**
 
-The Product Listing Page provides various features for sorting and presenting products in our database. This page can be accessed from 2 views, either by category or by search term(s). In both cases the sorting works and could be easily extended to provide further functionality.
+The Product Listing Page renders the product views & provides various features for sorting and presenting products in our database. This page can be accessed from 2 views, either by category or by search term(s). In both cases the sorting works and could be easily extended to provide further functionality.
 
 ## Features
 
 - **Product Display**: The page presents a collection of products in a grid layout. Each product is represented as a card with its image, name, price, and category information.
 - **Sorting**: Users can sort the products based on price or average rating. The page includes a sorting form with options to select the sorting criteria and direction (ascending or descending). Upon submitting the form, the products are rearranged according to the selected criteria. This sorting works when products 
 - **Category Filtering**: If applicable, users can filter the products by a specific category. The page displays a heading indicating the selected category, allowing users to browse products within that category specifically.
-- **Search Term Filtering**: If applicable, users can filter the products by a keyword searchs from our nabvar. The page displays a heading indicating the selected category, allowing users to browse products within that category specifically.
+- **Search Term Filtering**: If applicable, users can filter the products by a keyword searchs from our nabvar. The page displays a heading indicating the selected search query where applicable.
 - **Average Rating**: For products with available reviews, the page calculates and displays the average rating in the form of stars. This allows users to quickly assess the overall quality of each product.
 - **Superuser Options**: If the user is a superuser, additional options are provided for editing or deleting products. This functionality enables superusers to manage the product inventory efficiently.
 - **Back to Top Button**: A "Back to Top" button is available, allowing users to easily navigate back to the top of the page with a single click.
 
-## Usage
-
-1. Access the Product Listing Page by navigating to the appropriate URL.
-2. Browse the list of products displayed on the page.
-3. To sort the products, use the sorting form to select the desired criteria and direction. Click the "Sort" button to apply the sorting.
-4. If applicable, click on a specific category to filter the products and view only those belonging to the selected category.
-5. Review the product details, including the product image, name, price, and category.
-6. If available, check the average rating of the product based on user reviews.
-7. If you are a superuser, additional options to edit or delete products are provided for efficient management.
-8. To quickly navigate back to the top of the page, click the "Back to Top" button.
-
-Please note that this project utilizes Django, a powerful web framework that simplifies the development of dynamic web applications. It handles various aspects, such as routing, database integration, and template rendering, to provide a seamless user experience on the Product Listing Page.
+## Notes:
+- **Future development**: In future a way prevent accidental deletion would be required. Either a modal or hidden div could be used which served as a two step deletion process. It is not included here as its relatively simple to add but just adds pointless clicks at a pre-test phase. Following a first deployment to a live testing environment and resultant feedback, a feature such as two step authorization could be added if needed.
 
 
 <details><summary>PRODUCTS PAGE IMAGE</summary>
@@ -354,27 +349,65 @@ Please note that this project utilizes Django, a powerful web framework that sim
 
 <br />
 
-### **Product Details Page**
+# **Product Details Page**
 
-Text here
+The Product Detail Page provides detailed information about a specific product. It allows users to view product details, reviews, and make purchases. The page uses Bootstraps built in tabbed content element. It allows us to have 3 distinct sections (see below) for product details, showing current reviews and showing the form to post reviews.
 
-<details><summary>Text here</summary>
+## Features
+
+- **Product Image**: The page displays an image of the product, allowing users to visually assess its appearance.
+- **Tabbed Content**: The page organizes information into tabs, providing easy navigation between different sections such as product details, reviews, and post review.
+- **Product Details**: The details tab provides comprehensive information about the product, including its name, price, category, average rating, and description. Users can also find a link to the corresponding category page.
+  * This tab allows editing and deletion of products in the same way as the products listing page. As there is may require two step authentication in future.
+- **Reviews**: The reviews tab displays user reviews for the product. Each review includes the username, rating, and comments. Users can also see whether a review is authorized or awaiting authorization. Superusers and staff members have additional options to authorize or delete reviews.
+  * Displays users reviews as card elements, the ratings are applied immediately but the review comments are blocked by default until admins authorise them to prevent malicious content being posted.
+  * Admins can authorise with one simple button click from here or from admin panel.
+  * Once authorised, users can delete their own reviews from here. Admins can delete anyones review.
+- **Post Review**: The post review tab allows authenticated users to submit their own reviews for the product. Users can rate the product and provide comments. If the user has already purchased the product, they will see the review form; otherwise, they will be prompted to log in or register.
+  * Has various template checks in place. 
+  * First checks for authenticated user (registered and logged in)
+  * Secondly checks if a review has already been posted by this user for this product.
+  * Third it checks if the user has purchased the product (must be in order history)
+  * If all three conditions are met it allows the posting of a rating and comment. The comment is not required to allow users to rate products without leaving a text review. 
+
+## Notes:
+- **Future development**: Currently it will still display the review card of blank reviews (to allow for deletion and authorisation) but a better solution could be found in future versions if this proved annoying for test users.
+
+<details><summary>PRODUCT DETAIL IMAGE</summary>
 
 ![Product Details Page](readme/assets/images/product-detail-page.jpg)
 
-![Post Review Tab](readme/assets/images/product-postreview-tab.jpg)
+</details>
+
+<details><summary>REVIEWS TAB IMAGE</summary>
 
 ![View Review Tab](readme/assets/images/product-viewreview-tab.jpg)
 
 </details>
 
+<details><summary>POST REVIEW TAB IMAGE</summary>
+
+![Post Review Tab](readme/assets/images/product-postreview-tab.jpg)
+
+</details>
+
 <br />
 
-### **Contact Page**
+# **Contact Page**
 
-Text here
+The Contact Page allows users to get in touch with the website administrators / owners. It provides a convenient and user-friendly interface for users to send inquiries, feedback, or any other messages. All contact form enquiries are saved to the database to prevent loss of data and allow for future functionality and cross app features.
 
-<details><summary>Text here</summary>
+## Features
+
+- **Contact Form**: The page includes a contact form where users can enter their information, such as name, email, phone number, and message. 
+- **User-Friendly Interface**: The contact form is designed to be intuitive and easy to use, ensuring a smooth experience for users when submitting their inquiries.
+- **Validation and Error Handling**: The form includes validation checks to ensure that required fields are filled out correctly. If there are any errors or missing information, appropriate error messages are displayed to guide users in correcting their input.
+- **Responsive Design**: A decision was taken to not link contact form entries to a specific user or user profile, as this would prevent non registered users from accessing this.
+
+## Notes:
+- **Future development**: In future more checks could be added so it still allowed non registered access, but also tracked contact forms sent by registered users and linked them to their profile.
+
+<details><summary>CONTACT PAGE IMAGE</summary>
 
 ![Contact Page](readme/assets/images/contact-page.jpg)
 
@@ -382,11 +415,23 @@ Text here
 
 <br />
 
-### **Contact Messages Page**
+# **Contact Messages Page**
 
-Text here
+The Contact Messages Page displays messages submitted through the contact form. It serves as a front end page for managing customer and business-to-business inquiries that require attention. The page provides an organized view of the contact messages, allowing administrators to review and take necessary actions.
 
-<details><summary>Text here</summary>
+## Features
+
+- **Message Overview**: The page provides an overview of contact messages, including the first name, last name, email, phone number, comment, and creation timestamp for each message.
+- **Attention Indicator**: Administrators can quickly identify new messages that require attention through an attention indicator. The page displays the count of new messages that need to be reviewed.
+- **Delete Functionality**: Superusers have the option to delete messages directly from the page. A delete button is provided for each message, enabling efficient management of messages.
+
+## Notes:
+- **Future development**: This page is mostly included as a first proof of concept for a larger in app messaging / contact system. It would require 1 or more of the following to going forward.
+  * Track new and old messages: This could be done relatively simply if this feature proved useful. It would mean admins could flag messages as 'read' without deleting them meaning they would no longer show as new messages but still remained to be interacted with. They could then be rendered on a separate page (archived messages) so data was retained but they didn't clog up the page.
+  * Allow front end form creation for admins to answer messages from this page. A message could be selected which navigated to a reply form that if hooked up the backend correctly could send an email directly from the this page without requiring separate emails to be sent.
+  * If users and user profiles were hooked up to this feature it would allow querying of orders and other such functionality.
+
+<details><summary>CONTACT MESSAGES PAGE IMAGE</summary>
 
 ![Contact Messages Page](readme/assets/images/contact-messages-page.jpg)
 
@@ -394,11 +439,16 @@ Text here
 
 <br />
 
-### **Allauth Pages**
+# **Allauth Pages**
 
-Text here
+The Base Allauth template is used as a foundation for other urls within the website. It provides a consistent structure and layout for the pages while allowing customization of specific content sections.
 
-<details><summary>Text here</summary>
+## Features
+
+- **User Menu**: The menu section provides options for user authentication. If the user is authenticated, they can access actions like changing their email or signing out. If the user is not authenticated, options for signing in or signing up are available.
+  * Users can login, logout, register and so on from here, it uses Allauths templates but customised to suit the project
+
+<details><summary>ALLAUTH PAGE IMAGE</summary>
 
 ![Allauth Pages](readme/assets/images/allauth-page.jpg)
 
@@ -406,11 +456,27 @@ Text here
 
 <br />
 
-### **Manage Products Page**
+# **Manage Products Page**
 
-Text here
+# Add Product Page
 
-<details><summary>Text here</summary>
+The Add Product Page allows admins to add new products to the website's product inventory. It provides a user-friendly interface for entering product details and uploading an associated image. The page is designed to streamline the product addition process and ensure accurate information for each new product.
+
+## Features
+
+- **Product Form**: The Add Product Page includes a form where users can enter the details of the new product. The form includes fields for various attributes, such as product name, price, description, and category. The form is designed using the Django Crispy Forms library, which enhances form rendering and validation.
+- **Image Upload**: Users can select an image file to associate with the new product. The page includes an image upload field that allows users to choose an image file from their local device. The selected image file name is displayed dynamically to provide visual feedback.
+  * The widget used here is the same as the walkthrough project.
+- **Form Submission**: Upon completing the product details and uploading the image, users can submit the form. The form data is sent via a POST request to the server, where it is processed and saved to the database. Successful submission redirects the user to the products page, allowing them to view the newly added product in the inventory.
+
+## Edit products page
+
+Is broadly similar but simply allows editing of existing products rather than adding new ones.
+
+## Notes:
+- **Future development**: Integrate a way to autoupload images to AWS on form submission (currently manually uploading the image is required)
+
+<details><summary>MANAGE PRODUCTS IMAGE</summary>
 
 ![Manage Products Page](readme/assets/images/product-management-page.jpg)
 
