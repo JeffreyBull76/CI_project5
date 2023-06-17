@@ -26,6 +26,7 @@ Minimal viable product for ecommerce candle and lifestyle product store.
 * [**SITE FEATURES**](#site-features)
     * [Inherited Code](#inherited-code)
     * [Depreciated Code](#depreciated-code)
+    * [Live Code](#live-code)
     * [Landing Page](#landing-page)
     * [Newsletter Signup](#newsletter-signup)
     * [Products Page](#products-page)
@@ -398,6 +399,26 @@ The Product Detail Page provides detailed information about a specific product. 
 
 <br />
 
+<details><summary>PRODUCT DETAIL IMAGE</summary>
+
+![Product Details Page](readme/assets/images/product-detail-page.jpg)
+
+</details>
+
+<details><summary>REVIEWS TAB IMAGE</summary>
+
+![View Review Tab](readme/assets/images/product-viewreview-tab.jpg)
+
+</details>
+
+<details><summary>POST REVIEW TAB IMAGE</summary>
+
+![Post Review Tab](readme/assets/images/product-postreview-tab.jpg)
+
+</details>
+
+<br />
+
 ### **Javascript Used**:
 
 <details><summary>JS Code Block</summary>
@@ -452,26 +473,6 @@ $('.decrement-qty').click(function(e) {
 3. Every time a quantity input is changed, the code checks and adjusts the enable/disable state of the buttons accordingly.
 4. The code increments the quantity by 1 when the "+" button is clicked, updates the input value, and adjusts the enable/disable state.
 5. The code decrements the quantity by 1 when the "-" button is clicked, updates the input value, and adjusts the enable/disable state.
-
-</details>
-
-<br />
-
-<details><summary>PRODUCT DETAIL IMAGE</summary>
-
-![Product Details Page](readme/assets/images/product-detail-page.jpg)
-
-</details>
-
-<details><summary>REVIEWS TAB IMAGE</summary>
-
-![View Review Tab](readme/assets/images/product-viewreview-tab.jpg)
-
-</details>
-
-<details><summary>POST REVIEW TAB IMAGE</summary>
-
-![Post Review Tab](readme/assets/images/product-postreview-tab.jpg)
 
 </details>
 
@@ -748,11 +749,11 @@ The same as the previous checkout success page, but called by clicking on order 
 
 <hr>
 
-# **STRIPE NOTES**
+## **STRIPE NOTES**
 
 The Stripe payment system has been integrated into the site to provide a secure payment processing solution. 
 
-## MVP Implementation and Webhooks
+### MVP Implementation and Webhooks
 
 It's important to emphasize that the current implementation of Stripe's payment system in this project is focused on MVP functionality and does not include full payment processing capabilities. The primary purpose is to enable user testing and evaluate the integration of webhooks.
 
