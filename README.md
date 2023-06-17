@@ -66,15 +66,19 @@ Minimal viable product for ecommerce candle and lifestyle product store.
 
 <br />
 
-* [DEPLOYMENT](<#deployment>)
+* [**SEO**](<#seo>)
 
 <br />
 
-* [CREDITS](<#credits>)
+* [**DEPLOYMENT**](<#deployment>)
 
 <br />
 
-* [ACKNOWLEDGEMENTS](<#acknowledgements>)
+* [**CREDITS**](<#credits>)
+
+<br />
+
+* [**ACKNOWLEDGEMENTS**](<#acknowledgements>)
 
 <br />
 
@@ -237,11 +241,19 @@ The navigation UI is significantly changed mechanically from the walkthrough, an
 
 <br />
 
-  * FOOTER ELEMENT:
+* MOBILE & SMALL SCREEN UI: 
 
-  ![Site Footer](readme/assets/images/footer.jpg)
+  * The mobile UI changes slightly. There is no home button instead the main site heading functions as a home link. The hamburger menu causes the nav area to slide down and reveals the remaining nav elements which are laid out differently.
+    * I may remove the small bag view in the success message on mobile as its fairly intrusive. For now its left but will need user testing in a live environment.
+    * The slide in animations for the dropdown menu are removed on small and mobile screens.
+
+<br />
+
+* FOOTER ELEMENT:
 
   * The site footer is a consistent component that appears on all pages of the website. It features a standard copyright statement and includes two links to the business's social media profiles: Facebook and Pinterest. These links direct visitors to the official Facebook page and Pinterest page of the business. Although the business is currently not active and the pages are not regularly updated, they remain unchanged from the time of the business's initial launch until it was temporarily put on hold due to relocation. In the event of a relaunch, these pages would require updating with new information and products, but for now, they are presented in their original form.
+
+  ![Site Footer](readme/assets/images/footer.jpg)
 
 <br />
 
@@ -892,7 +904,8 @@ Please keep in mind that while the current implementation may not process actual
   * [Coolors](https://coolors.co/) - Used to create color palette
   * [DRAW Sql](https://drawsql.app/) - Used to create visual DB schema
   * [CSS Tricks](https://css-tricks.com/css-link-hover-effects/) - Arrow effect for messages
-
+  * [Placeholder Images](https://placehold.co/) - Use to generate placeholder images fully configurable.
+  
 <br />
 
 ## **Testing resources**
@@ -1181,9 +1194,8 @@ All user stories marked as 'done' on our project board [HERE](https://github.com
 | Status | **Admin Page**
 |:-------:|:--------|
 | &check; | Custom 404 page exists and shows when the user manually enters an incorrect address extension |
-| &check; | All standard admin functionality is available | 
-| &check; | Extra function to allow mass publishing from dropdown present and working |
-| &check; | All form data is admissable from the Admin panel in line with the model |
+| &check; | All standard admin functionality is available |
+| &check; | All data is admissable from the Admin panel in line with the models |
 | &check; | Users are able to navigate back to the site easily |
 
 <br />
@@ -1196,112 +1208,166 @@ All user stories marked as 'done' on our project board [HERE](https://github.com
 
 ## **Validation**
 
-  **HTML validation:**
-  All HtML was vaidated and returned no errors. See below for warnings:
+### **HTML validation:**
+ All HtML was vaidated and returned no errors. See below for warnings:
 
-###  - **All script tags return the following warning:**
-  - * Warning: The type attribute is unnecessary for JavaScript resources.
+- **All script tags return the following warning:**
+- Warning: The type attribute is unnecessary for JavaScript resources.
 
-  I tried removing these but it stopped some of the scripts working, as its only a warning it is left in but noted.
+I tried removing these but it stopped some of the scripts working, as its only a warning it is left in but noted.
 
-  <details><summary>HTML Validation</summary>
+<details><summary>HTML Validation</summary>
 
-  [Landing page validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fp5-bull-and-sea.herokuapp.com%2F)
+[Landing page validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fp5-bull-and-sea.herokuapp.com%2F)
 
-  [Products page validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fp5-bull-and-sea.herokuapp.com%2Fproducts%2F)
+[Products page validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fp5-bull-and-sea.herokuapp.com%2Fproducts%2F)
 
-  [Contact page validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fp5-bull-and-sea.herokuapp.com%2Fcontact%2F)
+[Contact page validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fp5-bull-and-sea.herokuapp.com%2Fcontact%2F)
 
-  [Contact form management validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fp5-bull-and-sea.herokuapp.com%2Fcontact-management%2F)
+[Contact form management validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fp5-bull-and-sea.herokuapp.com%2Fcontact-management%2F)
 
-  [Bag Page validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fp5-bull-and-sea.herokuapp.com%2Fbag%2F)
+[Bag Page validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fp5-bull-and-sea.herokuapp.com%2Fbag%2F)
 
-  [Checkout page validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fp5-bull-and-sea.herokuapp.com%2Fcheckout%2F)
+[Checkout page validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fp5-bull-and-sea.herokuapp.com%2Fcheckout%2F)
 
-  [Add products page validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fp5-bull-and-sea.herokuapp.com%2Fproducts%2Fadd%2F)
+[Add products page validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fp5-bull-and-sea.herokuapp.com%2Fproducts%2Fadd%2F)
 
-  [Profile page validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fp5-bull-and-sea.herokuapp.com%2Fprofile%2F)
+[Profile page validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fp5-bull-and-sea.herokuapp.com%2Fprofile%2F)
 
-  [Signup page validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fp5-bull-and-sea.herokuapp.com%2Fsignup%2F)
+[Signup page validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fp5-bull-and-sea.herokuapp.com%2Fsignup%2F)
 
-  [Product details page validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fp5-bull-and-sea.herokuapp.com%2Fproducts%2F3%2F)
+[Product details page validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fp5-bull-and-sea.herokuapp.com%2Fproducts%2F3%2F)
 
-
-  <br />
-
-  </details>
-
-  <br />
-
-  **CSS validation:**
-  All code was checked and returns no errors.
-
-  <details><summary>CSS Validation</summary>
-
-  [CSS validation](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fp5-bull-and-sea.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
-
-  <br />
-
-  </details>
-  
-  <br />
-
-  **Javascript validation:**
-
-  Add JS testing images 
-
-  <details><summary>JS Validation</summary>
-
-  ![JS validation]()
-
-  </details>
-  
-  <br />
-
-  **Lighthouse testing:**
-
-  Test data here
-
-  <br />
-
-  **Wave web accessibility test:**
-
-  Testing output here
-
-  <details><summary>Wave web test</summary>
-
-  Wave web test:
-
-  ![Wave web test]()
-
-  <br />
-
-  </details>
+Checkout success page excluded from pre-built list due to requiring specific order item to search. This has been tested and returned no errors.
 
 <br />
 
-## **Lessons Learned**
+</details>
+
+<hr>
+
+<br />
+
+### **CSS validation:**
+All code was checked and returns no errors.
+
+<details><summary>CSS Validation</summary>
+
+[CSS validation](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fp5-bull-and-sea.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+
+<br />
+
+</details>
+
+<hr>
+  
+<br />
+
+### **Javascript validation:**
+
+All JS tested and passed, warnings are non critical and ignored (beyond scope of project)
+
+<details><summary>JS Validation Images</summary>
+
+![Countryfield JS](readme/assets/images/countryfield_js.jpg)
+
+![New Image JS](readme/assets/images/new_image_js.jpg)
+
+![Stripe Elements JS](readme/assets/images/stripe_elements_js.jpg)
+
+![Update Bag JS](readme/assets/images/update_bag_js.jpg)
+
+Other JS was not tested as it consists of bootstrap elements to control dropdowns and similar functionality.
+
+</details>
+
+<hr>
+  
+<br />
+
+### **Lighthouse testing:**
+
+* On desktop the accessibility score is mainly due to content blocking and script blocking (beyond scope of project to address)
+
+* On mobile the speed is due to blocking by script elements (beyond scope of project to address)
+
+<details><summary>Lighthouse Testing</summary>
+
+![Lighthouse test](readme/assets/images/Pagespeed_Desktop.jpg)
+
+![Lighthouse test](readme/assets/images/Pagespeed_Mobile.jpg)
+
+<br />
+
+</details>
+
+<hr>
+
+<br />
+
+### **Wave web accessibility test:**
+
+* 1 error (see image) I could not find this error despite repeated attempts. I have added a note here for completion but further testing would be required to discover where this error originates.
+
+* 5 contrast errors, as detailed above these were left but could addressed following further testing.
+
+* Warnings relate to header elements
+
+<details><summary>Wave web test</summary>
+
+![Wave web test](readme/assets/images/wave_web_test.jpg)
+
+<br />
+
+</details>
+
+<hr>
+
+<br />
+
+### **Lessons Learned**
   * Text here
 
 <br />
 
---------------------------------------------------------
+<hr>
 
 ### [Contents Menu](<#table-of-contents>)
---------------------------------------------------------
 
-EDIT THIS
-## **DEPLOYMENT**
+<hr>
+
+# **SEO**
+
+* Setting up SEO (Search Engine Optimization) is crucial for a small business like Bull & Sea. During the creation of this MVP the following steps were taken.
+
+- **KEYWORDS**: Both short and long tail keywords were added pertaining to the main product of the site (candles) These were tested as best as possible across google 
+searches. 
+
+- **SPLASH TEXT**: The splash text contains relevant strongly highlighted keywords so score higher with web crawlers.
+
+- **LINKS**: Links to relevant Social Media business pages exist on all pages in the form of footer content. This should help crawlers rank our site higher due to having offsite links present throughout the site.
+
+- **SITEMAP XML**: A sitemap.xml file has been added, which is essentially a list of all the web pages we want search engines to index. Including a sitemap helps search engines discover and crawl your pages more efficiently, improving the visibility of your content in search results.
+
+- **ROBOTS TXT FILE**: A robots.txt file is present to guide search engine crawlers on how to navigate the website. The robots.txt file instructs search engines on which pages to crawl and which to exclude. It helps to prevent search engines from indexing irrelevant or duplicate content. In this case it only excludes the accounts pages as they aren't relevant to the search engines.
+
+<hr>
+
+### [Contents Menu](<#table-of-contents>)
+
+<hr>
+
+# **DEPLOYMENT**
 
 * Code was written in Gitpod by creating a repo from the initial CI full template [HERE](https://github.com/Code-Institute-Org/gitpod-full-template)
-* ### Forking the repository
+* ## Forking the repository
   * A copy of the GitHub Repository can be made by forking the GitHub account. This copy can be viewed and changes can be made to the copy without affecting the original repository. Take the following steps to fork the repository;
   * Log in to GitHub and locate the repository.
   * On the right-hand side of the page in line with the repository name is a button called 'Fork', click on the button to create a copy of the original repository in your GitHub Account.
 
 <br />
 
-* ### Cloning the repository
+* ## Cloning the repository
   * Under the repo’s name, click on the code tab.
   * In the Clone with HTTPS section, click on the clipboard icon to copy the given URL.
   * In your IDE of choice, open Git Bash.
@@ -1311,7 +1377,7 @@ EDIT THIS
 
 <br />
 
-* ### Deploying to Heroku
+* ## Deploying to Heroku
   * Create working Procfile
   * Ensure requirements.txt is up to date with pip freeze --local > requirement.txt - Vital so that Heroku knows what packages and dependencies are being used.
   * In our env.py files we use 'noqa' to stop error for long line, this was ok to leave as it not deployed to Heroku.
@@ -1326,14 +1392,15 @@ EDIT THIS
   * You do this by navigating to the deploy tab and selecting manual or automatic.
   * Check the build log for a successful build.
 
-* ### AWS hosting
-  * TEXT HERE
-
 <details><summary>Config Vars redacted</summary>
 
-![Config Vars redacted]()
+![Config Vars redacted](readme/assets/images/config-vars-redacted.jpg)
+
 
 </details>
+
+* ### AWS hosting
+  * TEXT HERE
 
 <br />
  
