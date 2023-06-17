@@ -834,6 +834,8 @@ Please keep in mind that while the current implementation may not process actual
 
 - **EXPANDED TAG LIST AND INTEGRATION**: This feature involves expanding the existing tag list and integrating it more comprehensively throughout the application. It will enhance product categorization, filtering, and search functionality, making it easier for users to find specific products based on their interests or preferences. This feels unwarranted for this particular site, as the product list would never be overly long. But it could be implemented further down the line.
 
+- **FLAG ITEMS THAT ARE NO LONGER AVAILABLE**: Currently if an admin deletes an item it does not cascade and delete orders associated with that product. This is desirable as to not invalidate past orders, however a way of noting this to Admins that orders contain no longer available prducts would be desirable, this could be part of a larger admin panel (see message system above)
+
 <br />
 
 <hr>
@@ -941,90 +943,113 @@ All user stories marked as 'done' on our project board [HERE](https://github.com
 | &check; | Using the navigation works correctly |
 | &check; | All scripts and resources load correctly |
 | &check; | The footer at the bottom shows correctly and the links work |
+| &check; | The navbar displays correctly and all links work |
+
+<br />
+
+| Status | **Navigation Bar** |
+|:-------:|:--------|
+| &check; | The "Home" link is active |
+| &check; | The "Shop" dropdown menu is displayed |
+| &check; | The "Connect" dropdown menu is displayed |
+| &check; | The "My Account" dropdown menu is displayed |
+| &check; | The shopping bag link is displayed when bag items are present |
+| &check; | The search form is present and functional |
+| &check; | The search box displays an error message when submitting without a query |
 
 <br />
 
 | Status | **Newsletter Signup Page**
 |:-------:|:--------|
 | &check; | Custom 404 page exists and shows when the user manually enters an incorrect address extension |
-| &check; | The Gallery page only shows for logged users, it is unreachable otherwise |
-| &check; | The Gallery page loads the post cards in a dynamic masonry gallery correctly |
-| &check; | On scroll new images become visible correctly using an intersection observer API |
-| &check; | The Main navigation links change to show account access and logout once signed in |
-| &check; | The Gallery navigation bar shows correctly once the user is logged in |
-| &check; | Gallery navigation bar links work correctly and redirect to the main gallery and submission form respectively |
-| &check; | Clicking the title when logged in correctly redirects to the gallery |
-| &check; | On new posts do not show in the gallery until published by superuser/staff |
-| &check; | Hovering over an image on desktop systems correctly fades in the image title, likes, and comments counters |
-| &check; | The hover function is correctly disabled on mobile and tablets |
-| &check; | All navigation links work correctly from the gallery page |
-| &check; | Clicking an image card takes you to the correct post details page |
-| &check; | The footer at the bottom shows correctly and the modal works |
+| &check; | Clicking the title reloads to index.html landing page |
+| &check; | The page extends the "base.html" template correctly |
+| ~~x~~ | Users can Unsubscribe from the newsletter (see known issues) |
+| &check; | The necessary static files are loaded |
+| &check; | The page header container is displayed |
+| &check; | The signup form card is present and styled correctly |
+| &check; | The signup form is rendered within the card |
+| &check; | The form includes a CSRF token |
+| &check; | The form elements are displayed correctly |
+| &check; | The submit button submits the form correctly |
+| &check; | The terms and conditions card is present and styled correctly |
+| &check; | The terms and conditions content is displayed correctly |
+| &check; | The email address for unsubscribing is properly formatted and linked |
+| &check; | The privacy policy and disclaimer statements are displayed correctly |
+| &check; | The terms and conditions notice is displayed correctly |
 
 <br />
 
-| Status | **Post Detail Page**
+| Status | **Products Listing Page** |
 |:-------:|:--------|
 | &check; | Custom 404 page exists and shows when the user manually enters an incorrect address extension |
-| &check; | Post details page only shows for logged users | 
-| &check; | On entering the page our view renders the post details and its relevant parameters to the fields | 
-| &cross; | Post detail page is bug-free (see known issues) |
-| &check; | All navigation links work correctly from this page |
-| &check; | Below the image the likes and comments counter appears correctly |
-| &check; | Clicking the like button toggles the like status for the current user |
-| &check; | A comment box form loads at the bottom of the page allowing users to post comments |
-| &check; | Posted comments render to the bottom left and correctly display a 'delete' button to the comment author |
-| &check; | Posting a comment automatically refreshes the page and reverse redirects |
-| &check; | The post text fields correctly allow for one-button copying to the clipboard via a script |
-| &check; | The footer at the bottom shows correctly and the modal works |
+| &check; | Clicking the title reloads to index.html landing page |
+| &check; | The page extends the "base.html" template correctly |
+| &check; | The necessary static files are loaded |
+| &check; | The page header container is displayed |
+| &check; | The sub-heading is displayed correctly based on the category or search query |
+| &check; | The sorting form is displayed correctly |
+| &check; | The sorting options are rendered properly |
+| &check; | The current sorting option is selected correctly |
+| &check; | The product cards are displayed in a grid layout |
+| &check; | Each product card includes an image |
+| &check; | The product name is displayed correctly |
+| &check; | The product price is displayed correctly |
+| &check; | The product category is displayed correctly if available |
+| &check; | The average rating is displayed correctly if available |
+| &check; | The edit and delete links are displayed for superusers |
+| &check; | The "Back to Top" button is displayed |
+| &check; | The "Back to Top" button scrolls to the top of the page when clicked |
+| &check; | If no products match the search, a proper message is displayed |
 
 <br />
 
-| Status | **Submit Post Page**
-|:-------:|:--------|
+| Status | **Product Details Page** |
+|:-------:|:--------------|
 | &check; | Custom 404 page exists and shows when the user manually enters an incorrect address extension |
-| &check; | All navigation links work correctly from this page |
-| &check; | Submit post page only shows for logged users | 
-| &check; | On entering the page the instructions panel shows correctly on all screen sizes | 
-| &check; | On entering the page our submission form renders correctly based on our Post model |
-| &check; | All form fields are error checked to prevent empty submissions |
-| &check; | On error correctly flags page as posted to prevent form clearly and redirects to self |
-| &check; | The title field checks for a unique name and correctly slugifies this data |
-| &check; | The form automatically detects the logged user and attaches their details to the submitted data |
-| &check; | The image field has a check in place to prevent data over 1MB from being submitted (temporary solution) |
-| &check; | Clicking submit correctly commits the data to the database and sends the image to Cloudinary |
-| &check; | Submitting data correctly redirects users back to the gallery page |
-| &check; | The footer at the bottom shows correctly and the modal works |
+| &check; | Clicking the title reloads to index.html landing page |
+| &check; | The page extends the base.html template correctly |
+| &check; | The necessary static files are loaded |
+| &check; | The page has a proper header container |
+| &check; | The content block is defined and filled with content |
+| &check; | The image element displays correctly with a fallback for missing images |
+| &check; | The tabbed content section is displayed correctly |
+| &check; | The tab headers are rendered properly |
+| &check; | The tab content is displayed and functional |
+| &check; | The details tab shows the product details accurately |
+| &check; | The reviews tab shows reviews and handles authorization correctly |
+| &check; | The post review tab is displayed based on user authentication |
+| &check; | The add review form is displayed for users who have purchased the product |
+| &check; | The script for quantity input is included and functions correctly |
+| &check; | The script for handling tabbed content is included and works as expected |
 
 <br />
 
-| Status | **Update Post Page**
-|:-------:|:--------|
-| &check; | Custom 404 page exists and shows when the user manually enters an incorrect address extension |
-| &check; | All navigation links work correctly from this page |
-| &check; | update post page only accessible for logged users | 
-| &check; | On entering the page form renders with the same formatting as post view page |
-| &check; | All form fields are Pre-populated with existing post details |
-| &check; | All form fields are error checked to prevent empty submissions |
-| &check; | When an error is encountered redirects the user to the current page |
-| &check; | Submitting data correctly redirects users back to the account page |
-| &check; | The footer at the bottom shows correctly and the modal works |
+| Status | **Contact Form Page**  |
+|:-------:|:----------|
+| &check; | The page extends the base.html template correctly |
+| &check; | The necessary static files are loaded |
+| &check; | The page has a proper header container |
+| &check; | The content block is defined and filled with content |
+| &check; | The form elements are displayed correctly |
+| &check; | Error messages are displayed for invalid form inputs |
+| &check; | The form submission is handled properly |
+| &check; | Cancel button redirects to the products page |
+| &check; | Submit button submits the form |
 
 <br />
 
-| Status | **Account Page**
-|:-------:|:--------|
+| Status | **Contact Form Management Page** |
+|:-------:|:----------|
 | &check; | Custom 404 page exists and shows when the user manually enters an incorrect address extension |
-| &check; | All navigation links work correctly from this page |
-| &check; | Account page only shows for logged users and shows their names correctly | 
-| &check; | Account page shows an admin button for superusers/staff only, allowing for easy navigation to the admin panel |
-| &check; | Correctly populates a list of draft posts for superusers/staff and allows for one-button publishing |
-| &check; | Correctly populates a list of user's own posts and allows for one-button updating and deletion |
-| &check; | All deletion and update actions require confirmation on request and show flash messages |
-| &check; | All redirects work conditionally to redirect to the account page |
-| &check; | Post deletion process also removes the image from Cloudinary |
-| &check; | All dynamic load animations for the gallery are removed from the account page|
-| &check; | The footer at the bottom shows correctly and the modal works |
+| &check; | Clicking the title reloads to index.html landing page |
+| &check; | Page is restricted for superusers only |
+| &check; | The page extends the "base.html" template correctly |
+| &check; | The message cards are displayed correctly with the appropriate styling. |
+| &check; | The message details are shown in each card. The card displays the details of each contact message, such as the first name, last name, email, phone number, comment, and created date. |
+| &check; | The number of new messages is displayed correctly. The appropriate message is displayed indicating the count of new messages. If there are no new messages, a message indicating so is displayed. |
+| &check; | Delete button is displayed for each message card. |
+| &check; | Delete button performs the delete action and removes the associated DB item. |
 
 <br />
 
@@ -1035,6 +1060,12 @@ All user stories marked as 'done' on our project board [HERE](https://github.com
 | &check; | Extra function to allow mass publishing from dropdown present and working |
 | &check; | All form data is admissable from the Admin panel in line with the model |
 | &check; | Users are able to navigate back to the site easily |
+
+<br />
+
+| Status | **Mobile / Small Screen View** |
+|:-------:|:--------|
+| &check; | All above functionality also works on mobile and small screens |
 
 <br />
 
