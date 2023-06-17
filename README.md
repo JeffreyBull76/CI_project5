@@ -229,6 +229,8 @@ The navigation UI is significantly changed mechanically from the walkthrough, an
 
 ### [Contents Menu](<#table-of-contents>)
 
+<hr>
+
 <br />
 
 # **SITE FEATURES**
@@ -284,8 +286,34 @@ The code presented below is my custom code that was once part of the repo but si
 
 <br />
 
-## **Live Code**
-I have added extensive annotation to all my Python files in the live code which details its function and how it was built. This of course could be edited down in a production version but it is included here to show what was learned. The various .py files have this throughout. Some of the code which remains unchanged from the walkthrough does not have any annotation added.
+<details><summary>Old search function</summary>
+
+```
+def search_products(request):
+    query = request.GET.get('q')
+
+    if query:
+        products = Product.objects.filter(Q(name__icontains=query) | Q(description__icontains=query))  # noqa
+    else:
+        products = Product.objects.none()
+
+    context = {
+        'products': products,
+        'search_query': query
+    }
+
+    return render(request, 'products/products.html', context)
+```
+<br>
+
+* This code was lacking with the site structure I implemented. Searching is now integrated into the `category_products` view and the `search_products` views which handle the two ways our products are retrieved when rendering the products page (as these two views both filter products in slightly different ways)
+
+</details>
+
+<br />
+
+## **Live Code Notes**
+I have added extensive annotation to all my Python files (please review where required) in the live code which details its function and how it was built. This of course could be edited down in a production version but it is included here to show what was learned. The various .py files have this throughout. Some of the code which remains unchanged from the walkthrough does not have any annotation added.
 
 Across all forms and elements validation checks are present where appropriate to prevent invalid entries.
 
@@ -330,6 +358,7 @@ This page provides a simple and user-friendly interface for collecting user info
 
 ### Notes:
 - **Future development**: In a live environment an automated backend integration would be required both for the sending of a newsletter and the unsubscribe feature. I did debate adding a delete address feature but it would serve no purpose in a real world project as it would be open to abuse so its left out here. It could eventually be integrated in the expanded admin messaging panel that could allow the composition of newlsetters in the front end and allow updating and targetting signup list addresses though this would require significantly more testing and development than is possible here.
+  * For now it exists as is but its current shortcomings are recognised.
 
 <br />
 
@@ -767,23 +796,29 @@ Please keep in mind that while the current implementation may not process actual
 
 ### [Contents Menu](<#table-of-contents>)
 
-<br />
-
 <hr>
 
-## **ROADMAP**
+# **ROADMAP**
 
-  Text here
+- **CONTACT FORM EXPANSION**: For now, this remains a proof of concept for what could become an internal messaging system for admins to answer customer inquiries. In theory, it could be expanded to allow the adding of different types of contact (such as business-to-business, complaints, etc.). Whether this proves a worthwhile use of development time would need to be judged after a test deploy and extensive user feedback. As detailed in various sections above, this could be integrated across many different features to allow users and admins to communicate more easily within the app.
 
-* Text here
+- **DYNAMIC BACK BUTTONS**: This feature aims to enhance the navigation experience by implementing dynamic back buttons that adapt to the user's browsing history. It would allow users to conveniently navigate back to the previous page they visited, improving overall usability.
+
+- **WISHLIST SYSTEM**: The wishlist system will enable users to save their favorite products for future reference or potential purchase. Users will be able to add items to their wishlist, view and manage the wishlist, and receive notifications for changes in availability or discounts on wishlisted items.
+
+- **SALE / OFFERS SYSTEM**: This feature aims to implement a sale/offers system to provide special discounts and promotions to users. It will enable the display of discounted prices, limited-time offers, promotional codes, or bundle deals, enhancing the user's shopping experience and encouraging increased sales.
+
+- **DELETE CONFIRMATION SYSTEM**: Working from feedback from the current MVP, a delete confirmation pop-up may be added to enhance user experience and prevent accidental deletion of important data. This system will prompt users to confirm their action before permanently deleting any content. I left this out for now as I felt implementing it then removing represented bad coding practice. Rather it was better to ommit now and add later if required in a live version.
+
+- **EXPANDED TAG LIST AND INTEGRATION**: This feature involves expanding the existing tag list and integrating it more comprehensively throughout the application. It will enhance product categorization, filtering, and search functionality, making it easier for users to find specific products based on their interests or preferences.
+
+- **MORE IMAGES ON PRODUCTS**: This feature aims to enhance product representation by allowing the addition of multiple images per product. It will provide users with a more comprehensive visual understanding of the products, potentially increasing engagement and conversion rates.
 
 <br />
 
 <hr>
 
 ### [Contents Menu](<#table-of-contents>)
-
-<br />
 
 <hr>
 
@@ -857,8 +892,6 @@ EDIT THIS
 <hr>
 
 ### [Contents Menu](<#table-of-contents>)
-
-<br />
 
 <hr>
 
@@ -1123,25 +1156,28 @@ EDIT THIS
 
 <br />
  
---------------------------------------------------------
+<hr>
 
 ### [Contents Menu](<#table-of-contents>)
---------------------------------------------------------
+
+<hr>
 
 ## **CREDITS**
 
 Text here
 
---------------------------------------------------------
+<hr>
 
 ### [Contents Menu](<#table-of-contents>)
---------------------------------------------------------
+
+<hr>
 
 ## **ACKNOWLEDGEMENTS**
 
 Text here
 
---------------------------------------------------------
+<hr>
 
 ### [Contents Menu](<#table-of-contents>)
---------------------------------------------------------
+
+<hr>
