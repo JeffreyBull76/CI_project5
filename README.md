@@ -17,7 +17,7 @@ Minimal viable product for ecommerce candle and lifestyle product store.
 * [**OVERVIEW**](<#overview>)
     * [Site Plan](<#site-plan>)
     * [Business Model](<#business-model>)
-    * [Database Schema](<#database_schema>)
+    * [Database Schema](<#database-schema>)
     * [User Stories & Agile](<#user-stories-and-agile>)
     * [Wireframes](<#wireframes>)
     * [User Interface](<#user-interface>)
@@ -226,8 +226,8 @@ The navigation UI is significantly changed mechanically from the walkthrough, an
 * NAVBAR STRUCTURE:
   * The shop button loads a html template (using includes) that iterates through our two product cateogories.
   This allows for new categories to be added dynamically. And a third static element which goes to an all products view.
-  * Contact button is populated with two options: 
-    * A connect option to allow users to submit forms to the sites admin. 
+  * Connect button is populated with two options: 
+    * A contact option to allow users to submit forms to the sites admin. 
     * If an admin is logged in this shows the number of messages requiring attention (or displays a message saying no messages)
   * My account is populated with 2 options for non logged users:
     * Register
@@ -342,7 +342,7 @@ def search_products(request):
 
 <br />
 
-## **Live Code Notes**
+## **Live Code**
 I have added extensive annotation to all my Python files (please review where required) in the live code which details its function and how it was built. This of course could be edited down in a production version but it is included here to show what was learned. The various .py files have this throughout. Some of the code which remains unchanged from the walkthrough does not have any annotation added.
 
 Across all forms and elements validation checks are present where appropriate to prevent invalid entries.
@@ -377,6 +377,7 @@ Uses the base template extended by index.html and then further extended by the v
 
 ## **Newsletter Signup**
 
+**NEW MODEL**
 This page provides a simple and user-friendly interface for collecting user information and subscribing them to periodic email updates.
 
 ### Features
@@ -433,6 +434,7 @@ The Product Listing Page renders the product views & provides various features f
 
 ## **Product Details Page**
 
+**REVIEW TAB IS NEW MODEL**
 The Product Detail Page provides detailed information about a specific product. It allows users to view product details, reviews, and make purchases. The page uses Bootstraps built in tabbed content element. It allows us to have 3 distinct sections (see below) for product details, showing current reviews and showing the form to post reviews.
 
 ### Features
@@ -541,6 +543,7 @@ $('.decrement-qty').click(function(e) {
 
 ## **Contact Page**
 
+**NEW MODEL**
 The Contact Page allows users to get in touch with the website administrators / owners. It provides a convenient and user-friendly interface for users to send inquiries, feedback, or any other messages. All contact form enquiries are saved to the database to prevent loss of data and allow for future functionality and cross app features.
 
 ### Features
@@ -576,9 +579,9 @@ The Contact Messages Page displays messages submitted through the contact form. 
 - **Delete Functionality**: Superusers have the option to delete messages directly from the page. A delete button is provided for each message, enabling efficient management of messages.
 
 ### Notes:
-- **Future development**: This page is mostly included as a first proof of concept for a larger in app messaging / contact system. It would require 1 or more of the following to going forward.
-  * Track new and old messages: This could be done relatively simply if this feature proved useful. It would mean admins could flag messages as 'read' without deleting them meaning they would no longer show as new messages but still remained to be interacted with. They could then be rendered on a separate page (archived messages) so data was retained but they didn't clog up the page.
-  * Allow front end form creation for admins to answer messages from this page. A message could be selected which navigated to a reply form that if hooked up the backend correctly could send an email directly from the this page without requiring separate emails to be sent.
+- **Future development**: This page is mostly included as a first proof of concept for a larger in app messaging / contact system. It would require 1 or more of the following going forward.
+  * Track new and old messages: This could be done relatively simply if this feature proved useful. It would mean admins could flag messages as 'read' without deleting them meaning they would no longer show as new messages but would still remain in the database. They could then be rendered on a separate page (archived messages) so data was retained but they didn't clog up the page.
+  * Allow front end form creation for admins to answer messages from this page. A message could be selected which navigated to a reply form. If hooked up to the backend correctly could send an email directly from the this page without requiring separate emails to be sent.
   * If users and user profiles were hooked up to this feature it would allow querying of orders and other such functionality.
 
 <br />
@@ -673,7 +676,7 @@ The Profile Page provides users with access to their account information and ord
 
 <hr>
 
-## **Shopping Bag Page**
+## **Bag Page**
 
 The Shopping Bag page allows users to view the items they have added to their bag while shopping on the website. It provides an overview of the items, their prices, quantities, and subtotal amounts. Users can adjust the quantities of items, remove items from the bag, and proceed to secure checkout. 
 
@@ -816,7 +819,7 @@ The Stripe payment system has been integrated into the site to provide a secure 
 
 It's important to emphasize that the current implementation of Stripe's payment system in this project is focused on MVP functionality and does not include full payment processing capabilities. The primary purpose is to enable user testing and evaluate the integration of webhooks.
 
-Webhooks play a crucial role in this MVP implementation. They are endpoints that allow Stripe to send real-time notifications to your application regarding specific payment events. By leveraging webhooks, you can track and respond to events such as successful payments, failed charges, and subscription updates, it also prevents user errors like double inputs or orders and so on.
+Webhooks play a crucial role in this MVP implementation. They are endpoints that allow Stripe to send real-time notifications to your application regarding specific payment events. With webhooks we can track and respond to events such as successful payments, failed charges, and subscription updates, it also prevents user errors like double inputs of orders, loss of data if navigating away during form submission... and so on.
 
 Please keep in mind that while the current implementation may not process actual payments, it serves as a foundation for future enhancements. In future development full integration with the API could be coded to allow actual payments to be made.
 
@@ -929,23 +932,23 @@ Please keep in mind that while the current implementation may not process actual
 # **TESTING**
 
 ## **Fixed Bugs**
-* No major bugs existed worthy of note except the one piece of unwanted function introduced by trying to provide dynamic back buttons (see previous entries on this).
+* No major bugs existed worthy of note except the one piece of unwanted function introduced by trying to provide dynamic back buttons (see depreciated code entry on this).
 
 <br />
 
 ## **Known Issues**
 * Currently users have no way of actually unsubscribing from the newsletter (addressed above)
 * Loading times for the application are slower than I would like due to heavy use of scripting and no ability to set or change cache policy. It also attempts to preload all data due to page structure and templates. In a real launch this would need to be addressed with host.
-* Some accessability issues around contrast are noted but I have chosen to accept them currently, I would need this be tested by visually imparied users to see if it needed changing.
+* Some accessability issues around contrast are noted but I have chosen to accept them currently, I would need this to be tested by visually imparied users to see if it needed changing.
 
 <br />
 
 ## **Manual Testing**
 All user stories marked as 'done' on our project board [HERE](https://github.com/users/JeffreyBull76/projects/6) were tested and signed off.
 
-<br />
+  * Below you can see the manual testing that was performed on each page of the site.
 
-## **Test Details**
+<br />
 
 | Status | **Landing Page** |
 |:-------:|:--------|
@@ -1309,7 +1312,7 @@ Other JS was not tested as it consists of bootstrap elements to control dropdown
 
 * 1 error (see image) I could not find this error despite repeated attempts. I have added a note here for completion but further testing would be required to discover where this error originates.
 
-* 5 contrast errors, as detailed above these were left but could addressed following further testing.
+* 5 contrast errors, as detailed above these were left but could be addressed following further testing.
 
 * Warnings relate to header elements
 
@@ -1338,7 +1341,7 @@ Other JS was not tested as it consists of bootstrap elements to control dropdown
 
 # **SEO**
 
-* Setting up SEO (Search Engine Optimization) is crucial for a small business like Bull & Sea. During the creation of this MVP the following steps were taken.
+Setting up SEO (Search Engine Optimization) is crucial for a small business like Bull & Sea. During the creation of this MVP the following steps were taken. 
 
 - **KEYWORDS**: Both short and long tail keywords were added pertaining to the main product of the site (candles) These were tested as best as possible across google 
 searches. 
@@ -1350,6 +1353,10 @@ searches.
 - **SITEMAP XML**: A sitemap.xml file has been added, which is essentially a list of all the web pages we want search engines to index. Including a sitemap helps search engines discover and crawl your pages more efficiently, improving the visibility of your content in search results.
 
 - **ROBOTS TXT FILE**: A robots.txt file is present to guide search engine crawlers on how to navigate the website. The robots.txt file instructs search engines on which pages to crawl and which to exclude. It helps to prevent search engines from indexing irrelevant or duplicate content. In this case it only excludes the accounts pages as they aren't relevant to the search engines.
+
+If the site were to go live google adwords would need to be considered, but in the short term extensive social media engagement at a local / county level.
+
+<br />
 
 <hr>
 
