@@ -85,6 +85,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
+                # processor to pass contact form count to all views
+                'bull_and_sea.context_processors.new_messages_count',
                 # processor to pass categories and products to all views
                 'products.context_processors.categories_and_products',
                 # processor to pass bag contents to all views
