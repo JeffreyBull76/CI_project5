@@ -65,18 +65,21 @@ Minimal viable product for ecommerce candle and lifestyle product store.
 <br />
 
 * [DEPLOYMENT](<#deployment>)
+
 <br />
 
 * [CREDITS](<#credits>)
+
 <br />
 
 * [ACKNOWLEDGEMENTS](<#acknowledgements>)
+
 <br />
 
---------------------------------------------------------
-## **OVERVIEW**
+# **OVERVIEW**
 
-### **Site Plan**
+## **Site Plan**
+
 <br>Fully responsive E-commerce website built using Django & Bootstrap to showcase learning outcomes of Porject 5 for my Code Institute course. The website is for a once-real, but now defunct (due to moving countries), actual business that sold artisan candles. This iteration presumes the business is being restarted and now branching into other lifestyle products.
 
 While technically fake, this may serve as a jumping-off point for a new website for this business or, at the very least, a test bed to ideate from, as we plan to restart the business now that we are settled in Ireland.
@@ -85,9 +88,9 @@ The design concept is somewhat in keeping with the original site and the existin
 
 The deployed site represents an MVP which would be iterated on going forward.
 
---------------------------------------------------------
+<br />
 
-### **Database Schema**
+## **Database Schema**
 
 <br>Here you can see the DB Schema plan visually represented. It inherits the core structure of Product, User and Categories from the walkthrough project.
 It adds and changes the following models.
@@ -108,9 +111,9 @@ It adds and changes the following models.
 
 </details>
 
---------------------------------------------------------
+<br />
 
-### **User Stories and Agile**
+## **User Stories and Agile**
 
 A comprehensive Git project page can be found here with my user stories. Overall, I wanted to focus on getting an MVP working, which could be iterated on later or expanded.
 
@@ -121,21 +124,22 @@ In theory, this would be the first step in a much larger and longer process. Thi
 [Project Board](https://github.com/users/JeffreyBull76/projects/6)
 
 
---------------------------------------------------------
+<br />
 
-### **Wireframes**
+## **Wireframes**
+
+I used an online wireframe tool to create my basic layout idea. It is by no means exhaustive and was ideated in production to what now exists. It provided a good base to work from.
 
 <details>
-<summary>I used an online wireframe tool to create my basic layout idea, that is not exhaustive and was ideated in production to what now exists.
+<summary>BULL AND SEA WIREFRAME PLAN</summary>
 
-[Fluid UI](https://www.fluidui.com/)
-</summary>
-
-![Wireframe](readme/assets/images/wireframe.jpg)
+![BULL AND SEA WIREFRAME PLAN](readme/assets/images/wireframe.jpg)
 
 </details>
 
-* SITE STRUCTURE:
+<br />
+
+### **FINAL SITE STRUCTURE:**
   * The main page structure remains similar to the walkthrough project. It has other templates added where required (such as those for new models)
   * Base page is extended by index which functions as our landing page. In turn the other main template views represented in our navigation are.
       * SHOP - Products > Product Details
@@ -146,9 +150,11 @@ In theory, this would be the first step in a much larger and longer process. Thi
   * Bag view page
   * Checkout view page
 
---------------------------------------------------------
+<br />
 
-### **Final Design**
+<hr>
+
+## **Final Design**
 
 * Font choice here:
     * Cinzel - for main title font and headings
@@ -174,9 +180,11 @@ Cinzel was chosen as a more decorative text for main title and Slabo as a still 
 
 * Hopefully the design feeling conveys artisan high quality products. 
 
---------------------------------------------------------
+<br />
 
-### **User Interface**
+
+
+## **User Interface**
 
 The navigation UI is significantly changed mechanically from the walkthrough, and changed in appearance as well. I now have the title central the search bar off to the far right of the screen and all nav buttons on the left. The shopping bag remains hidden until items are added. 
 
@@ -214,15 +222,17 @@ The navigation UI is significantly changed mechanically from the walkthrough, an
 
   * The site footer is a consistent component that appears on all pages of the website. It features a standard copyright statement and includes two links to the business's social media profiles: Facebook and Pinterest. These links direct visitors to the official Facebook page and Pinterest page of the business. Although the business is currently not active and the pages are not regularly updated, they remain unchanged from the time of the business's initial launch until it was temporarily put on hold due to relocation. In the event of a relaunch, these pages would require updating with new information and products, but for now, they are presented in their original form.
 
---------------------------------------------------------
+<br />
+
+<hr>
 
 ### [Contents Menu](<#table-of-contents>)
 
---------------------------------------------------------
+<br />
 
-## **SITE FEATURES**
+# **SITE FEATURES**
 
-### **Inherited Code**
+## **Inherited Code**
 
 The navigation UI in this project has undergone significant changes, both mechanically and visually. The codebase for this project inherits the foundational structure and shared code from the walkthrough blog project on the CI course. The models and basic project structure from the previous project served as a starting pointonly. 
 
@@ -236,7 +246,7 @@ STRIPE: A special note on the stripe code and integration used. This is unchange
 
 <br />
 
-### **Depreciated Code**
+## **Depreciated Code**
 
 The code presented below is my custom code that was once part of the repo but since removed following testing.
 
@@ -273,25 +283,28 @@ The code presented below is my custom code that was once part of the repo but si
 
 <br />
 
-### **Live Code**
+## **Live Code**
 I have added extensive annotation to all my Python files in the live code which details its function and how it was built. This of course could be edited down in a production version but it is included here to show what was learned. The various .py files have this throughout. Some of the code which remains unchanged from the walkthrough does not have any annotation added.
 
 Across all forms and elements validation checks are present where appropriate to prevent invalid entries.
 
 <br />
+
 <hr>
 
-# **Landing Page**
+## **Landing Page**
 
 Uses the base template extended by index.html and then further extended by the various templates across the site.
 
-## Features
+### Features
 
 - **Main page**: Displays splash text introducing the store's main product (rapeseed wax candles) and encourages visitors to explore the candle collection and sign up for the newsletter. The page follows the structure defined in the base.html template (which itself has all our dependencies and meta information).
   * Splash text is concise and descriptive and uses strong styling element to highlight the most relevant keywords for the purposes of web crawlers.
 
-## Notes:
+### Notes:
 - **Future development**: More detail could be added on the front page, such as scrollable content, pleasant inviting animations and video elements and more prominent links to social media sites.
+
+<br />
 
 <details><summary>LANDING PAGE IMAGE</summary>
 
@@ -301,19 +314,23 @@ Uses the base template extended by index.html and then further extended by the v
 
 <br />
 
-# **Newsletter Signup**
+<hr>
+
+## **Newsletter Signup**
 
 This page provides a simple and user-friendly interface for collecting user information and subscribing them to periodic email updates.
 
-## Features
+### Features
 
 - **Signup Form**: The page displays a signup form where users can enter their email address, to subscribe to the newsletter.
 - **Terms and Conditions**: A section displaying the terms and conditions of the newsletter subscription. It outlines important information regarding privacy, content usage, age requirements, and more.
 - **Unsubscribe Option**: Users are informed that they can unsubscribe from the newsletter at any time. The page provides an email address where users can send their unsubscribe requests.
 - **Responsive Design**: The signup page is designed to be responsive, ensuring optimal viewing and interaction across different devices and screen sizes.
 
-## Notes:
+### Notes:
 - **Future development**: In a live environment an automated backend integration would be required both for the sending of a newsletter and the unsubscribe feature. I did debate adding a delete address feature but it would serve no purpose in a real world project as it would be open to abuse so its left out here. It could eventually be integrated in the expanded admin messaging panel that could allow the composition of newlsetters in the front end and allow updating and targetting signup list addresses though this would require significantly more testing and development than is possible here.
+
+<br />
 
 <details><summary>NEWSLETTER SIGNUP IMAGE</summary>
 
@@ -323,11 +340,13 @@ This page provides a simple and user-friendly interface for collecting user info
 
 <br />
 
-# **Products Page**
+<hr>
+
+## **Products Page**
 
 The Product Listing Page renders the product views & provides various features for sorting and presenting products in our database. This page can be accessed from 2 views, either by category or by search term(s). In both cases the sorting works and could be easily extended to provide further functionality.
 
-## Features
+### Features
 
 - **Product Display**: The page presents a collection of products in a grid layout. Each product is represented as a card with its image, name, price, and category information.
 - **Sorting**: Users can sort the products based on price or average rating. The page includes a sorting form with options to select the sorting criteria and direction (ascending or descending). Upon submitting the form, the products are rearranged according to the selected criteria. This sorting works when products 
@@ -337,9 +356,10 @@ The Product Listing Page renders the product views & provides various features f
 - **Superuser Options**: If the user is a superuser, additional options are provided for editing or deleting products. This functionality enables superusers to manage the product inventory efficiently.
 - **Back to Top Button**: A "Back to Top" button is available, allowing users to easily navigate back to the top of the page with a single click.
 
-## Notes:
+### Notes:
 - **Future development**: In future a way prevent accidental deletion would be required. Either a modal or hidden div could be used which served as a two step deletion process. It is not included here as its relatively simple to add but just adds pointless clicks at a pre-test phase. Following a first deployment to a live testing environment and resultant feedback, a feature such as two step authorization could be added if needed.
 
+<br />
 
 <details><summary>PRODUCTS PAGE IMAGE</summary>
 
@@ -349,16 +369,19 @@ The Product Listing Page renders the product views & provides various features f
 
 <br />
 
-# **Product Details Page**
+<hr>
+
+## **Product Details Page**
 
 The Product Detail Page provides detailed information about a specific product. It allows users to view product details, reviews, and make purchases. The page uses Bootstraps built in tabbed content element. It allows us to have 3 distinct sections (see below) for product details, showing current reviews and showing the form to post reviews.
 
-## Features
+### Features
 
 - **Product Image**: The page displays an image of the product, allowing users to visually assess its appearance.
 - **Tabbed Content**: The page organizes information into tabs, providing easy navigation between different sections such as product details, reviews, and post review.
 - **Product Details**: The details tab provides comprehensive information about the product, including its name, price, category, average rating, and description. Users can also find a link to the corresponding category page.
   * This tab allows editing and deletion of products in the same way as the products listing page. As there is may require two step authentication in future.
+  * Javascript detailed below
 - **Reviews**: The reviews tab displays user reviews for the product. Each review includes the username, rating, and comments. Users can also see whether a review is authorized or awaiting authorization. Superusers and staff members have additional options to authorize or delete reviews.
   * Displays users reviews as card elements, the ratings are applied immediately but the review comments are blocked by default until admins authorise them to prevent malicious content being posted.
   * Admins can authorise with one simple button click from here or from admin panel.
@@ -370,8 +393,69 @@ The Product Detail Page provides detailed information about a specific product. 
   * Third it checks if the user has purchased the product (must be in order history)
   * If all three conditions are met it allows the posting of a rating and comment. The comment is not required to allow users to rate products without leaving a text review. 
 
-## Notes:
+### Notes:
 - **Future development**: Currently it will still display the review card of blank reviews (to allow for deletion and authorisation) but a better solution could be found in future versions if this proved annoying for test users.
+
+<br />
+
+### **Javascript Used**:
+
+<details><summary>JS Code Block</summary>
+
+```javascript
+// Disable +/- buttons outside 1-99 range
+function handleEnableDisable(itemId) {
+    var currentValue = parseInt($(`#id_qty_${itemId}`).val());
+    var minusDisabled = currentValue < 2;
+    var plusDisabled = currentValue > 98;
+    $(`#decrement-qty_${itemId}`).prop('disabled', minusDisabled);
+    $(`#increment-qty_${itemId}`).prop('disabled', plusDisabled);
+}
+
+// Ensure proper enabling/disabling of all inputs on page load
+var allQtyInputs = $('.qty_input');
+for(var i = 0; i < allQtyInputs.length; i++){
+    var itemId = $(allQtyInputs[i]).data('item_id');
+    handleEnableDisable(itemId);
+}
+
+// Check enable/disable every time the input is changed
+$('.qty_input').change(function() {
+    var itemId = $(this).data('item_id');
+    handleEnableDisable(itemId);
+});
+
+// Increment quantity
+$('.increment-qty').click(function(e) {
+   e.preventDefault();
+   var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
+   var currentValue = parseInt($(closestInput).val());
+   $(closestInput).val(currentValue + 1);
+   var itemId = $(this).data('item_id');
+   handleEnableDisable(itemId);
+});
+
+// Decrement quantity
+$('.decrement-qty').click(function(e) {
+   e.preventDefault();
+   var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
+   var currentValue = parseInt($(closestInput).val());
+   $(closestInput).val(currentValue - 1);
+   var itemId = $(this).data('item_id');
+   handleEnableDisable(itemId);
+});
+```
+
+- The `products/templates/products/includes/quantity_input_script.html` javascript handles the quantity inputs(see above):
+1. The `handleEnableDisable` function disables the "+" button if the current quantity is 1 or less, and disables the "-" button if the current quantity is 98 or more.
+2. On page load, the code ensures that the proper buttons are enabled or disabled for all quantity inputs.
+3. Every time a quantity input is changed, the code checks and adjusts the enable/disable state of the buttons accordingly.
+4. The code increments the quantity by 1 when the "+" button is clicked, updates the input value, and adjusts the enable/disable state.
+5. The code decrements the quantity by 1 when the "-" button is clicked, updates the input value, and adjusts the enable/disable state.
+
+</details>
+
+<br />
 
 <details><summary>PRODUCT DETAIL IMAGE</summary>
 
@@ -393,19 +477,23 @@ The Product Detail Page provides detailed information about a specific product. 
 
 <br />
 
-# **Contact Page**
+<hr>
+
+## **Contact Page**
 
 The Contact Page allows users to get in touch with the website administrators / owners. It provides a convenient and user-friendly interface for users to send inquiries, feedback, or any other messages. All contact form enquiries are saved to the database to prevent loss of data and allow for future functionality and cross app features.
 
-## Features
+### Features
 
 - **Contact Form**: The page includes a contact form where users can enter their information, such as name, email, phone number, and message. 
 - **User-Friendly Interface**: The contact form is designed to be intuitive and easy to use, ensuring a smooth experience for users when submitting their inquiries.
 - **Validation and Error Handling**: The form includes validation checks to ensure that required fields are filled out correctly. If there are any errors or missing information, appropriate error messages are displayed to guide users in correcting their input.
 - **Responsive Design**: A decision was taken to not link contact form entries to a specific user or user profile, as this would prevent non registered users from accessing this.
 
-## Notes:
+### Notes:
 - **Future development**: In future more checks could be added so it still allowed non registered access, but also tracked contact forms sent by registered users and linked them to their profile.
+
+<br />
 
 <details><summary>CONTACT PAGE IMAGE</summary>
 
@@ -415,21 +503,25 @@ The Contact Page allows users to get in touch with the website administrators / 
 
 <br />
 
-# **Contact Messages Page**
+<hr>
+
+## **Contact Messages Page**
 
 The Contact Messages Page displays messages submitted through the contact form. It serves as a front end page for managing customer and business-to-business inquiries that require attention. The page provides an organized view of the contact messages, allowing administrators to review and take necessary actions.
 
-## Features
+### Features
 
 - **Message Overview**: The page provides an overview of contact messages, including the first name, last name, email, phone number, comment, and creation timestamp for each message.
 - **Attention Indicator**: Administrators can quickly identify new messages that require attention through an attention indicator. The page displays the count of new messages that need to be reviewed.
 - **Delete Functionality**: Superusers have the option to delete messages directly from the page. A delete button is provided for each message, enabling efficient management of messages.
 
-## Notes:
+### Notes:
 - **Future development**: This page is mostly included as a first proof of concept for a larger in app messaging / contact system. It would require 1 or more of the following to going forward.
   * Track new and old messages: This could be done relatively simply if this feature proved useful. It would mean admins could flag messages as 'read' without deleting them meaning they would no longer show as new messages but still remained to be interacted with. They could then be rendered on a separate page (archived messages) so data was retained but they didn't clog up the page.
   * Allow front end form creation for admins to answer messages from this page. A message could be selected which navigated to a reply form that if hooked up the backend correctly could send an email directly from the this page without requiring separate emails to be sent.
   * If users and user profiles were hooked up to this feature it would allow querying of orders and other such functionality.
+
+<br />
 
 <details><summary>CONTACT MESSAGES PAGE IMAGE</summary>
 
@@ -439,14 +531,18 @@ The Contact Messages Page displays messages submitted through the contact form. 
 
 <br />
 
-# **Allauth Pages**
+<hr>
+
+## **Allauth Pages**
 
 The Base Allauth template is used as a foundation for other urls within the website. It provides a consistent structure and layout for the pages while allowing customization of specific content sections.
 
-## Features
+### Features
 
 - **User Menu**: The menu section provides options for user authentication. If the user is authenticated, they can access actions like changing their email or signing out. If the user is not authenticated, options for signing in or signing up are available.
   * Users can login, logout, register and so on from here, it uses Allauths templates but customised to suit the project
+
+<br />
 
 <details><summary>ALLAUTH PAGE IMAGE</summary>
 
@@ -456,25 +552,29 @@ The Base Allauth template is used as a foundation for other urls within the webs
 
 <br />
 
-# **Manage Products Page**
+<hr>
 
-# Add Product Page
+## **Manage Products Page**
+
+### Add Product Page
 
 The Add Product Page allows admins to add new products to the website's product inventory. It provides a user-friendly interface for entering product details and uploading an associated image. The page is designed to streamline the product addition process and ensure accurate information for each new product.
 
-## Features
+### Features
 
 - **Product Form**: The Add Product Page includes a form where users can enter the details of the new product. The form includes fields for various attributes, such as product name, price, description, and category. The form is designed using the Django Crispy Forms library, which enhances form rendering and validation.
 - **Image Upload**: Users can select an image file to associate with the new product. The page includes an image upload field that allows users to choose an image file from their local device. The selected image file name is displayed dynamically to provide visual feedback.
   * The widget used here is the same as the walkthrough project.
 - **Form Submission**: Upon completing the product details and uploading the image, users can submit the form. The form data is sent via a POST request to the server, where it is processed and saved to the database. Successful submission redirects the user to the products page, allowing them to view the newly added product in the inventory.
 
-## Edit products page
+### Edit products page
 
 Is broadly similar but simply allows editing of existing products rather than adding new ones.
 
-## Notes:
+### Notes:
 - **Future development**: Integrate a way to autoupload images to AWS on form submission (currently manually uploading the image is required)
+
+<br />
 
 <details><summary>MANAGE PRODUCTS IMAGE</summary>
 
@@ -484,11 +584,26 @@ Is broadly similar but simply allows editing of existing products rather than ad
 
 <br />
 
-### **Profile Page**
+<hr>
 
-Text here
+## **Profile Page**
 
-<details><summary>Text here</summary>
+The Profile Page provides users with access to their account information and order history. It allows users to view and update their default delivery information and review their past orders. The page is designed to be user-friendly and responsive.
+
+### Features
+
+- **Default Delivery Information**: Users can view their default delivery information, such as name, address, and contact details, conveniently displayed on the page.
+- **Update Information**: A form is provided for users to update their default delivery information. The form is pre-populated with the existing data and includes fields for users to make changes. Upon submitting the form, the updated information is saved to the database (form validation is present)
+- **Order History**: Users can access a table displaying their order history. Each order entry includes the order number, date, items purchased, and the total order amount.
+- **Order Details**: By clicking on the order number, users can navigate to a detailed view of a specific order. This view provides additional information about the order, including individual products purchased and their quantities.
+- **Post-load JavaScript**: Additional JavaScript functionality is included at the end of the page for handling country fields. The JavaScript file "countryfield.js" is loaded for this purpose.
+
+### Notes:
+- **Future development**: In future as mentioned earlier, greater integration with the messaging system could be put in place. Allowing users to perform some tasks from within their profile, such as messaging site admins, unsubscribing to the newsletter etc.
+
+<br />
+
+<details><summary>PROFILE PAGE IMAGE</summary>
 
 ![Profile Page](readme/assets/images/profile-page.jpg)
 
@@ -496,11 +611,55 @@ Text here
 
 <br />
 
-### **Bag Page**
+<hr>
 
-Text here
+## **Shopping Bag Page**
 
-<details><summary>Text here</summary>
+The Shopping Bag page allows users to view the items they have added to their bag while shopping on the website. It provides an overview of the items, their prices, quantities, and subtotal amounts. Users can adjust the quantities of items, remove items from the bag, and proceed to secure checkout. 
+
+### Features
+
+- **Table Overview**: The page displays a table with a detailed overview of the items in the shopping bag. Each row represents an individual item and includes the item's image, name, price, quantity, and subtotal amount.
+- **Update Quantity**: Users can update the quantity of each item by adjusting the corresponding input field. The quantity update is performed using an increment and decrement functionality.
+- **Remove Item**: Users can remove an item from the shopping bag by clicking the "Remove" link next to the item. The page automatically updates to reflect the changes.
+- **Bag Total**: The page displays the total price of the items in the bag, including the subtotal and delivery charges (if applicable). The grand total, which includes the bag total and delivery charges, is also shown.
+- **Navigation Buttons**: Users can navigate back to the product listing page to continue shopping or proceed to the secure checkout page using the provided navigation buttons.
+
+### Javascript used
+
+- This JavaScript code loaded from `quantity_input_script.html`used earlier in the product details page.
+- This code handles the functionality of updating the quantity of an item and removing an item from the shopping bag in this template.
+
+<details><summary>JS Code Block</summary>
+
+```// Update quantity on click
+    $('.update-link').click(function(e) {
+        var form = $(this).prev('.update-form');
+        form.submit();
+    });
+
+    // Remove item and reload on click
+    $('.remove-item').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var url = `/bag/remove/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken};
+
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    });
+  ```
+
+1. The `$('.update-link').click(...)` function is triggered when the "Update" link is clicked. It selects the corresponding form element and submits it, triggering the form submission action.
+2. The `$('.remove-item').click(...)` function is triggered when the "Remove" link is clicked. It retrieves the necessary information such as the CSRF token and the item ID from the HTML attributes. Then, it sends a POST request to the specified URL with the data. If the request is successful, it reloads the page.
+
+</details>
+
+<br />
+
+<details><summary>BAG PAGE IMAGE</summary>
 
 ![Bag Page](readme/assets/images/bag-page.jpg)
 
@@ -508,11 +667,31 @@ Text here
 
 <br />
 
-### **Checkout Page**
+<hr>
 
-Text here
+## **Checkout Page**
 
-<details><summary>Text here</summary>
+The Checkout Page where users can complete their orders by providing necessary details and making payments.
+
+### Features
+
+- **Order Summary**: The Checkout Page displays a summary of the user's order, including the number of items in the order and the total order amount. Each item in the order is listed, showing the item's name, size (if applicable), quantity, and subtotal.
+- **Form for Order Completion**: Users are presented with a form to fill out their details for order completion. The form includes fields for the user's full name, email, phone number, delivery address (street address, town/city, county, and postcode), and country.
+- **Saving Delivery Information**: If the user is authenticated, they have the option to save their delivery information to their profile by checking the "Save this delivery information to my profile" checkbox.
+- **Payment**: The Checkout Page includes a payment section where users can enter their payment information. It utilizes Stripe as the payment gateway, providing a secure and seamless payment experience.
+- **Navigation**: Users have the ability to adjust their bag and return to the previous page by clicking the "Adjust Bag" button. They can also complete their order by clicking the "Complete Order" button.
+
+### JavaScript Functionality
+
+- **Stripe Elements**: The page includes the necessary JavaScript code to integrate Stripe Elements for handling the payment section. It sets up the Stripe card element and displays any form errors or validation messages to the user.
+- **Loading Overlay**: A loading overlay is displayed while the page is processing information or waiting for a response. It provides visual feedback to the user, indicating that the page is working on their request.
+
+### Notes:
+- **Future development**: Full site would require setup so actual order fulfilment, stock tracking and payments were processed (beyond scope of this project)
+
+<br />
+
+<details><summary>CHECKOUT PAGE IMAGE</summary>
 
 ![Checkout Page](readme/assets/images/checkout-page.jpg)
 
@@ -520,11 +699,26 @@ Text here
 
 <br />
 
+<hr>
+
 ### **Checkout Success Page**
 
-Text here
+The checkout success page is displayed to users after they have successfully placed an order. This Markdown readme description provides an overview of the Order Confirmation Page and its features.
 
-<details><summary>Text here</summary>
+## Features
+
+- **Order Information**: The page displays the order details, including the order number, order date, and order items. Each item in the order is listed, showing the product name, quantity, and individual price.
+- **Delivery Information**: The page also presents the delivery information provided by the user during the checkout process. This includes the user's full name, address details (street address, city/town, county, postal code), country, and phone number.
+- **Billing Information**: The order's billing information is displayed, including the order total, delivery cost, and grand total.
+- **Navigation**: Users can navigate back to their profile page or the home page, depending on their context. The appropriate navigation link is displayed based on whether the user accessed the page from their profile or directly from the checkout process.
+- **Newsletter Subscription**: Users are provided with an option to sign up for the newsletter by clicking the "Sign up to our newsletter" button. This integration allows users to stay updated with the latest offers and promotions.
+
+### Notes:
+- **Future development**: This could in theory be integrated into the proposed internal messaging system so users could attach notes to their deliveries. So for example if they wanted special delivery notes added or wrapped as a gift for somebody (etc)
+
+<br />
+
+<details><summary>CHECKOUT SUCCESS PAGE IMAGE</summary>
 
 ![Checkout Success Page](readme/assets/images/checkout-success.jpg)
 
@@ -532,11 +726,19 @@ Text here
 
 <br />
 
+<hr>
+
 ### **Order History View**
 
-Text here
+The same as the previous checkout success page, but called by clicking on order number within a users profile (see image below)
 
-<details><summary>Text here</summary>
+### Notes:
+- **Future development**: This could in theory be integrated into the proposed internal messaging system so users could receive updates on their order, raise queries or complaints directly from within the app.
+  * Could also have repeat order functionality added to allow easily repeating an order.
+
+<br />
+
+<details><summary>ORDER HISORY VIEW IMAGE</summary>
 
 ![Order History Page](readme/assets/images/order-history-view.jpg)
 
@@ -544,16 +746,29 @@ Text here
 
 <br />
 
-### **User Feedback**
+<hr>
 
-  Text here
+# **STRIPE NOTES**
+
+The Stripe payment system has been integrated into the site to provide a secure payment processing solution. 
+
+## MVP Implementation and Webhooks
+
+It's important to emphasize that the current implementation of Stripe's payment system in this project is focused on MVP functionality and does not include full payment processing capabilities. The primary purpose is to enable user testing and evaluate the integration of webhooks.
+
+Webhooks play a crucial role in this MVP implementation. They are endpoints that allow Stripe to send real-time notifications to your application regarding specific payment events. By leveraging webhooks, you can track and respond to events such as successful payments, failed charges, and subscription updates, it also prevents user errors like double inputs or orders and so on.
+
+Please keep in mind that while the current implementation may not process actual payments, it serves as a foundation for future enhancements. In future development full integration with the API could be coded to allow actual payments to be made.
 
 <br />
 
---------------------------------------------------------
+<hr>
 
 ### [Contents Menu](<#table-of-contents>)
---------------------------------------------------------
+
+<br />
+
+<hr>
 
 ## **ROADMAP**
 
@@ -561,13 +776,19 @@ Text here
 
 * Text here
 
---------------------------------------------------------
+<br />
+
+<hr>
 
 ### [Contents Menu](<#table-of-contents>)
---------------------------------------------------------
+
+<br />
+
+<hr>
 
 ## **TECHNOLOGY USED**
 EDIT THIS
+
 ## **Languages**
   * [HTML](https://www.w3.org/standards/webdesign/htmlcss) - Base structure
   * [CSS](https://www.w3.org/standards/webdesign/htmlcss) - Style elements
@@ -630,10 +851,15 @@ EDIT THIS
 
 <br />
 
---------------------------------------------------------
+<br />
+
+<hr>
 
 ### [Contents Menu](<#table-of-contents>)
---------------------------------------------------------
+
+<br />
+
+<hr>
 
 ## **TESTING**
 
@@ -767,17 +993,20 @@ I did not have time to implement automated or unit tests. As the project is rela
 <br />
 
 ## **Validation**
+
   **HTML validation:**
   All code was manually fed into the validator. Various duplicate ID errors and missing alt tags were fixed. 
   Now returns no errors on all pages.
 
   <details><summary>HTML Validation</summary>
-  
-  <br />
-  
-  Page 1:
 
-  ![LPage 1 Validation]()
+  HTML validation:
+
+  ![HTML validation]()
+
+  <br />
+
+  </details>
 
   <br />
 
