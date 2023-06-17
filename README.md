@@ -273,13 +273,14 @@ The code presented below is my custom code that was once part of the repo but si
 I have added extensive annotation to all my Python files in the live code which details its function and how it was built. This of course could be edited down in a production version but it is included here to show what was learned. The various .py files have this throughout. Some of the code which remains unchanged from the walkthrough does not have any annotation added.
 
 <br />
+<hr>
 
-### **Landing Page**
+# **Landing Page**
 
 * The main landing page for the online store. It displays splash text introducing the store's main product (rapeseed wax candles) and encourages visitors to explore the candle collection and sign up for the newsletter. The page follows the structure defined in the base.html template (which itself has all our dependencies and meta information).
   * Splash text is concise and descriptive and uses strong styling element to highlight the most relevant keywords for the purposes of web crawlers.
 
-<details><summary>Landing Page</summary>
+<details><summary>LANDING PAGE IMAGE</summary>
 
 ![Landing Page](readme/assets/images/landing-page.jpg)
 
@@ -287,11 +288,29 @@ I have added extensive annotation to all my Python files in the live code which 
 
 <br />
 
-### **Newsletter Signup**
+# **Newsletter Signup**
 
-Text here
+This page provides a simple and user-friendly interface for collecting user information and subscribing them to periodic email updates.
 
-<details><summary>Text here</summary>
+## Features
+
+- **Signup Form**: The page displays a signup form where users can enter their email address, to subscribe to the newsletter.
+- **Terms and Conditions**: A section displaying the terms and conditions of the newsletter subscription. It outlines important information regarding privacy, content usage, age requirements, and more.
+- **Unsubscribe Option**: Users are informed that they can unsubscribe from the newsletter at any time. The page provides an email address where users can send their unsubscribe requests.
+- **Responsive Design**: The signup page is designed to be responsive, ensuring optimal viewing and interaction across different devices and screen sizes.
+
+## Usage
+
+1. Access the signup page by navigating to the appropriate URL.
+2. Fill out the signup form with the required information.
+3. Click the "Submit" button to subscribe to the newsletter.
+4. Optionally, review the terms and conditions section for more details.
+5. To unsubscribe from the newsletter, send an email to the provided email address with "Unsubscribe" in the subject line.
+
+## Notes:
+- **Future development**: In a live environment an automated backend integration would be required both for the sending of a newsletter and the unsubscribe feature. I did debate adding a delete address feature but it would serve no purpose in a real world project as it would be open to abuse so its left out here. It could eventually be integrated in the expanded admin messaging panel that could allow the composition of newlsetters in the front end and allow updating and targetting signup list addresses though this would require significantly more testing and development than is possible here.
+
+<details><summary>NEWSLETTER SIGNUP IMAGE</summary>
 
 ![Newsletter Signup](readme/assets/images/newsletter-page.jpg)
 
@@ -299,11 +318,35 @@ Text here
 
 <br />
 
-### **Products Page**
+# **Products Page**
 
-Text here
+The Product Listing Page provides various features for sorting and presenting products in our database. This page can be accessed from 2 views, either by category or by search term(s). In both cases the sorting works and could be easily extended to provide further functionality.
 
-<details><summary>Text here</summary>
+## Features
+
+- **Product Display**: The page presents a collection of products in a grid layout. Each product is represented as a card with its image, name, price, and category information.
+- **Sorting**: Users can sort the products based on price or average rating. The page includes a sorting form with options to select the sorting criteria and direction (ascending or descending). Upon submitting the form, the products are rearranged according to the selected criteria. This sorting works when products 
+- **Category Filtering**: If applicable, users can filter the products by a specific category. The page displays a heading indicating the selected category, allowing users to browse products within that category specifically.
+- **Search Term Filtering**: If applicable, users can filter the products by a keyword searchs from our nabvar. The page displays a heading indicating the selected category, allowing users to browse products within that category specifically.
+- **Average Rating**: For products with available reviews, the page calculates and displays the average rating in the form of stars. This allows users to quickly assess the overall quality of each product.
+- **Superuser Options**: If the user is a superuser, additional options are provided for editing or deleting products. This functionality enables superusers to manage the product inventory efficiently.
+- **Back to Top Button**: A "Back to Top" button is available, allowing users to easily navigate back to the top of the page with a single click.
+
+## Usage
+
+1. Access the Product Listing Page by navigating to the appropriate URL.
+2. Browse the list of products displayed on the page.
+3. To sort the products, use the sorting form to select the desired criteria and direction. Click the "Sort" button to apply the sorting.
+4. If applicable, click on a specific category to filter the products and view only those belonging to the selected category.
+5. Review the product details, including the product image, name, price, and category.
+6. If available, check the average rating of the product based on user reviews.
+7. If you are a superuser, additional options to edit or delete products are provided for efficient management.
+8. To quickly navigate back to the top of the page, click the "Back to Top" button.
+
+Please note that this project utilizes Django, a powerful web framework that simplifies the development of dynamic web applications. It handles various aspects, such as routing, database integration, and template rendering, to provide a seamless user experience on the Product Listing Page.
+
+
+<details><summary>PRODUCTS PAGE IMAGE</summary>
 
 ![Products Page](readme/assets/images/products-page.jpg)
 
