@@ -16,6 +16,7 @@ Minimal viable product for ecommerce candle and lifestyle product store.
 
 * [**OVERVIEW**](<#overview>)
     * [Site Plan](<#site-plan>)
+    * [Business Model](<#business-model>)
     * [Database Schema](<#database_schema>)
     * [User Stories & Agile](<#user-stories-and-agile>)
     * [Wireframes](<#wireframes>)
@@ -39,8 +40,8 @@ Minimal viable product for ecommerce candle and lifestyle product store.
     * [Bag Page](#bag-page)
     * [Checkout Page](#checkout-page)
     * [Checkout Success Page](#checkout-success-page)
-    * [Order History Page](#order-history-page)
-    * [User Feedback](#user-feedback)
+    * [Order History Page](#order-history-view)
+    * [Stripe Notes](#stripe-notes)
 
 <br />
 
@@ -88,6 +89,28 @@ While technically fake, this may serve as a jumping-off point for a new website 
 The design concept is somewhat in keeping with the original site and the existing but dormant Facebook page. It should be an e-commerce site that focuses on a small inventory of items, with high customer engagement and feedback in the form of a review system and wishlist.
 
 The deployed site represents an MVP which would be iterated on going forward.
+
+<br />
+
+## **Business Model**
+
+<br>As detailed above this project is for an artisan candle shop and lifestyle products store. It would operate on a B2C model, focusing on serving individual consumers directly.
+
+The B2C (Business-to-Consumer) model involves businesses selling products or services directly to individual consumers. In relation to this business it would function as follows:
+
+- **Targeting Individual Consumers:** Bull & Sea would focus on catering to the needs and preferences of individual consumers by offering a wide range of products and services. It could also offer B2B services later if the business proved successful.
+
+- **Product Catalog and Display:** Bull & Sea would be an online storefront to showcase their products with detailed descriptions, images, pricing information, and other relevant details.
+
+- **Direct Sales:** Bull & Sea would sell directly to consumers without intermediaries or wholesalers, allowing customers to browse, add items to their carts, and complete purchases through a secure checkout process.
+
+- **Customer Relationship Management:** As a small business Bull & Sea would aim to establish strong relationships with individual customers by providing personalized experiences, exceptional customer service, and post-sales support.
+
+- **Marketing and Promotion:** Bull & Sea would utilise marketing strategies, including digital advertising, social media marketing, and email campaigns, to attract and engage a wide audience. It would put a particularly strong emphasis on Facebook, TikTok and Pinterest.
+
+- **Customer Feedback and Reviews:** Bull & Sea would actively encourage customers to provide feedback, ratings, and reviews to improve the overall customer experience and build trust.
+
+Overall the strategy moving forward to a live version would be to reach out to specific audiences interested in lifestyle and artisan brands to build a name. As this process gathered steam the product inventory could be diversified but not to the point of diluting the brand. It should always remained very focused on it's specific field.
 
 <br />
 
@@ -157,23 +180,22 @@ I used an online wireframe tool to create my basic layout idea. It is by no mean
 
 ## **Final Design**
 
-* Font choice here:
-    * Cinzel - for main title font and headings
-    * Slabo - for all other text
-
-Cinzel was chosen as a more decorative text for main title and Slabo as a still decorative but more readable font for all other text. Both should elicit a craft or artisan feeling without looking to cold or modern.
-
-<br />
-
+### **Font choices:**
+- Cinzel was chosen as a more decorative text for main title. Slabo was chosen as a still decorative, but more readable font, for all other text. Both should elicit a craft / artisan feeling without looking to cold or modern.
+    
+* Cinzel - for main title font and headings
+<br>
 ![font 1](readme/assets/images/cinzel_font.jpg)
 
 <br />
 
+* Slabo - for all other text
+<br>
 ![font 2](readme/assets/images/slabo_font.jpg)
 
 <br />
 
-* Color palette
+### **Color palette**
     * The color palette below was chosen to allow the products to take center stage. A distinct vintage blue and muted grey tones where used to evoke an artisan / vintage feeling.
     * Worth noting some slight variations in tone from these were used where appropriate on elements which were small or needed opacity.
 
@@ -182,8 +204,6 @@ Cinzel was chosen as a more decorative text for main title and Slabo as a still 
 * Hopefully the design feeling conveys artisan high quality products. 
 
 <br />
-
-
 
 ## **User Interface**
 
@@ -244,8 +264,6 @@ Throughout the development process, the codebase was iterated on and substantial
 As this is purely an MVP to showcase learning outcomes, at this time I felt it best to stick to the base structure but later in my roadmap section I will note areas this could change further if it were to become a real project.
 
 STRIPE: A special note on the stripe code and integration used. This is unchanged from the walkthrough project. All webhook handling is tested as working on my live code (see testing later)
-
-
 
 <br />
 
@@ -780,7 +798,7 @@ The same as the previous checkout success page, but called by clicking on order 
 
 ## **STRIPE NOTES**
 
-The Stripe payment system has been integrated into the site to provide a secure payment processing solution. 
+The Stripe payment system has been integrated into the site to provide a secure payment processing solution. It's integration follows the walkthrough project exactly.
 
 ### MVP Implementation and Webhooks
 
@@ -800,19 +818,21 @@ Please keep in mind that while the current implementation may not process actual
 
 # **ROADMAP**
 
-- **CONTACT FORM EXPANSION**: For now, this remains a proof of concept for what could become an internal messaging system for admins to answer customer inquiries. In theory, it could be expanded to allow the adding of different types of contact (such as business-to-business, complaints, etc.). Whether this proves a worthwhile use of development time would need to be judged after a test deploy and extensive user feedback. As detailed in various sections above, this could be integrated across many different features to allow users and admins to communicate more easily within the app.
+- **MORE IMAGES ON PRODUCTS**: Currently only one image exists, this could be changed so each product in the product detail view had a carousel of multiple images. This would likely be added in next development cycle.
 
-- **DYNAMIC BACK BUTTONS**: This feature aims to enhance the navigation experience by implementing dynamic back buttons that adapt to the user's browsing history. It would allow users to conveniently navigate back to the previous page they visited, improving overall usability.
+- **CONTACT FORM EXPANSION / INTERNAL MESSAGING SYSTEM**: For now, this remains a proof of concept for what could become an internal messaging system for admins to answer customer inquiries. In theory, it could be expanded to allow the adding of different types of contact (such as business-to-business, complaints, etc.). Whether this proves a worthwhile use of development time would need to be judged after a test deploy and extensive user feedback. As detailed in various sections above, this could be integrated across many different features to allow users and admins to communicate more easily within the app.
 
-- **WISHLIST SYSTEM**: The wishlist system will enable users to save their favorite products for future reference or potential purchase. Users will be able to add items to their wishlist, view and manage the wishlist, and receive notifications for changes in availability or discounts on wishlisted items.
+- **DYNAMIC BACK BUTTONS**: In testing I did have a version (see depreciated code) of dynamic back buttons implemented. As discussed above that was sub optimal and removed for the MVP. Using either a stored session variable or use of template logic similar to how the checkout bag quick view recognises the page you are on, back buttons which direct to different pages based on where you had come from could be implemented. 
+  * The former would be preferable but would require cookies and other solutions beyond the scope of this MVP
 
-- **SALE / OFFERS SYSTEM**: This feature aims to implement a sale/offers system to provide special discounts and promotions to users. It will enable the display of discounted prices, limited-time offers, promotional codes, or bundle deals, enhancing the user's shopping experience and encouraging increased sales.
+- **WISHLIST SYSTEM**: The wishlist system would enable users to save their favorite products for future reference or potential purchase. Users will be able to add items to their wishlist, view and manage the wishlist, and receive notifications for changes in availability or discounts on wishlisted items.
 
-- **DELETE CONFIRMATION SYSTEM**: Working from feedback from the current MVP, a delete confirmation pop-up may be added to enhance user experience and prevent accidental deletion of important data. This system will prompt users to confirm their action before permanently deleting any content. I left this out for now as I felt implementing it then removing represented bad coding practice. Rather it was better to ommit now and add later if required in a live version.
+- **SALE / OFFERS SYSTEM**: This feature aims to implement a sale/offers system to provide special discounts and promotions to users. It will enable the display of discounted prices, limited-time offers, promotional codes, or bundle deals, enhancing the user's shopping experience and encouraging increased sales. In pracice admins could set a special offer template and then apply its logic to products dynamically. I feel this would be desirable but also beyond the scope of this project currently.
+  * Users are not required to sign up but in a live version incentives such as this discount system could be offered to encourage sign ups. 
 
-- **EXPANDED TAG LIST AND INTEGRATION**: This feature involves expanding the existing tag list and integrating it more comprehensively throughout the application. It will enhance product categorization, filtering, and search functionality, making it easier for users to find specific products based on their interests or preferences.
+- **DELETE CONFIRMATION SYSTEM**: Working from feedback from the current MVP, a delete confirmation pop-up may be added to enhance user experience and prevent accidental deletion of important data. This system will prompt users to confirm their action before permanently deleting any content. I left this out for now as I felt implementing then removing it, represented bad coding practice. Rather it was better to ommit now and add later if required in a live version.
 
-- **MORE IMAGES ON PRODUCTS**: This feature aims to enhance product representation by allowing the addition of multiple images per product. It will provide users with a more comprehensive visual understanding of the products, potentially increasing engagement and conversion rates.
+- **EXPANDED TAG LIST AND INTEGRATION**: This feature involves expanding the existing tag list and integrating it more comprehensively throughout the application. It will enhance product categorization, filtering, and search functionality, making it easier for users to find specific products based on their interests or preferences. This feels unwarranted for this particular site, as the product list would never be overly long. But it could be implemented further down the line.
 
 <br />
 
@@ -823,7 +843,6 @@ Please keep in mind that while the current implementation may not process actual
 <hr>
 
 ## **TECHNOLOGY USED**
-EDIT THIS
 
 ## **Languages**
   * [HTML](https://www.w3.org/standards/webdesign/htmlcss) - Base structure
@@ -833,48 +852,47 @@ EDIT THIS
 
 <br />
 
-EDIT THIS
 ## **Installed libraries in Requirements**
   * [asgiref](https://pypi.org/project/asgiref/)
-  * [cloudinary](https://pypi.org/project/cloudinary/)
-  * [dj-database-url](https://pypi.org/project/dj-database-url/)
-  * [dj3-cloudinary-storage](https://pypi.org/project/dj3-cloudinary-storage/)
+  * [Boto3](https://pypi.org/project/boto3/)
+  * [dj-database-url](https://pypi.org/project/dj-database-url/0.5.0/)
   * [Django](https://pypi.org/project/Django/)
   * [django-allauth](https://pypi.org/project/django-allauth/)
+  * [django-countries](https://pypi.org/project/django-countries/7.2.1/)
   * [django-crispy-forms](https://pypi.org/project/django-crispy-forms/)
-  * [django-summernote](https://pypi.org/project/django-summernote/)
+  * [django-storage](https://pypi.org/project/django-storages/1.13.2/)
   * [gunicorn](https://pypi.org/project/gunicorn/)
   * [oauthlib](https://pypi.org/project/oauthlib/)
+  * [jmespath](https://pypi.org/project/jmespath/1.0.1/)
   * [Pillow](https://pypi.org/project/Pillow/)
   * [psycopg2](https://pypi.org/project/psycopg2/)
-  * [PyJWT](https://pypi.org/project/PyJWT/)
-  * [python3-openid](https://pypi.org/project/python3-openid/)
+  * [python3-openid](https://pypi.org/project/python3-openid/3.2.0/)
   * [pytz](https://pypi.org/project/pytz/)
   * [requests-oauhlib](https://pypi.org/project/requests-oauthlib/)
   * [sqlparse](https://pypi.org/project/sqlparse/)
+  * [s3transfer](https://pypi.org/project/s3transfer/)
+  * [stripe](https://pypi.org/project/stripe/)
 
 <br />
 
-EDIT THIS
 ## **Other software, libraries and resources**
   * [Bootstrap](https://getbootstrap.com/) - used for base style elements and layout
   * [Font Awesome](https://fontawesome.com/) - used for landing page icons
   * [Jquery](https://cdnjs.com/libraries/jquery) - used throughout the site
   * [Popper JS](https://cdnjs.com/libraries/popper.js) - Library used in forms.py
   * [Django](https://www.djangoproject.com/) - A model-view-template framework used to create the Review | Alliance site
-  * [Fluid UI](https://www.fluidui.com/) - Wireframe resource
   * [Github](https://github.com/) - Used to host this repository
   * [Gitpod](https://www.gitpod.io) - Used to edit and push to the repo, the native validator was used to validate all Python code.
   * [Heroku](https://id.heroku.com/login) - Cloud platform the live site is deployed to
+  * [AWS](https://aws.amazon.com/) - Used to host images 
+  * [Fluid UI](https://www.fluidui.com/) - Used to create wireframe
   * [Favicon](https://favicon.io/) - Used to create favicon
-  * [Cloudinary](https://cloudinary.com/) - Hosts all static files in the project and user images
-  * [LINK](https://www.youtube.com/watch?v=2IbRtjez6ag) - Link to a lesson that showed how to create a simple Intersection observer script, which was extended for my project
-  * [LINK](https://www.w3resource.com/html-css-exercise/html-css-practical-exercises/html-css-practical-exercise-40.php) - Gallery code was taken from here then edited for use.
-  * [LINK](http://animista.net) - Used to create the bounce button effect and slide-up image animation
+  * [Coolors](https://coolors.co/) - Used to create color palette
+  * [DRAW Sql](https://drawsql.app/) - Used to create visual DB schema
+  * [CSS Tricks](https://css-tricks.com/css-link-hover-effects/) - Arrow effect for messages
 
 <br />
 
-EDIT THIS
 ## **Testing resources**
   * [HTML Validation](https://validator.w3.org/) - Used to validate HTML code
   * [CSS Validation](https://jigsaw.w3.org/css-validator/) - Used to validate CSS code
@@ -887,8 +905,6 @@ EDIT THIS
 
 <br />
 
-<br />
-
 <hr>
 
 ### [Contents Menu](<#table-of-contents>)
@@ -898,41 +914,37 @@ EDIT THIS
 ## **TESTING**
 
 ## **Fixed Bugs**
-* Text here
+* No major bugs existed worthy of note except the one piece of unwanted function introduced by trying to provide dynamic back buttons (see previous entries on this).
 
 <br />
 
 ## **Known Issues**
-
-Text here
+* Currently users have no way of actually unsubscribing from the newsletter (addressed above)
+* Loading times for the application are slower than I would like due to heavy use of scripting and no ability to set or change cache policy. It also attempts to preload all data due to page structure and templates. In a real launch this would need to be addressed with host.
+* Some accessability issues around contrast are noted but I have chosen to accept them currently, I would need this be tested by visually imparied users to see if it needed changing.
 
 <br />
 
 ## **Manual Testing**
-All user stories marked as 'done' on our project board [HERE](board-link-here) were tested and signed off.
+All user stories marked as 'done' on our project board [HERE](https://github.com/users/JeffreyBull76/projects/6) were tested and signed off.
 
 <br />
 
-I did not have time to implement automated or unit tests. As the project is relatively straightforward I opted for manual testing. The results can be seen below.
-
-
-!! EDIT THIS TO BE RELEVANT TO PROJECT 5 !!
+## **Test Details**
 
 | Status | **Landing Page** |
 |:-------:|:--------|
 | &check; | Custom 404 page exists and shows when the user manually enters an incorrect address extension |
 | &check; | Clicking the title reloads to index.html landing page when not logged in |
 | &check; | All landing page links navigate to the correct pages |
-| &check; | All landing page modals open the correct panels |
 | &check; | The landing page responds to different screen sizes correctly |
-| &check; | Using the signup link work correctly and redirects to the gallery page |
-| &check; | Using the login link work correctly and redirects to the gallery page |
+| &check; | Using the navigation works correctly |
 | &check; | All scripts and resources load correctly |
-| &check; | The footer at the bottom shows correctly and the modal works |
+| &check; | The footer at the bottom shows correctly and the links work |
 
 <br />
 
-| Status | **Gallery Page**
+| Status | **Newsletter Signup Page**
 |:-------:|:--------|
 | &check; | Custom 404 page exists and shows when the user manually enters an incorrect address extension |
 | &check; | The Gallery page only shows for logged users, it is unreachable otherwise |
@@ -1029,14 +1041,35 @@ I did not have time to implement automated or unit tests. As the project is rela
 ## **Validation**
 
   **HTML validation:**
-  All code was manually fed into the validator. Various duplicate ID errors and missing alt tags were fixed. 
-  Now returns no errors on all pages.
+  All HtML was vaidated and returned no errors. See below for warnings:
+
+###  - **All script tags return the following warning:**
+  - * Warning: The type attribute is unnecessary for JavaScript resources.
+
+  I tried removing these but it stopped some of the scripts working, as its only a warning it is left in but noted.
 
   <details><summary>HTML Validation</summary>
 
-  HTML validation:
+  [Landing page validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fp5-bull-and-sea.herokuapp.com%2F)
 
-  ![HTML validation]()
+  [Products page validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fp5-bull-and-sea.herokuapp.com%2Fproducts%2F)
+
+  [Contact page validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fp5-bull-and-sea.herokuapp.com%2Fcontact%2F)
+
+  [Contact form management validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fp5-bull-and-sea.herokuapp.com%2Fcontact-management%2F)
+
+  [Bag Page validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fp5-bull-and-sea.herokuapp.com%2Fbag%2F)
+
+  [Checkout page validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fp5-bull-and-sea.herokuapp.com%2Fcheckout%2F)
+
+  [Add products page validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fp5-bull-and-sea.herokuapp.com%2Fproducts%2Fadd%2F)
+
+  [Profile page validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fp5-bull-and-sea.herokuapp.com%2Fprofile%2F)
+
+  [Signup page validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fp5-bull-and-sea.herokuapp.com%2Fsignup%2F)
+
+  [Product details page validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fp5-bull-and-sea.herokuapp.com%2Fproducts%2F3%2F)
+
 
   <br />
 
@@ -1045,13 +1078,11 @@ I did not have time to implement automated or unit tests. As the project is rela
   <br />
 
   **CSS validation:**
-  All code was manually fed into the validator. Returns no errors.
+  All code was checked and returns no errors.
 
   <details><summary>CSS Validation</summary>
 
-  CSS validation:
-
-  ![CSS validation]()
+  [CSS validation](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fp5-bull-and-sea.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
   <br />
 
@@ -1060,15 +1091,12 @@ I did not have time to implement automated or unit tests. As the project is rela
   <br />
 
   **Javascript validation:**
-  JS testing output here
-  
+
+  Add JS testing images 
+
   <details><summary>JS Validation</summary>
 
-  Account page:
-
-  ![Account page]()
-
-  <br />
+  ![JS validation]()
 
   </details>
   
@@ -1142,16 +1170,13 @@ EDIT THIS
   * You do this by navigating to the deploy tab and selecting manual or automatic.
   * Check the build log for a successful build.
 
+* ### AWS hosting
+  * TEXT HERE
+
 <details><summary>Config Vars redacted</summary>
 
-![Config Vars redacted](readme/assets/images/config_vars.png)
-</details>
+![Config Vars redacted]()
 
-<br />
-
-<details><summary>Link repo</summary>
-
-![Repo link](readme/assets/images/heroku_link.png)
 </details>
 
 <br />
