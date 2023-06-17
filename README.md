@@ -908,6 +908,7 @@ Please keep in mind that while the current implementation may not process actual
   * [DRAW Sql](https://drawsql.app/) - Used to create visual DB schema
   * [CSS Tricks](https://css-tricks.com/css-link-hover-effects/) - Arrow effect for messages
   * [Placeholder Images](https://placehold.co/) - Use to generate placeholder images fully configurable.
+  * [Smart Mock Ups](https://smartmockups.com/) - USed for non candle product images
   
 <br />
 
@@ -1329,7 +1330,9 @@ Other JS was not tested as it consists of bootstrap elements to control dropdown
 <br />
 
 ### **Lessons Learned**
-  * Text here
+  * While I have used far more original code in this project than my previous one, I have struggled with the structure somewhat. I think if this site were to become a real project I would rework it. Using similar coding concepts but a totally different structure. I would create more seperation betwen the sections and allow for more future development. I would prefer bigger and more personal product pages with detailed descriptions (as its a personal small scale artisan business)
+
+  * With that said I think this represents a good base to ideate from.
 
 <br />
 
@@ -1406,8 +1409,39 @@ If the site were to go live google adwords would need to be considered, but in t
 
 </details>
 
-* ### AWS hosting
-  * TEXT HERE
+* ## AWS hosting
+
+A brief overview of the process for hosting images on AWS (Amazon Web Services) using S3 (Simple Storage Service). I followed the walkthrough guides for this as it was quite in depth but below is a synposis of the process.
+
+## Prerequisites
+
+- If you don't have one you'll need an account, sign up at the [AWS website](https://aws.amazon.com/).
+
+## Steps
+
+1. **Set up an S3 bucket**
+   - Create an S3 bucket to store your images.
+   - Choose a unique bucket name and specify the region for storing the data.
+
+2. **Configure bucket permissions**
+   - Manage access control using AWS Identity and Access Management (IAM) policies.
+   - Ensure the bucket has appropriate permissions to allow access to your images.
+
+3. **Upload images to the S3 bucket**
+   - Use the AWS Management Console, AWS CLI (Command Line Interface), or an SDK (Software Development Kit) to upload your images.
+   - Choose the method that suits your needs.
+
+4. **Enable public access (if required)**
+   - Configure the bucket policy or access control list (ACL) to allow public access if you want your images to be publicly accessible on the web.
+   - Understand the security implications before making your bucket public.
+
+5. **Link AWS to Heroku App**
+   - Integrate AWS access via config vars (see above)
+
+## Additional Resources
+
+- [AWS S3 Documentation](https://aws.amazon.com/s3/)
+- [AWS IAM Documentation](https://aws.amazon.com/iam/)
 
 <br />
  
@@ -1419,7 +1453,7 @@ If the site were to go live google adwords would need to be considered, but in t
 
 ## **CREDITS**
 
-Text here
+All images used are my own original work created for this project, with the exception of the candle images which are from the old version of this business website.
 
 <hr>
 
@@ -1429,7 +1463,8 @@ Text here
 
 ## **ACKNOWLEDGEMENTS**
 
-Text here
+Thanks to fellow slack students and CI staff who gave advice and also my mentor. 
+But mostly thanks to my Wife for putting up with me during this time !
 
 <hr>
 
