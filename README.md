@@ -1213,9 +1213,9 @@ All user stories marked as 'done' on our project board [HERE](https://github.com
 ## **Validation**
 
 ### **HTML validation:**
- All HtML was vaidated and returned no errors. See below for warnings:
+ All HTML was validated and returned no errors. See below for warnings:
 
-- **All script tags return the following warning:**
+**All script tags return the following warning:**
 - Warning: The type attribute is unnecessary for JavaScript resources.
 
 I tried removing these but it stopped some of the scripts working, as its only a warning it is left in but noted.
