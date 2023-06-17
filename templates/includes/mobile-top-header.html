@@ -113,7 +113,13 @@
                 aria-labelledby="navbarDropdown5">
                 <a href="{% url 'contact' %}" class="dropdown-item">Contact</a>
                 {% if request.user.is_superuser %}
-                <a href="{% url 'contact_management' %}" class="dropdown-item">Messages</a>
+                <a href="{% url 'contact_management' %}" class="dropdown-item">
+                  {% if new_messages_count > 0 %}
+                  New Messages ({{ new_messages_count }})
+                  {% else %}
+                  No new messages
+                  {% endif %}
+                </a>
                 {% endif %}
               </div>
             </li>
