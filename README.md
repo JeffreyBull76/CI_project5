@@ -937,13 +937,16 @@ All user stories marked as 'done' on our project board [HERE](https://github.com
 | Status | **Landing Page** |
 |:-------:|:--------|
 | &check; | Custom 404 page exists and shows when the user manually enters an incorrect address extension |
-| &check; | Clicking the title reloads to index.html landing page when not logged in |
+| &check; | The page extends the `base.html` template correctly. It inherits the common layout and styling from the base template. |
+| &check; | The necessary static files are loaded. |
+| &check; | The page has a proper header container. The header container is present and styled within the `container` class. |
 | &check; | All landing page links navigate to the correct pages |
 | &check; | The landing page responds to different screen sizes correctly |
 | &check; | Using the navigation works correctly |
 | &check; | All scripts and resources load correctly |
 | &check; | The footer at the bottom shows correctly and the links work |
 | &check; | The navbar displays correctly and all links work |
+| &check; | Messaging system present on main page and throughout site |
 
 <br />
 
@@ -962,11 +965,14 @@ All user stories marked as 'done' on our project board [HERE](https://github.com
 | Status | **Newsletter Signup Page**
 |:-------:|:--------|
 | &check; | Custom 404 page exists and shows when the user manually enters an incorrect address extension |
+| &check; | The page extends the `base.html` template correctly. It inherits the common layout and styling from the base template. |
+| &check; | The necessary static files are loaded. |
 | &check; | Clicking the title reloads to index.html landing page |
-| &check; | The page extends the "base.html" template correctly |
+| &check; | The page has a proper header container. The header container is present and styled within the `container` class. |
 | ~~x~~ | Users can Unsubscribe from the newsletter (see known issues) |
 | &check; | The necessary static files are loaded |
 | &check; | The page header container is displayed |
+| &check; | Entering incorrect data prevents form submission and generates an error message |
 | &check; | The signup form card is present and styled correctly |
 | &check; | The signup form is rendered within the card |
 | &check; | The form includes a CSRF token |
@@ -983,10 +989,10 @@ All user stories marked as 'done' on our project board [HERE](https://github.com
 | Status | **Products Listing Page** |
 |:-------:|:--------|
 | &check; | Custom 404 page exists and shows when the user manually enters an incorrect address extension |
+| &check; | The page extends the `base.html` template correctly. It inherits the common layout and styling from the base template. |
+| &check; | The necessary static files are loaded. |
 | &check; | Clicking the title reloads to index.html landing page |
-| &check; | The page extends the "base.html" template correctly |
-| &check; | The necessary static files are loaded |
-| &check; | The page header container is displayed |
+| &check; | The page has a proper header container. The header container is present and styled within the `container` class. |
 | &check; | The sub-heading is displayed correctly based on the category or search query |
 | &check; | The sorting form is displayed correctly |
 | &check; | The sorting options are rendered properly |
@@ -1007,10 +1013,10 @@ All user stories marked as 'done' on our project board [HERE](https://github.com
 | Status | **Product Details Page** |
 |:-------:|:--------------|
 | &check; | Custom 404 page exists and shows when the user manually enters an incorrect address extension |
+| &check; | The page extends the `base.html` template correctly. It inherits the common layout and styling from the base template. |
+| &check; | The necessary static files are loaded. |
 | &check; | Clicking the title reloads to index.html landing page |
-| &check; | The page extends the base.html template correctly |
-| &check; | The necessary static files are loaded |
-| &check; | The page has a proper header container |
+| &check; | The page has a proper header container. The header container is present and styled within the `container` class. |
 | &check; | The content block is defined and filled with content |
 | &check; | The image element displays correctly with a fallback for missing images |
 | &check; | The tabbed content section is displayed correctly |
@@ -1027,9 +1033,11 @@ All user stories marked as 'done' on our project board [HERE](https://github.com
 
 | Status | **Contact Form Page**  |
 |:-------:|:----------|
-| &check; | The page extends the base.html template correctly |
-| &check; | The necessary static files are loaded |
-| &check; | The page has a proper header container |
+| &check; | Custom 404 page exists and shows when the user manually enters an incorrect address extension |
+| &check; | The page extends the `base.html` template correctly. It inherits the common layout and styling from the base template. |
+| &check; | The necessary static files are loaded. |
+| &check; | Clicking the title reloads to index.html landing page |
+| &check; | The page has a proper header container. The header container is present and styled within the `container` class. |
 | &check; | The content block is defined and filled with content |
 | &check; | The form elements are displayed correctly |
 | &check; | Error messages are displayed for invalid form inputs |
@@ -1042,14 +1050,131 @@ All user stories marked as 'done' on our project board [HERE](https://github.com
 | Status | **Contact Form Management Page** |
 |:-------:|:----------|
 | &check; | Custom 404 page exists and shows when the user manually enters an incorrect address extension |
+| &check; | The page extends the `base.html` template correctly. It inherits the common layout and styling from the base template. |
+| &check; | The necessary static files are loaded. |
 | &check; | Clicking the title reloads to index.html landing page |
+| &check; | The page has a proper header container. The header container is present and styled within the `container` class. |
 | &check; | Page is restricted for superusers only |
-| &check; | The page extends the "base.html" template correctly |
 | &check; | The message cards are displayed correctly with the appropriate styling. |
 | &check; | The message details are shown in each card. The card displays the details of each contact message, such as the first name, last name, email, phone number, comment, and created date. |
 | &check; | The number of new messages is displayed correctly. The appropriate message is displayed indicating the count of new messages. If there are no new messages, a message indicating so is displayed. |
 | &check; | Delete button is displayed for each message card. |
 | &check; | Delete button performs the delete action and removes the associated DB item. |
+
+<br />
+
+| Status | **Add Products Page** |
+|:-------:|:----------|
+| &check; | Custom 404 page exists and shows when the user manually enters an incorrect address extension |
+| &check; | The page extends the `base.html` template correctly. It inherits the common layout and styling from the base template. |
+| &check; | The necessary static files are loaded. |
+| &check; | Clicking the title reloads to index.html landing page |
+| &check; | The page has a proper header container. The header container is present and styled within the `container` class. |
+| &check; | The form to add a new product is rendered correctly. The form fields are displayed properly with appropriate styling. |
+| &check; | The form includes a file upload field. The form contains an input field for uploading an image file. |
+| &check; | The form submission is handled properly. When the form is submitted, it triggers the appropriate action URL and includes the necessary CSRF token. |
+| &check; | Entering incorrect data prevents form submission and generates an error message |
+| &check; | The cancel button redirects to the products page. Clicking the cancel button redirects the user to the products page. |
+| &check; | The add product button submits the form. Clicking the add product button successfully submits the form and adds the product. |
+| &check; | The image filename is displayed dynamically. When a file is selected for upload, the filename is displayed dynamically on the page. |
+| &check; | The JavaScript code executes correctly. |
+
+<br />
+
+| Status | **Edit Products Page** |
+|:-------:|:----------|
+| &check; | Custom 404 page exists and shows when the user manually enters an incorrect address extension |
+| &check; | The page extends the `base.html` template correctly. It inherits the common layout and styling from the base template. |
+| &check; | The necessary static files are loaded. |
+| &check; | Clicking the title reloads to index.html landing page |
+| &check; | The page has a proper header container. The header container is present and styled within the `container` class. |
+| &check; | Entering incorrect data prevents form submission and generates an error message |
+| &check; | The form to edit a product is rendered correctly |
+| &check; | The form fields are displayed appropriately |
+| &check; | The form handles the submission properly |
+| &check; | The cancel button redirects to the products page |
+| &check; | The edit product button performs the edit action |
+| &check; | The script for handling the image selection is included and functions correctly |
+
+<br />
+
+| Status | **Profile Page** |
+|:-------:|:----------|
+| &check; | Custom 404 page exists and shows when the user manually enters an incorrect address extension |
+| &check; | The page extends the `base.html` template correctly. It inherits the common layout and styling from the base template. |
+| &check; | The necessary static files are loaded. |
+| &check; | Clicking the title reloads to index.html landing page |
+| &check; | The page has a proper header container. The header container is present and styled within the `container` class. |
+| &check; | The CSS file for the profile page is included |
+| &check; | Entering incorrect data prevents form submission and generates an error message |
+| &check; | The form to update the default delivery information is rendered correctly |
+| &check; | The form fields are displayed appropriately |
+| &check; | The form handles the submission properly |
+| &check; | The order history table is displayed |
+| &check; | The order history table shows the order details correctly |
+| &check; | The order numbers link to their respective order history page |
+| &check; | The country field JavaScript file is included and works correctly |
+
+<br />
+
+| Status | **Allauth Pages** |
+|:-------:|:----------|
+| &check; | Custom 404 page exists and shows when the user manually enters an incorrect address extension |
+| &check; | Clicking the title reloads to index.html landing page |
+| &check; | The DOCTYPE declaration is present and correct |
+| &check; | The HTML structure is valid |
+| &check; | The page title is set dynamically using a block |
+| &check; | The extra_head block is present and empty |
+| &check; | The body block is defined and filled with content |
+| &check; | Messages are displayed if present |
+| &check; | The menu section is displayed |
+| &check; | The menu items are rendered based on user authentication |
+| &check; | The menu links are correctly configured |
+| &check; | The content block is defined and empty |
+| &check; | The extra_body block is present and empty |
+| &check; | The page is correctly extended by the various Allauth templates related to logging in and signing up |
+
+<br />
+
+| Status | **Checkout Page** |
+|:-------:|:-----------------|
+| &check; | Custom 404 page exists and shows when the user manually enters an incorrect address extension |
+| &check; | The page extends the `base.html` template correctly. It inherits the common layout and styling from the base template. |
+| &check; | The necessary static files are loaded. |
+| &check; | Clicking the title reloads to index.html landing page |
+| &check; | The page has a proper header container. The header container is present and styled within the `container` class. |
+| &check; | The CSS file for the checkout page is included |
+| &check; | The order summary section is displayed, showing the items in the bag, their details, and subtotals |
+| &check; | The order summary section displays the correct total, delivery cost, and grand total |
+| &check; | Entering incorrect data prevents form submission and generates an error message |
+| &check; | The form for order details is rendered correctly |
+| &check; | The form fields for order details are displayed appropriately |
+| &check; | The form handles the submission properly |
+| &check; | The delivery details section is displayed, showing the fields for name, email, phone number, address, and country |
+| &check; | The "Save this delivery information to my profile" checkbox is displayed correctly and works |
+| &check; | The payment section is displayed, showing the Stripe card element |
+| &check; | The "Adjust Bag" button redirects to the bag view |
+| &check; | The "Complete Order" button submits the form and initiates the payment process |
+| &check; | The loading overlay is displayed during the payment processing |
+| &check; | The Stripe public key and client secret are included as JSON scripts |
+| &check; | The Stripe Elements JavaScript file is included |
+
+<br />
+
+| Status | **Checkout Success Page** |
+|:-------:|:----------|
+| &check; | Custom 404 page exists and shows when the user manually enters an incorrect address extension |
+| &check; | The page extends the `base.html` template correctly. It inherits the common layout and styling from the base template. |
+| &check; | The necessary static files are loaded. |
+| &check; | Clicking the title reloads to index.html landing page |
+| &check; | The page has a proper header container. The header container is present and styled within the `container` class. |
+| &check; | The order information is displayed correctly. The order number, order date, and confirmation message are shown. |
+| &check; | The order details table is displayed. It includes the product name, quantity, and price for each item in the order. |
+| &check; | The delivering information is displayed. The full name, address, town/city, country, and phone number are shown. |
+| &check; | If available, the address line 2, county, and postal code are displayed correctly. |
+| &check; | The billing information is displayed. The order total, delivery cost, and grand total are shown. |
+| &check; | The back button correctly navigates to the previous page (profile or home). |
+| &check; | The "Sign up to our newsletter" button redirects to the sign-up page. |
 
 <br />
 
