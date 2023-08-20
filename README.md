@@ -35,6 +35,7 @@ Minimal viable product for ecommerce candle and lifestyle product store.
     * [Contact Page](#contact-page)
     * [Contact Messages Page](#contact-messages-page)
     * [Allauth Pages](#allauth-pages)
+    * [Resubmission changes](#resubmission-changes-180823)
     * [Manage Products Page](#manage-products-page)
     * [Profile Page](#profile-page)
     * [Bag Page](#bag-page)
@@ -598,12 +599,12 @@ The Contact Messages Page displays messages submitted through the contact form. 
 
 ## **Allauth Pages**
 
-The Base Allauth template is used as a foundation for other urls within the website. It provides a consistent structure and layout for the pages while allowing customization of specific content sections.
+The Base Allauth template is used as a foundation for other urls within the website. It provides a consistent structure and layout for the pages while allowing customization of specific content sections. 
 
 ### Features
 
 - **User Menu**: The menu section provides options for user authentication. If the user is authenticated, they can access actions like changing their email or signing out. If the user is not authenticated, options for signing in or signing up are available.
-  * Users can login, logout, register and so on from here, it uses Allauths templates but customised to suit the project
+  * Users can login, logout, register and so on from here, it uses Allauths templates but customised to suit the project.
 
 <br />
 
@@ -617,11 +618,31 @@ The Base Allauth template is used as a foundation for other urls within the webs
 
 <hr>
 
+## RESUBMISSION CHANGES 18/08/23
+
+Following feedback from my first submission I have now disabled the console for emails in the live site (it still works on the development version)
+In the live site users can now sign up and receive confirmation emails directly without needing to use the console or admin panel.
+
+Provided below is an image showing a temp email being used to receive both the sign-up and order confrimation emails.
+  * Users can now register themselves without needing to access console or admin panel.
+  * It is worth noting while I have changed the base text of both emails to reflect my own site, the confirmation email has a link to 'bullandsea.com' which currently is not a live domain so does not work. This was done to reflect how this would appear were the site real.
+  * Also for testing purposes I am using my own gmail account for this, again in a live site a specialised business email account would be substituted.
+
+<details><summary>CONFIRMATION EMAILS IMAGE</summary>
+
+![Allauth Pages](readme/assets/images/email_proof.jpg)
+
+</details>
+
+<br />
+
+<hr>
+
 ## **Manage Products Page**
 
 ### Add Product Page
 
-The Add Product Page allows admins to add new products to the website's product inventory. It provides a user-friendly interface for entering product details and uploading an associated image. The page is designed to streamline the product addition process and ensure accurate information for each new product.
+The Add Product Page allows admins to add new products to the website's product inventory. Standard users cannot access this page. It provides a user-friendly interface for entering product details and uploading an associated image. The page is designed to streamline the product addition process and ensure accurate information for each new product.
 
 ### Features
 
@@ -1151,6 +1172,12 @@ All user stories marked as 'done' on our project board [HERE](https://github.com
 | &check; | The extra_body block is present and empty |
 | &check; | The page is correctly extended by the various Allauth templates related to logging in and signing up |
 
+| Status | **Resubmission Changes** |
+|:-------:|:----------|
+| &check; | Emails are now generated via gmail and sent to users following sign-up and account changes |
+| &check; | Emails are now generated and sent containing order confirmation details correctly |
+| &check; | Text in generated emails changed from default text |
+
 <br />
 
 | Status | **Checkout Page** |
@@ -1333,6 +1360,8 @@ Other JS was not tested as it consists of bootstrap elements to control dropdown
   * While I have used far more original code in this project than my previous one, I have struggled with the structure somewhat. I think if this site were to become a real project I would rework it. Using similar coding concepts but a totally different structure. I would create more seperation betwen the sections and allow for more future development. I would prefer bigger and more personal product pages with detailed descriptions (as its a personal small scale artisan business)
 
   * With that said I think this represents a good base to ideate from.
+  * **UPDATED 18/08/23 for re-submission.**
+    * Following a first failed submission I have now successfully implemented email confirmations via external email (gmail) in line with feedback from assessor.
 
 <br />
 
